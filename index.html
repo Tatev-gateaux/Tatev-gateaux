@@ -3,1075 +3,1356 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f7f0f8">
-<meta name="description" content="Tatev Gateux — Gâteaux sur mesure, chocolats, fraises enrobées et formations Cake Design à Orléans.">
-<title>Tatev Gateux | Pâtisserie & Cake Design</title>
-<link rel="icon" type="image/png" href="logo.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fcfaf9">
+<meta name="description" content="Tatev Gateaux, pâtisserie et cake design à Orléans. Gâteaux sur mesure, chocolats, fraises enrobées et formations.">
+<title>Tatev Gateaux — Maison de Pâtisserie</title>
+
+<!-- OFFICIAL LOGO & FAVICON -->
+<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719">
+<link rel="apple-touch-icon" href="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --paper:#fffcfd;
-  --cream:#faf6f9;
-  --lavender:#f3eaf5;
-  --lilac:#e9d8ed;
-  --purple:#916ba5;
-  --deep:#4d345c;
-  --ink:#302637;
-  --muted:#827689;
-  --line:#e9dfe9;
+:root{
+ --white:#fff;
+ --ivory:#fcfaf9;
+ --cream:#f8f4f3;
+ --mauve:#f0e9ef;
+ --dust:#e8dde7;
+ --plum:#513b55;
+ --purple:#856a88;
+ --ink:#332d34;
+ --muted:#827b83;
+ --line:#eae3e8;
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"DM Sans",sans-serif;
-  font-size:14px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ background:var(--ivory);
+ color:var(--ink);
+ font-family:"DM Sans",sans-serif;
+ font-size:14px;
+ -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4,p {margin-top:0}
-h1,h2,h3,h4 {
-  font-family:"Cormorant Garamond",serif;
-  font-weight:500;
+h1,h2,h3,h4,p{margin-top:0}
+h1,h2,h3,h4{
+ font-family:"Cormorant Garamond",serif;
+ font-weight:500;
 }
-h1 {font-size:clamp(52px,6.4vw,104px);line-height:.94}
-h2 {font-size:clamp(39px,4.2vw,65px);line-height:1}
-h3 {font-size:29px}
-p {line-height:1.85;color:#66596a}
-a {color:inherit;text-decoration:none}
-button {font:inherit;cursor:pointer}
-img {max-width:100%}
-.container {max-width:1370px;margin:auto;padding:0 35px}
-.section {padding:105px 0}
-.eyebrow {
-  font-size:10px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:var(--purple);
-  font-weight:600;
-  margin-bottom:20px;
+h1{font-size:clamp(62px,7.2vw,112px);line-height:.91;letter-spacing:-2px}
+h2{font-size:clamp(44px,5vw,78px);line-height:1.02;letter-spacing:-1px}
+h3{font-size:32px;line-height:1.1}
+p{color:#6e6670;line-height:1.9}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+img{max-width:100%}
+.container{max-width:1400px;margin:auto;padding:0 48px}
+.section{padding:120px 0}
+.kicker{
+ display:block;
+ color:var(--purple);
+ font-size:10px;
+ font-weight:600;
+ letter-spacing:3.2px;
+ text-transform:uppercase;
+ margin-bottom:22px;
 }
-.center {text-align:center}
-.section-heading {margin-bottom:48px}
-.section-heading p {max-width:580px;margin:12px auto 0}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:13px 27px;
-  border:1px solid var(--purple);
-  border-radius:3px;
-  background:var(--purple);
-  color:white;
-  font-size:12px;
-  letter-spacing:.3px;
-  transition:.3s;
+.center{text-align:center}
+.heading{max-width:790px;margin:0 auto 60px;text-align:center}
+.heading p{max-width:580px;margin:16px auto 0}
+.btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:18px;
+ padding:17px 27px;
+ min-height:52px;
+ background:var(--plum);
+ border:1px solid var(--plum);
+ color:#fff;
+ font-size:11px;
+ font-weight:500;
+ letter-spacing:1px;
+ text-transform:uppercase;
+ transition:.35s;
 }
-.btn:hover {background:var(--deep);border-color:var(--deep);transform:translateY(-2px)}
-.btn.outline {background:transparent;color:var(--deep)}
-.btn.outline:hover {background:var(--lavender)}
-.btn-group {display:flex;gap:12px;flex-wrap:wrap}
-header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(255,252,253,.97);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(16px);
+.btn:hover{background:#765b78;border-color:#765b78}
+.btn.light{background:transparent;color:var(--plum)}
+.btn.light:hover{background:var(--mauve)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.rule{height:1px;background:var(--line);width:100%}
+a:focus-visible,button:focus-visible{
+ outline:2px solid var(--purple);
+ outline-offset:4px;
 }
-.nav {
-  max-width:1450px;
-  margin:auto;
-  padding:10px 35px;
-  min-height:90px;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:25px;
+
+/* HEADER */
+.topline{
+ height:30px;
+ background:var(--plum);
+ color:#fff;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:9px;
+ letter-spacing:2px;
+ text-transform:uppercase;
 }
-.nav-side {display:flex;align-items:center;gap:26px}
-.nav-side.right {justify-content:flex-end}
-.nav-side a {font-size:12px;white-space:nowrap;transition:.2s}
-.nav-side a:hover {color:var(--purple)}
-.brand {display:flex;align-items:center;justify-content:center;gap:10px}
-.brand img {width:65px;height:65px;object-fit:contain}
-.brand span {
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  white-space:nowrap;
-  color:var(--deep);
+.header{
+ position:sticky;
+ top:0;
+ z-index:100;
+ background:rgba(252,250,249,.97);
+ backdrop-filter:blur(16px);
+ border-bottom:1px solid var(--line);
 }
-.menu-toggle {
-  display:none;
-  border:0;
-  background:none;
-  font-size:26px;
-  color:var(--deep);
+.nav{
+ max-width:1480px;
+ margin:auto;
+ padding:8px 48px;
+ min-height:92px;
+ display:grid;
+ grid-template-columns:1fr auto 1fr;
+ align-items:center;
+ gap:25px;
 }
-.mobile-nav {display:none}
-.hero {
-  background:linear-gradient(110deg,#fffcfd 0%,#f6ecf6 100%);
-  overflow:hidden;
+.nav-left,.nav-right{
+ display:flex;
+ align-items:center;
+ gap:34px;
 }
-.hero-inner {
-  min-height:610px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:60px;
+.nav-right{justify-content:flex-end}
+.nav a:not(.logo){
+ font-size:11px;
+ font-weight:500;
+ letter-spacing:1px;
+ text-transform:uppercase;
 }
-.hero-copy {padding:65px 0}
-.hero-copy h1 {color:var(--deep);margin-bottom:25px}
-.hero-copy p {max-width:440px;font-size:15px;margin-bottom:30px}
-.hero-visual {height:510px;position:relative}
-.photo {
-  background:linear-gradient(145deg,#f7eff7,#e9d9ec);
-  border:1px solid rgba(126,91,142,.14);
-  position:relative;
+.nav a:hover{color:var(--purple)}
+.logo{
+ display:flex;
+ align-items:center;
+ gap:12px;
+}
+.logo img{
+ width:72px;
+ height:72px;
+ object-fit:contain;
+ border-radius:50%;
+}
+.logo-text{
+ display:flex;
+ flex-direction:column;
+ gap:5px;
+}
+.logo-text strong{
+ font-family:"Cormorant Garamond",serif;
+ font-size:26px;
+ font-weight:600;
+ letter-spacing:.2px;
+ color:var(--plum);
+ white-space:nowrap;
+}
+.logo-text small{
+ font-size:8px;
+ letter-spacing:2px;
+ text-transform:uppercase;
+ color:var(--muted);
+}
+.mobile-toggle{
+ display:none;
+ border:0;
+ background:none;
+ font-size:24px;
+ color:var(--plum);
+}
+.mobile-menu{display:none}
+
+/* HERO */
+.hero{
+ background:linear-gradient(110deg,#fcfaf9 30%,#f2eaf0);
+ overflow:hidden;
+}
+.hero-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ align-items:center;
+ gap:65px;
+ min-height:670px;
+}
+.hero-copy{padding:85px 0}
+.hero-copy h1{color:var(--plum);margin-bottom:30px}
+.hero-copy p{font-size:15px;max-width:430px;margin-bottom:34px}
+.hero-visual{
+ height:590px;
+ position:relative;
+ display:flex;
+ align-items:flex-end;
+ justify-content:center;
+}
+.hero-visual .placeholder{
+ width:88%;
+ height:93%;
+ border-radius:250px 250px 0 0;
+}
+.hero-caption{
+ position:absolute;
+ right:0;
+ bottom:34px;
+ padding:16px 24px;
+ background:rgba(252,250,249,.92);
+ color:var(--plum);
+ font-family:"Cormorant Garamond",serif;
+ font-size:23px;
+ font-style:italic;
+}
+
+/* IMAGE PLACEHOLDERS */
+.placeholder{
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:linear-gradient(135deg,#f3edf1,#e8dde7);
+ overflow:hidden;
+ border:1px solid #e5dce4;
+}
+.placeholder:before{
+ content:"";
+ position:absolute;
+ inset:15px;
+ border:1px solid rgba(91,68,94,.12);
+ pointer-events:none;
+}
+.placeholder-label{
+ color:#a18f9f;
+ font-size:10px;
+ text-transform:uppercase;
+ letter-spacing:2px;
+ text-align:center;
+ padding:20px;
+ position:relative;
+}
+.placeholder-label:before{
+ content:"◇";
+ display:block;
+ font-size:28px;
+ font-family:serif;
+ margin-bottom:12px;
+}
+.placeholder img{
+ width:100%;
+ height:100%;
+ position:absolute;
+ inset:0;
+ object-fit:cover;
+}
+.arch{border-radius:230px 230px 0 0}
+.arch:before{border-radius:210px 210px 0 0}
+
+/* INTRO */
+.intro{
+ text-align:center;
+ padding:95px 0 30px;
+}
+.intro h2{max-width:850px;margin:0 auto 25px}
+.intro p{max-width:600px;margin:auto}
+
+/* COLLECTIONS */
+.collections-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:48px 24px;
+}
+.collection-card .placeholder{
+ height:400px;
+ transition:transform .5s,filter .5s;
+}
+.collection-card:hover .placeholder{
+ transform:translateY(-5px);
+ filter:brightness(.98);
+}
+.collection-card h3{
+ font-size:31px;
+ margin:23px 0 10px;
+}
+.collection-card .discover{
+ color:var(--purple);
+ text-transform:uppercase;
+ letter-spacing:2px;
+ font-size:10px;
+}
+.collection-card .line{
+ width:40px;
+ height:1px;
+ background:var(--purple);
+ margin-top:16px;
+ transition:.3s;
+}
+.collection-card:hover .line{width:80px}
+
+/* SWEETS */
+.sweets{
+ background:var(--mauve);
+}
+.sweets-layout{
+ display:grid;
+ grid-template-columns:.85fr 1fr 1fr;
+ gap:28px;
+ align-items:center;
+}
+.sweets-copy{padding-right:30px}
+.sweets-copy h2{margin-bottom:25px}
+.sweet-card .placeholder{height:390px}
+.sweet-card h3{margin:22px 0 10px}
+.sweet-card small{
+ color:var(--purple);
+ text-transform:uppercase;
+ letter-spacing:2px;
+}
+
+/* STORY */
+.story-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:100px;
+ align-items:center;
+}
+.story-image{
+ position:relative;
+ padding-right:55px;
+ padding-bottom:45px;
+}
+.story-image>.placeholder{
+ height:550px;
+}
+.story-detail{
+ position:absolute;
+ width:42%;
+ height:245px;
+ right:0;
+ bottom:0;
+ border:9px solid var(--ivory);
+}
+.story-copy p{max-width:510px}
+.story-copy .btn{margin-top:17px}
+
+/* TRAINING */
+.training{
+ background:var(--cream);
+}
+.training-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ align-items:center;
+ gap:90px;
+}
+.training-grid p{max-width:510px}
+.training-image{
+ display:grid;
+ grid-template-columns:1.4fr 1fr;
+ gap:12px;
+}
+.training-image .placeholder{height:440px}
+
+/* REVIEWS */
+.review-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:22px;
+}
+.review-card{
+ background:#fff;
+ border:1px solid var(--line);
+ padding:38px;
+ min-height:240px;
+}
+.review-quote{
+ font-family:"Cormorant Garamond",serif;
+ font-size:60px;
+ color:var(--purple);
+ line-height:.8;
+}
+.review-card p{
+ font-family:"Cormorant Garamond",serif;
+ font-size:26px;
+ line-height:1.3;
+ color:var(--plum);
+}
+.review-card small{color:var(--muted)}
+
+/* CTA */
+.contact-cta{
+ padding:110px 25px;
+ background:linear-gradient(120deg,#f6f0f4,#e9dfe9,#f6f0f4);
+ text-align:center;
+}
+.contact-cta h2{max-width:800px;margin:0 auto 24px}
+.contact-cta p{max-width:570px;margin:0 auto 28px}
+.contact-cta .actions{justify-content:center}
+
+/* SUBPAGES */
+.page-hero{
+ background:var(--mauve);
+ padding:100px 25px;
+ text-align:center;
+}
+.page-hero h1{
+ font-size:clamp(55px,7vw,92px);
+ color:var(--plum);
+}
+.page-hero p{max-width:590px;margin:20px auto 0}
+.back{
+ display:inline-block;
+ margin-bottom:35px;
+ color:var(--purple);
+ font-size:11px;
+ letter-spacing:1px;
+ text-transform:uppercase;
+}
+.product-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:28px;
+}
+.product-card .placeholder{height:390px}
+.product-card h3{margin:22px 0 12px}
+.product-card p{margin-bottom:20px}
+.product-detail{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:80px;
+ align-items:center;
+}
+.product-detail .placeholder{height:590px}
+.product-detail h1{
+ font-size:clamp(50px,5vw,76px);
+ color:var(--plum);
+}
+.empty{
+ text-align:center;
+ border:1px solid var(--line);
+ background:#fff;
+ padding:75px 25px;
+}
+.empty h3{font-size:42px}
+.empty p{max-width:520px;margin:0 auto 25px}
+.training-list{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:24px;
+}
+.training-card .placeholder{height:350px}
+.training-card h3{margin-top:22px}
+
+/* FOOTER */
+.footer{
+ background:#f8f5f6;
+ padding:65px 0 25px;
+ border-top:1px solid var(--line);
+}
+.footer-grid{
+ display:grid;
+ grid-template-columns:1.4fr 1fr 1fr;
+ gap:60px;
+}
+.footer h4{
+ font-size:25px;
+ margin-bottom:20px;
+ color:var(--plum);
+}
+.footer a:not(.logo){
+ display:block;
+ font-size:12px;
+ margin-bottom:13px;
+ color:#6d626e;
+}
+.footer a:hover{color:var(--purple)}
+.footer-bottom{
+ border-top:1px solid var(--line);
+ margin-top:55px;
+ padding-top:23px;
+ display:flex;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:15px;
+ font-size:11px;
+ color:var(--muted);
+}
+.footer-bottom a{display:inline!important;margin:0!important}
+.reveal{
+ opacity:0;
+ transform:translateY(22px);
+ transition:opacity .75s ease,transform .75s ease;
+}
+.reveal.visible{
+ opacity:1;
+ transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+ .nav{grid-template-columns:1fr auto}
+ .nav-left,.nav-right{display:none}
+ .mobile-toggle{display:block}
+ .mobile-menu.open{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  min-height:160px;
-}
-.photo:before {
-  content:"";
-  position:absolute;
-  width:65%;
-  height:75%;
-  border:1px solid rgba(139,101,156,.2);
-  border-radius:48% 48% 0 0;
-  top:13%;
-  left:17%;
-}
-.photo-label {
-  position:relative;
-  z-index:1;
-  text-align:center;
-  color:#9b84a5;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding:20px;
-}
-.photo-label span {display:block;font-size:25px;margin-bottom:12px}
-.hero-photo {
-  width:86%;
-  height:100%;
-  margin-left:auto;
-  border-radius:48% 48% 0 0;
-}
-.hero-accent {
-  position:absolute;
-  width:150px;
-  height:210px;
-  left:0;
-  bottom:-25px;
-  border:9px solid var(--paper);
-  background:#e7d7e9;
-}
-.intro {padding:85px 0 25px;text-align:center}
-.intro h2 {max-width:820px;margin:0 auto 20px}
-.intro p {max-width:650px;margin:auto}
-.category-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.category-card {display:block}
-.category-card .photo {
-  height:345px;
-  border-radius:170px 170px 0 0;
-  transition:.4s;
-}
-.category-card:hover .photo {filter:brightness(.96);transform:translateY(-5px)}
-.category-info {text-align:center;padding:22px 8px}
-.category-info h3 {font-size:27px;margin-bottom:7px}
-.category-info small {color:var(--purple);letter-spacing:1px}
-.sweets {background:var(--lavender)}
-.sweets-grid {
-  display:grid;
-  grid-template-columns:.8fr 1fr 1fr;
-  gap:25px;
-  align-items:center;
-}
-.sweets-copy {padding-right:20px}
-.sweet-card .photo {height:365px}
-.sweet-card h3 {margin:17px 0 5px}
-.sweet-card small {color:var(--purple)}
-.story {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:85px;
-  align-items:center;
-}
-.story-visual {position:relative;padding:0 60px 45px 0}
-.story-main {height:490px;border-radius:220px 220px 0 0}
-.story-small {
-  position:absolute;
-  width:42%;
-  height:235px;
-  right:0;
-  bottom:0;
-  border:9px solid var(--paper);
-}
-.story-copy p {max-width:540px}
-.training {background:#f8f1f8}
-.training-layout {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-.training-photos {display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
-.training-photos .photo:first-child {height:420px}
-.training-photos .photo:nth-child(2) {height:420px}
-.testimonials {background:var(--paper)}
-.review-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review {
-  padding:35px;
-  border:1px solid var(--line);
-  background:white;
-}
-.review .quote {font-family:Georgia,serif;font-size:45px;color:var(--purple);line-height:1}
-.review p {font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.35}
-.review small {color:var(--muted)}
-.contact-banner {
-  padding:95px 20px;
-  text-align:center;
-  background:linear-gradient(120deg,#f9f3f9,#e9d9ed,#f9f3f9);
-}
-.contact-banner p {margin:0 auto 25px;max-width:600px}
-.contact-banner .btn-group {justify-content:center}
-footer {background:#fff;padding:55px 0 25px;border-top:1px solid var(--line)}
-.footer-top {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-.footer-links {display:flex;gap:20px;flex-wrap:wrap;font-size:12px}
-.footer-bottom {
+  flex-direction:column;
+  gap:20px;
+  padding:24px 48px;
   border-top:1px solid var(--line);
-  margin-top:35px;
-  padding-top:22px;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:15px;
-  color:var(--muted);
-  font-size:11px;
+ }
+ .mobile-menu a{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+ }
+ .hero-grid{gap:25px}
+ .sweets-layout{grid-template-columns:1fr 1fr}
+ .sweets-copy{grid-column:1/-1}
+ .story-grid,.training-grid{gap:45px}
 }
-.page-hero {
-  padding:95px 20px;
-  text-align:center;
-  background:var(--lavender);
+@media(max-width:720px){
+ .container{padding:0 22px}
+ .section{padding:75px 0}
+ .nav{padding:8px 22px;min-height:76px}
+ .logo img{width:52px;height:52px}
+ .logo-text strong{font-size:21px}
+ .logo-text small{font-size:7px}
+ .hero-grid,.story-grid,.training-grid,.product-detail{
+  grid-template-columns:1fr;
+ }
+ .hero-grid{gap:0}
+ .hero-copy{padding:75px 0 35px}
+ .hero-visual{height:410px}
+ .hero-visual .placeholder{height:100%}
+ .hero-caption{bottom:15px}
+ .collections-grid,.product-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px 15px;
+ }
+ .collection-card .placeholder{height:255px}
+ .collection-card h3{font-size:25px}
+ .sweets-layout{grid-template-columns:1fr}
+ .sweets-copy{grid-column:auto}
+ .sweet-card .placeholder{height:350px}
+ .story-image{padding-right:35px}
+ .story-image>.placeholder{height:410px}
+ .story-detail{height:170px}
+ .training-image .placeholder{height:310px}
+ .review-grid,.training-list,.footer-grid{grid-template-columns:1fr}
+ .product-detail .placeholder{height:430px}
+ .footer-grid{gap:30px}
+ .footer-bottom{margin-top:35px}
+ .page-hero{padding:80px 22px}
 }
-.page-hero h1 {font-size:clamp(48px,6vw,82px)}
-.page-hero p {max-width:650px;margin:auto}
-.product-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.product-card .photo {height:350px}
-.product-card h3 {margin:20px 0 5px}
-.product-card p {margin:0 0 14px}
-.back-link {display:inline-block;margin-bottom:30px;color:var(--purple)}
-.empty-state {
-  padding:70px 30px;
-  border:1px solid var(--line);
-  background:var(--cream);
-  text-align:center;
+@media(max-width:420px){
+ .collections-grid,.product-grid{grid-template-columns:1fr}
+ .collection-card .placeholder{height:360px}
 }
-.detail-grid {display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.detail-grid .photo {height:540px}
-.detail-copy h1 {font-size:65px}
-.detail-copy p {margin-bottom:30px}
-.info-list {border-top:1px solid var(--line);margin:30px 0}
-.info-list div {padding:16px 0;border-bottom:1px solid var(--line)}
-.reveal {opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
-.reveal.visible {opacity:1;transform:none}
-@media(max-width:1000px) {
-  .nav {grid-template-columns:1fr auto}
-  .nav-side {display:none}
-  .menu-toggle {display:block}
-  .mobile-nav.open {
-    display:flex;
-    flex-direction:column;
-    padding:20px 35px 30px;
-    gap:20px;
-    border-top:1px solid var(--line);
-  }
-  .hero-inner {gap:20px}
-  .sweets-grid {grid-template-columns:1fr 1fr}
-  .sweets-copy {grid-column:1/-1}
-  .story,.training-layout {gap:35px}
-}
-@media(max-width:700px) {
-  .container {padding:0 20px}
-  .section {padding:70px 0}
-  .nav {padding:10px 20px;min-height:70px}
-  .brand img {width:48px;height:48px}
-  .brand span {font-size:21px}
-  .hero-inner,.story,.training-layout,.detail-grid {grid-template-columns:1fr}
-  .hero-inner {gap:0}
-  .hero-copy {padding:65px 0 35px}
-  .hero-visual {height:370px}
-  .hero-photo {width:88%}
-  .hero-accent {width:100px;height:140px}
-  .category-grid,.product-grid {grid-template-columns:repeat(2,1fr);gap:15px}
-  .category-card .photo {height:225px}
-  .category-info h3 {font-size:22px}
-  .sweets-grid {grid-template-columns:1fr}
-  .sweets-copy {grid-column:auto}
-  .sweet-card .photo {height:300px}
-  .story-visual {padding-right:35px}
-  .story-main {height:370px}
-  .story-small {height:160px}
-  .training-photos .photo:first-child,
-  .training-photos .photo:nth-child(2) {height:290px}
-  .review-grid {grid-template-columns:1fr}
-  .detail-grid .photo {height:390px}
-  .detail-copy h1 {font-size:48px}
-  .footer-top {align-items:flex-start;flex-direction:column}
-}
-@media(max-width:390px) {
-  .category-grid,.product-grid {grid-template-columns:1fr}
-  .category-card .photo {height:300px}
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after {scroll-behavior:auto!important;transition:none!important;animation:none!important}
-  .reveal {opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{
+  scroll-behavior:auto!important;
+  transition:none!important;
+ }
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
-<header>
-  <div class="nav">
-    <nav class="nav-side">
-      <a href="?page=home">Accueil</a>
-      <a href="?page=creations">Nos Créations</a>
-      <a href="?page=histoire">Mon Histoire</a>
-    </nav>
 
-    <a href="?page=home" class="brand">
-      <img src="logo.png" alt="Logo Tatev Gateux">
-      <span>TATEV GATEUX</span>
-    </a>
+<div class="topline">TATEV GATEUX — PÂTISSERIE & CAKE DESIGN — ORLÉANS</div>
 
-    <nav class="nav-side right">
-      <a href="?page=formations">Formations</a>
-      <a href="?page=avis">Avis clients</a>
-      <a href="?page=contact">Contact</a>
-    </nav>
+<header class="header">
+ <div class="nav">
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  </div>
-
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="?page=home">Accueil</a>
-    <a href="?page=creations">Nos Créations</a>
-    <a href="?page=histoire">Mon Histoire</a>
-    <a href="?page=formations">Formations</a>
-    <a href="?page=avis">Avis clients</a>
-    <a href="?page=contact">Contact</a>
+  <nav class="nav-left">
+   <a href="?page=home">Accueil</a>
+   <a href="?page=creations">Nos Créations</a>
   </nav>
+
+  <a href="?page=home" class="logo">
+   <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719" alt="Tatev Gateux — Logo">
+   <div class="logo-text">
+    <strong>Tatev Gateux</strong>
+    <small>Maison de Pâtisserie</small>
+   </div>
+  </a>
+
+  <nav class="nav-right">
+   <a href="?page=contact">Contact</a>
+  </nav>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+ </div>
+ <nav class="mobile-menu" id="mobileMenu">
+  <a href="?page=home">Accueil</a>
+  <a href="?page=creations">Nos Créations</a>
+  <a href="?page=contact">Contact</a>
+ </nav>
 </header>
 
 <main id="app"></main>
 
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <a href="?page=home" class="brand">
-        <img src="logo.png" alt="Tatev Gateux">
-        <span>TATEV GATEUX</span>
-      </a>
-      <nav class="footer-links">
-        <a href="?page=home">Accueil</a>
-        <a href="?page=creations">Nos Créations</a>
-        <a href="?page=histoire">Mon Histoire</a>
-        <a href="?page=formations">Formations</a>
-        <a href="?page=avis">Avis clients</a>
-        <a href="?page=contact">Contact</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <span>Orléans, France · Tatev Gateux</span>
-      <span>
-        <a href="?page=legal">Mentions légales</a> ·
-        <a href="?page=privacy">Confidentialité</a>
-      </span>
-      <span>© <span id="year"></span> Tatev Gateux</span>
-    </div>
+<footer class="footer">
+ <div class="container">
+
+  <div class="footer-grid">
+
+   <div>
+    <a href="?page=home" class="logo">
+     <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719" alt="Tatev Gateux">
+     <div class="logo-text">
+      <strong>Tatev Gateux</strong>
+      <small>Maison de Pâtisserie</small>
+     </div>
+    </a>
+    <p style="margin-top:20px;max-width:310px">
+     Des créations sur mesure pour célébrer vos plus beaux moments.
+    </p>
+    <p>Orléans, France</p>
+   </div>
+
+   <div>
+    <h4>Explorer</h4>
+    <a href="?page=home">Accueil</a>
+    <a href="?page=creations">Nos Créations</a>
+    <a href="?page=histoire">Mon Histoire</a>
+    <a href="?page=formations">Formations Cake Design</a>
+    <a href="?page=avis">Avis Clients</a>
+   </div>
+
+   <div>
+    <h4>Nous contacter</h4>
+    <a href="?page=contact">Contact & Commandes</a>
+    <div id="footerSocial"></div>
+    <a href="?page=legal">Mentions légales</a>
+    <a href="?page=privacy">Confidentialité</a>
+   </div>
+
   </div>
+
+  <div class="footer-bottom">
+   <span>© <span id="year"></span> Tatev Gateux. Tous droits réservés.</span>
+   <span>Fait avec passion à Orléans.</span>
+  </div>
+
+ </div>
 </footer>
 
 <script>
-/* ==========================================
-   TATEV GATEUX — CONFIGURATION
-   Replace contact information later.
-========================================== */
+/* =========================================
+   CONFIGURATION
+   Add actual contact links when available.
+========================================= */
 
-const CONFIG = {
-  whatsapp: "",
-  instagram: "",
-  facebook: "",
-  location: "Orléans, France"
+const CONFIG={
+ logo:"https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719",
+ whatsapp:"",
+ instagram:"",
+ facebook:""
 };
 
-/* ==========================================
+/* =========================================
    CATEGORIES
-========================================== */
+========================================= */
 
-const categories = [
-  {
-    id:"mariage",
-    title:"Gâteaux de Mariage",
-    subtitle:"Des créations uniques pour célébrer votre union."
-  },
-  {
-    id:"anniversaire",
-    title:"Gâteaux d'Anniversaire",
-    subtitle:"Un gâteau imaginé pour votre journée spéciale."
-  },
-  {
-    id:"bapteme",
-    title:"Gâteaux de Baptême",
-    subtitle:"Des créations délicates pour un moment précieux."
-  },
-  {
-    id:"gender-reveal",
-    title:"Gâteaux Gender Reveal",
-    subtitle:"Une douce surprise pour un moment inoubliable."
-  },
-  {
-    id:"enfants",
-    title:"Gâteaux pour Enfants",
-    subtitle:"Des créations personnalisées pour les petits."
-  },
-  {
-    id:"bento",
-    title:"Bento Cakes",
-    subtitle:"De petites créations pour de grandes émotions."
-  },
-  {
-    id:"chocolats",
-    title:"Chocolats Artisanaux",
-    subtitle:"Un univers de douceurs chocolatées."
-  },
-  {
-    id:"fraises",
-    title:"Fraises Enrobées de Chocolat",
-    subtitle:"De délicieuses créations à offrir ou à partager."
-  }
+const categories=[
+ {
+  id:"mariage",
+  name:"Gâteaux de Mariage",
+  description:"Des créations uniques pour célébrer votre union.",
+  image:""
+ },
+ {
+  id:"anniversaire",
+  name:"Gâteaux d'Anniversaire",
+  description:"Des créations sur mesure pour vos plus beaux anniversaires.",
+  image:""
+ },
+ {
+  id:"bapteme",
+  name:"Gâteaux de Baptême",
+  description:"Des douceurs délicates pour une célébration précieuse.",
+  image:""
+ },
+ {
+  id:"gender-reveal",
+  name:"Gâteaux Gender Reveal",
+  description:"Une surprise gourmande pour un moment inoubliable.",
+  image:""
+ },
+ {
+  id:"enfants",
+  name:"Gâteaux pour Enfants",
+  description:"Des créations personnalisées pour les petits.",
+  image:""
+ },
+ {
+  id:"bento",
+  name:"Bento Cakes",
+  description:"De petites créations pleines d'émotion.",
+  image:""
+ },
+ {
+  id:"chocolats",
+  name:"Chocolats Artisanaux",
+  description:"Des gourmandises chocolatées à découvrir.",
+  image:""
+ },
+ {
+  id:"fraises",
+  name:"Fraises Enrobées de Chocolat",
+  description:"Une touche de gourmandise à offrir ou à partager.",
+  image:""
+ }
 ];
 
-/* ==========================================
+/* =========================================
    PRODUCTS
-   Add real products here later.
+   Add real creations here later.
 
-   Example format:
+   Example:
    {
-     id:"produit-1",
+     id:"creation-001",
      category:"mariage",
-     name:"Nom du gâteau",
-     description:"Description en français",
-     image:"images/gateau-1.jpg",
+     name:"Nom de la création",
+     description:"Description",
+     image:"images/photo.jpg",
      gallery:[],
-     price:"",
-     details:""
+     details:"Informations sur mesure"
    }
-========================================== */
+========================================= */
 
-const products = [];
+const products=[];
 
-/* ==========================================
+/* =========================================
    TRAINING COURSES
-========================================== */
+========================================= */
 
-const courses = [];
+const courses=[];
 
-/* ==========================================
-   REAL CUSTOMER REVIEWS
-   Add verified reviews only.
-========================================== */
+/* =========================================
+   AUTHENTIC CUSTOMER REVIEWS
+========================================= */
 
-const reviews = [];
+const reviews=[];
 
-/* ==========================================
-   HELPERS
-========================================== */
+/* =========================================
+   UTILITY FUNCTIONS
+========================================= */
 
-const app = document.getElementById("app");
+const app=document.getElementById("app");
 
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  }[char]));
+function esc(s){
+ return String(s??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+ }[c]));
 }
 
-function photo(label, className="", src="") {
-  if(src) {
-    return `<div class="photo ${className}">
-      <img src="${escapeHTML(src)}" alt="${escapeHTML(label)}"
-      style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"
-      loading="lazy">
-    </div>`;
+function photo(label,cls="",src=""){
+ return `<div class="placeholder ${cls}">
+  ${src
+   ? `<img src="${esc(src)}" alt="${esc(label)}" loading="lazy">`
+   : `<div class="placeholder-label">Votre photo ici<br>${esc(label)}</div>`
   }
-  return `<div class="photo ${className}">
-    <div class="photo-label">
-      <span>◇</span>
-      VOTRE PHOTO ICI
-      <div style="margin-top:8px;letter-spacing:1px">${escapeHTML(label)}</div>
-    </div>
-  </div>`;
+ </div>`;
 }
 
-function btn(text,href,outline=false) {
-  return `<a class="btn ${outline?"outline":""}" href="${href}">${escapeHTML(text)} &nbsp;→</a>`;
+function btn(label,url,light=false){
+ return `<a class="btn ${light?"light":""}" href="${esc(url)}">${esc(label)} <span aria-hidden="true">↗</span></a>`;
 }
 
-function categoryCard(c) {
-  return `<a class="category-card reveal" href="?page=collection&id=${encodeURIComponent(c.id)}">
-    ${photo(c.title)}
-    <div class="category-info">
-      <h3>${escapeHTML(c.title)}</h3>
-      <small>Découvrir →</small>
-    </div>
-  </a>`;
+function heading(kicker,title,description=""){
+ return `<div class="heading reveal">
+  <span class="kicker">${kicker}</span>
+  <h2>${title}</h2>
+  ${description?`<p>${description}</p>`:""}
+ </div>`;
 }
 
-function heading(kicker,title,description="") {
-  return `<div class="section-heading center reveal">
-    <div class="eyebrow">${kicker}</div>
-    <h2>${title}</h2>
-    ${description?`<p>${description}</p>`:""}
-  </div>`;
+function whatsapp(message){
+ const phone=CONFIG.whatsapp.replace(/\D/g,"");
+ if(!phone)return "";
+ return "https://wa.me/"+phone+"?text="+encodeURIComponent(message);
 }
 
-function whatsappLink(message) {
-  if(!CONFIG.whatsapp) return "";
-  const number=CONFIG.whatsapp.replace(/\D/g,"");
-  if(!number) return "";
-  return "https://wa.me/"+number+"?text="+encodeURIComponent(message);
+function orderButton(label,message){
+ const url=whatsapp(message);
+ return url
+ ? `<a class="btn" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`
+ : btn(label,"?page=contact");
 }
 
-function contactButton(label,message) {
-  const url=whatsappLink(message);
-  return url
-    ? `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">${label} →</a>`
-    : `<a class="btn" href="?page=contact">${label} →</a>`;
+function categoryCard(c){
+ return `<a class="collection-card reveal" href="?page=collection&id=${encodeURIComponent(c.id)}">
+  ${photo(c.name,"arch",c.image)}
+  <h3>${esc(c.name)}</h3>
+  <span class="discover">Découvrir la collection ↗</span>
+  <div class="line"></div>
+ </a>`;
 }
 
-function productCard(p) {
-  return `<article class="product-card reveal">
-    <a href="?page=produit&id=${encodeURIComponent(p.id)}">
-      ${photo(p.name,"",p.image)}
-      <h3>${escapeHTML(p.name)}</h3>
-    </a>
-    <p>${escapeHTML(p.description||"")}</p>
-    ${btn("Découvrir","?page=produit&id="+encodeURIComponent(p.id))}
-  </article>`;
+function productCard(p){
+ return `<article class="product-card reveal">
+  <a href="?page=produit&id=${encodeURIComponent(p.id)}">
+   ${photo(p.name,"",p.image)}
+   <h3>${esc(p.name)}</h3>
+  </a>
+  <p>${esc(p.description)}</p>
+  ${btn("Voir la création","?page=produit&id="+encodeURIComponent(p.id))}
+ </article>`;
 }
 
-/* ==========================================
+function contactBanner(){
+ return `<section class="contact-cta">
+  <span class="kicker">Votre projet commence ici</span>
+  <h2>Imaginons ensemble quelque chose d'exceptionnel.</h2>
+  <p>Une célébration, une création personnalisée ou une question ? Nous serons ravis d'échanger avec vous.</p>
+  <div class="actions">
+   ${orderButton("Nous écrire sur WhatsApp","Bonjour, je souhaite vous contacter au sujet d'une création.")}
+   ${btn("Contact","?page=contact",true)}
+  </div>
+ </section>`;
+}
+
+/* =========================================
    HOMEPAGE
-========================================== */
+========================================= */
 
-function homePage() {
-return `
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-copy reveal">
-      <div class="eyebrow">Pâtisserie & Cake Design · Orléans</div>
-      <h1>L'art de créer<br>des instants<br>inoubliables</h1>
-      <p>Des créations pâtissières sur mesure, imaginées avec passion à Orléans.</p>
-      <div class="btn-group">
-        ${btn("Découvrir nos créations","?page=creations")}
-        ${btn("Nous contacter","?page=contact",true)}
-      </div>
+function home(){
+ return `
+ <section class="hero">
+  <div class="container hero-grid">
+   <div class="hero-copy reveal">
+    <span class="kicker">Maison de Pâtisserie · Orléans</span>
+    <h1>La beauté<br>des instants<br>précieux.</h1>
+    <p>Des créations pâtissières sur mesure, où chaque détail célèbre l'élégance, la douceur et l'émotion.</p>
+    <div class="actions">
+     ${btn("Explorer nos créations","?page=creations")}
+     ${btn("Nous contacter","?page=contact",true)}
     </div>
-    <div class="hero-visual reveal">
-      ${photo("Création signature","hero-photo")}
-      <div class="hero-accent"></div>
-    </div>
+   </div>
+
+   <div class="hero-visual reveal">
+    ${photo("Création signature Tatev Gateux","arch")}
+    <div class="hero-caption">Créé avec passion.</div>
+   </div>
   </div>
-</section>
+ </section>
 
-<section class="intro container reveal">
-  <div class="eyebrow">L'univers Tatev Gateux</div>
-  <h2>Une touche de douceur<br>pour chaque occasion</h2>
-  <p>Chaque occasion mérite une création unique. Chez Tatev Gateux, la pâtisserie devient une expression de délicatesse, de créativité et d'émotion.</p>
-</section>
+ <section class="intro">
+  <div class="container reveal">
+   <span class="kicker">L'univers Tatev Gateux</span>
+   <h2>Des créations pensées pour vos plus beaux moments.</h2>
+   <p>Chaque événement possède sa propre histoire. Nous imaginons des créations sur mesure pour rendre chaque instant encore plus mémorable.</p>
+  </div>
+ </section>
 
-<section class="section" id="creations">
+ <section class="section">
   <div class="container">
-    ${heading("Nos créations","Des gâteaux pour chaque occasion",
-    "Découvrez nos créations sur mesure, pensées pour accompagner les moments les plus précieux.")}
-    <div class="category-grid">
-      ${categories.slice(0,6).map(categoryCard).join("")}
-    </div>
-    <div class="center" style="margin-top:25px">
-      ${btn("Toutes nos créations","?page=creations",true)}
-    </div>
+   ${heading("Nos créations","L'art de célébrer",
+    "Des créations personnalisées pour accompagner chaque occasion avec élégance.")}
+   <div class="collections-grid">
+    ${categories.slice(0,6).map(categoryCard).join("")}
+   </div>
+   <div class="center" style="margin-top:55px">
+    ${btn("Voir toutes les créations","?page=creations",true)}
+   </div>
   </div>
-</section>
+ </section>
 
-<section class="section sweets">
-  <div class="container sweets-grid">
-    <div class="sweets-copy reveal">
-      <div class="eyebrow">Douceurs & Chocolats</div>
-      <h2>De petites douceurs pour de grands bonheurs</h2>
-      <p>Découvrez notre univers de gourmandises artisanales et de créations chocolatées.</p>
-    </div>
-    ${categories.slice(6).map(c=>`
-      <a class="sweet-card reveal" href="?page=collection&id=${c.id}">
-        ${photo(c.title)}
-        <h3>${escapeHTML(c.title)}</h3>
-        <small>Découvrir →</small>
-      </a>
-    `).join("")}
+ <section class="section sweets">
+  <div class="container sweets-layout">
+
+   <div class="sweets-copy reveal">
+    <span class="kicker">Les gourmandises</span>
+    <h2>L'élégance se savoure aussi.</h2>
+    <p>Chocolats artisanaux et fraises enrobées de chocolat : des créations délicates pour le plaisir d'offrir et de partager.</p>
+   </div>
+
+   ${categories.slice(6).map(c=>`
+    <a class="sweet-card reveal" href="?page=collection&id=${c.id}">
+     ${photo(c.name,"",c.image)}
+     <h3>${esc(c.name)}</h3>
+     <small>Découvrir ↗</small>
+    </a>
+   `).join("")}
+
   </div>
-</section>
+ </section>
 
-<section class="section">
-  <div class="container story">
-    <div class="story-visual reveal">
-      ${photo("Portrait de Tatev","story-main")}
-      ${photo("Atelier de pâtisserie","story-small")}
+ <section class="section">
+  <div class="container story-grid">
+
+   <div class="story-image reveal">
+    ${photo("Portrait de Tatev","arch")}
+    <div class="story-detail">
+     ${photo("À l'atelier")}
     </div>
-    <div class="story-copy reveal">
-      <div class="eyebrow">Mon Histoire</div>
-      <h2>Derrière chaque création, une passion.</h2>
-      <p>Découvrez l'histoire de Tatev Gateux, le parcours de sa fondatrice et l'univers créatif qui accompagne chacune de ses réalisations.</p>
-      <p>Son histoire personnelle et ses photographies seront ajoutées prochainement.</p>
-      ${btn("Découvrir mon histoire","?page=histoire")}
-    </div>
+   </div>
+
+   <div class="story-copy reveal">
+    <span class="kicker">Mon Histoire</span>
+    <h2>Une passion, une histoire, une signature.</h2>
+    <p>Derrière Tatev Gateux se trouve une histoire personnelle, un regard créatif et une passion pour la pâtisserie.</p>
+    <p>Découvrez le parcours de la fondatrice, ses inspirations et l'univers qui donne vie à ses créations.</p>
+    ${btn("Découvrir mon histoire","?page=histoire")}
+   </div>
+
   </div>
-</section>
+ </section>
 
-<section class="section training">
-  <div class="container training-layout">
-    <div class="reveal">
-      <div class="eyebrow">Formations Cake Design</div>
-      <h2>Transmettre la passion du Cake Design</h2>
-      <p>Découvrez un univers de créativité, de savoir-faire et de passion autour de l'art du Cake Design.</p>
-      <div class="btn-group">
-        ${btn("Découvrir les formations","?page=formations")}
-        ${btn("S'inscrire","?page=contact",true)}
-      </div>
+ <section class="section training">
+  <div class="container training-grid">
+
+   <div class="reveal">
+    <span class="kicker">Formations Cake Design</span>
+    <h2>L'art de créer. Le plaisir de transmettre.</h2>
+    <p>Découvrez l'univers du Cake Design à travers les formations proposées par Tatev Gateux.</p>
+    <p>Un espace dédié à l'apprentissage, à la créativité et au développement du savoir-faire.</p>
+    <div class="actions">
+     ${btn("Découvrir les formations","?page=formations")}
+     ${btn("Nous contacter","?page=contact",true)}
     </div>
-    <div class="training-photos reveal">
-      ${photo("Formation Cake Design")}
-      ${photo("Atelier pratique")}
-    </div>
+   </div>
+
+   <div class="training-image reveal">
+    ${photo("Formation Cake Design")}
+    ${photo("Atelier & techniques")}
+   </div>
+
   </div>
-</section>
+ </section>
 
-<section class="section testimonials">
+ <section class="section">
   <div class="container">
-    ${heading("Ils nous font confiance","Vos beaux messages",
-    "Les témoignages de nos clients seront présentés ici.")}
-    ${reviews.length ? `
-      <div class="review-grid">
-        ${reviews.slice(0,3).map(reviewCard).join("")}
-      </div>` :
-      `<div class="empty-state reveal">
-        <h3>Vos témoignages comptent</h3>
-        <p>Les avis authentiques de nos clients seront bientôt disponibles.</p>
-      </div>`
-    }
-    <div class="center" style="margin-top:30px">
-      ${btn("Voir les avis clients","?page=avis",true)}
-    </div>
-  </div>
-</section>
+   ${heading("Témoignages","Vos beaux messages",
+    "Parce que votre confiance est notre plus belle récompense.")}
 
-${contactBanner()}
-`;
+   ${reviews.length
+    ? `<div class="review-grid">${reviews.slice(0,3).map(reviewCard).join("")}</div>`
+    : `<div class="empty">
+        <span class="kicker">Avis clients</span>
+        <h3>Vos mots comptent.</h3>
+        <p>Les témoignages authentiques de nos clients seront bientôt présentés ici.</p>
+       </div>`
+   }
+
+   <div class="center" style="margin-top:35px">
+    ${btn("Découvrir les avis","?page=avis",true)}
+   </div>
+  </div>
+ </section>
+
+ ${contactBanner()}
+ `;
 }
 
-/* ==========================================
-   CONTACT BANNER
-========================================== */
+/* =========================================
+   ALL CATEGORIES
+========================================= */
 
-function contactBanner() {
-return `<section class="contact-banner">
-  <div class="eyebrow">Contact & Commandes</div>
-  <h2>Une création pour votre prochain événement ?</h2>
-  <p>Parlons ensemble de votre projet et imaginons une création qui vous ressemble.</p>
-  <div class="btn-group">
-    ${contactButton("Nous écrire sur WhatsApp","Bonjour, je souhaite obtenir des informations sur vos créations.")}
-    ${btn("Nous contacter","?page=contact",true)}
-  </div>
-  <p style="margin-top:22px;font-size:12px">Orléans, France</p>
-</section>`;
-}
-
-/* ==========================================
-   ALL CREATIONS
-========================================== */
-
-function creationsPage() {
-return `
-<section class="page-hero">
-  <div class="eyebrow">Tatev Gateux</div>
+function creations(){
+ return `
+ <section class="page-hero">
+  <span class="kicker">Tatev Gateux</span>
   <h1>Nos Créations</h1>
-  <p>Explorez nos univers pâtissiers et découvrez des créations pour chaque occasion.</p>
-</section>
-<section class="section">
+  <p>Un univers de créations sur mesure, imaginées pour vos moments précieux.</p>
+ </section>
+
+ <section class="section">
   <div class="container">
-    ${heading("Gâteaux sur mesure","Pour chaque occasion")}
-    <div class="category-grid">
-      ${categories.slice(0,6).map(categoryCard).join("")}
-    </div>
+   ${heading("Cake Design","Nos gâteaux")}
+   <div class="collections-grid">
+    ${categories.slice(0,6).map(categoryCard).join("")}
+   </div>
   </div>
-</section>
-<section class="section sweets">
+ </section>
+
+ <section class="section sweets">
   <div class="container">
-    ${heading("Gourmandises","Douceurs & Chocolats")}
-    <div class="category-grid">
-      ${categories.slice(6).map(categoryCard).join("")}
-    </div>
+   ${heading("Gourmandises","Chocolats & Douceurs")}
+   <div class="collections-grid">
+    ${categories.slice(6).map(categoryCard).join("")}
+   </div>
   </div>
-</section>
-${contactBanner()}`;
+ </section>
+
+ ${contactBanner()}
+ `;
 }
 
-/* ==========================================
-   INDIVIDUAL COLLECTION
-========================================== */
+/* =========================================
+   INDIVIDUAL CATEGORY PAGE
+========================================= */
 
-function collectionPage(id) {
-const c=categories.find(item=>item.id===id);
-if(!c) return notFound();
+function collection(id){
+ const c=categories.find(x=>x.id===id);
+ if(!c)return notFound();
 
-const list=products.filter(p=>p.category===id);
+ const list=products.filter(p=>p.category===id);
 
-return `
-<section class="page-hero">
-  <div class="eyebrow">Nos Créations</div>
-  <h1>${escapeHTML(c.title)}</h1>
-  <p>${escapeHTML(c.subtitle)}</p>
-</section>
-<section class="section">
+ return `
+ <section class="page-hero">
+  <span class="kicker">Collection Tatev Gateux</span>
+  <h1>${esc(c.name)}</h1>
+  <p>${esc(c.description)}</p>
+ </section>
+
+ <section class="section">
   <div class="container">
-    <a class="back-link" href="?page=creations">← Toutes les créations</a>
-    ${list.length?`
-      <div class="product-grid">
-        ${list.map(productCard).join("")}
-      </div>`:`
-      <div class="empty-state">
-        <div class="eyebrow">Collection</div>
-        <h2>${escapeHTML(c.title)}</h2>
-        <p>Les photographies et les créations de cette collection seront bientôt ajoutées.</p>
-        ${contactButton("Demander une création personnalisée",
-          "Bonjour, je souhaite des informations concernant "+c.title+".")}
-      </div>`}
+   <a class="back" href="?page=creations">← Retour aux créations</a>
+
+   ${list.length
+    ? `<div class="product-grid">${list.map(productCard).join("")}</div>`
+    : `<div class="empty">
+        <span class="kicker">Collection à découvrir</span>
+        <h3>${esc(c.name)}</h3>
+        <p>Nos photographies et créations seront ajoutées prochainement. En attendant, vous pouvez nous contacter pour imaginer votre projet.</p>
+        ${orderButton("Demander une création","Bonjour, je souhaite des informations sur "+c.name+".")}
+       </div>`
+   }
   </div>
-</section>
-${contactBanner()}`;
+ </section>
+
+ ${contactBanner()}
+ `;
 }
 
-/* ==========================================
-   INDIVIDUAL PRODUCT
-========================================== */
+/* =========================================
+   INDIVIDUAL PRODUCT PAGE
+========================================= */
 
-function productPage(id) {
-const p=products.find(item=>item.id===id);
-if(!p) return notFound();
+function product(id){
+ const p=products.find(x=>x.id===id);
+ if(!p)return notFound();
 
-return `
-<section class="section">
+ return `
+ <section class="section">
   <div class="container">
-    <a class="back-link" href="?page=collection&id=${encodeURIComponent(p.category)}">← Retour à la collection</a>
-    <div class="detail-grid">
-      ${photo(p.name,"",p.image)}
-      <div class="detail-copy">
-        <div class="eyebrow">Création Tatev Gateux</div>
-        <h1>${escapeHTML(p.name)}</h1>
-        <p>${escapeHTML(p.description||"")}</p>
-        <div class="info-list">
-          ${p.details?`<div>${escapeHTML(p.details)}</div>`:""}
-          ${p.price?`<div>Prix : ${escapeHTML(p.price)}</div>`:""}
-        </div>
-        ${contactButton("Commander sur WhatsApp",
-          "Bonjour, je souhaite obtenir des informations concernant "+p.name+".")}
-      </div>
+
+   <a class="back" href="?page=collection&id=${encodeURIComponent(p.category)}">← Retour à la collection</a>
+
+   <div class="product-detail">
+    ${photo(p.name,"",p.image)}
+    <div>
+     <span class="kicker">Création sur mesure</span>
+     <h1>${esc(p.name)}</h1>
+     <p>${esc(p.description)}</p>
+     ${p.details?`<p>${esc(p.details)}</p>`:""}
+     ${orderButton("Demander cette création","Bonjour, je souhaite des informations sur "+p.name+".")}
     </div>
-    ${p.gallery?.length?`
-      <div class="product-grid" style="margin-top:60px">
-        ${p.gallery.map((src,i)=>photo(p.name+" — "+(i+1),"",src)).join("")}
-      </div>`:""}
+   </div>
+
+   ${p.gallery?.length?`
+    <div class="product-grid" style="margin-top:65px">
+     ${p.gallery.map((src,i)=>photo(p.name+" "+(i+1),"",src)).join("")}
+    </div>`:""}
+
   </div>
-</section>`;
+ </section>
+ ${contactBanner()}
+ `;
 }
 
-/* ==========================================
-   FOUNDER STORY
-========================================== */
+/* =========================================
+   MON HISTOIRE PAGE
+========================================= */
 
-function histoirePage() {
-return `
-<section class="page-hero">
-  <div class="eyebrow">Tatev Gateux</div>
+function histoire(){
+ return `
+ <section class="page-hero">
+  <span class="kicker">La fondatrice</span>
   <h1>Mon Histoire</h1>
-  <p>Derrière chaque création, une passion.</p>
-</section>
-<section class="section">
-  <div class="container story">
-    <div class="story-visual">
-      ${photo("Portrait de Tatev","story-main")}
-      ${photo("Les premières créations","story-small")}
-    </div>
-    <div>
-      <div class="eyebrow">La fondatrice</div>
-      <h2>Une histoire de passion et de créativité</h2>
-      <p>Bienvenue dans l'univers de Tatev Gateux.</p>
-      <p>Cet espace accueillera l'histoire personnelle de Tatev : ses débuts en pâtisserie, son parcours, ses inspirations et les étapes qui l'ont conduite vers le Cake Design.</p>
-      <p>Le récit authentique de la fondatrice sera ajouté ici avec ses photographies.</p>
-    </div>
+  <p>Une histoire personnelle, une passion créative.</p>
+ </section>
+
+ <section class="section">
+  <div class="container story-grid">
+
+   <div class="story-image">
+    ${photo("Portrait de Tatev","arch")}
+    <div class="story-detail">${photo("Atelier de Tatev")}</div>
+   </div>
+
+   <div>
+    <span class="kicker">Bienvenue dans mon univers</span>
+    <h2>Derrière chaque création, il y a une histoire.</h2>
+    <p>Cet espace présentera le véritable parcours de Tatev, ses débuts, ses inspirations et les moments importants de son évolution en pâtisserie.</p>
+    <p>Son histoire personnelle sera rédigée avec ses propres mots et accompagnée de ses photographies.</p>
+   </div>
+
   </div>
-</section>
-<section class="section training">
-  <div class="container story">
-    <div>
-      <div class="eyebrow">Savoir-faire</div>
-      <h2>La pâtisserie comme expression artistique</h2>
-      <p>Un espace dédié à son évolution, à ses créations et à sa vision du Cake Design.</p>
-      ${btn("Découvrir les formations","?page=formations")}
-    </div>
-    ${photo("Tatev à l'atelier","story-main")}
+ </section>
+
+ <section class="section training">
+  <div class="container training-grid">
+   <div>
+    <span class="kicker">Savoir-faire</span>
+    <h2>Une passion qui se partage.</h2>
+    <p>Découvrez également les formations Cake Design proposées par Tatev Gateux.</p>
+    ${btn("Explorer les formations","?page=formations")}
+   </div>
+   ${photo("Création à l'atelier")}
   </div>
-</section>`;
+ </section>
+ `;
 }
 
-/* ==========================================
-   TRAINING PAGE
-========================================== */
+/* =========================================
+   FORMATIONS PAGE
+========================================= */
 
-function formationsPage() {
-return `
-<section class="page-hero">
-  <div class="eyebrow">Apprendre & Créer</div>
+function formations(){
+ return `
+ <section class="page-hero">
+  <span class="kicker">Apprendre & Créer</span>
   <h1>Formations Cake Design</h1>
-  <p>Transmettre la passion du Cake Design.</p>
-</section>
-<section class="section">
-  <div class="container training-layout">
-    <div>
-      <div class="eyebrow">L'univers des formations</div>
-      <h2>Apprendre, créer, se perfectionner</h2>
-      <p>Découvrez les formations proposées par Tatev Gateux et explorez l'univers du Cake Design.</p>
-      <p>Les programmes, les durées, les dates et les modalités d'inscription seront ajoutés prochainement.</p>
-      ${contactButton("Demander des informations",
-        "Bonjour, je souhaite obtenir des informations sur vos formations Cake Design.")}
-    </div>
-    <div class="training-photos">
-      ${photo("Photographie de formation")}
-      ${photo("Techniques de décoration")}
-    </div>
+  <p>Découvrez l'art du Cake Design dans l'univers Tatev Gateux.</p>
+ </section>
+
+ <section class="section">
+  <div class="container training-grid">
+   <div>
+    <span class="kicker">Le savoir-faire</span>
+    <h2>Développez votre créativité.</h2>
+    <p>Découvrez nos formations dédiées à la pâtisserie créative et aux techniques du Cake Design.</p>
+    <p>Les programmes détaillés, dates, durées et modalités seront ajoutés prochainement.</p>
+    ${orderButton("Informations & inscriptions","Bonjour, je souhaite des informations sur vos formations Cake Design.")}
+   </div>
+   <div class="training-image">
+    ${photo("Formation")}
+    ${photo("Atelier pratique")}
+   </div>
   </div>
-</section>
-<section class="section training">
+ </section>
+
+ <section class="section training">
   <div class="container">
-    ${heading("Les programmes","Nos Formations")}
-    ${courses.length?`
-      <div class="product-grid">
+   ${heading("Les programmes","Nos Formations")}
+
+   ${courses.length
+    ? `<div class="training-list">
         ${courses.map(c=>`
-          <article class="product-card">
-            ${photo(c.title,"",c.image)}
-            <h3>${escapeHTML(c.title)}</h3>
-            <p>${escapeHTML(c.description||"")}</p>
-            ${contactButton("S'inscrire",
-              "Bonjour, je souhaite des informations sur la formation "+c.title+".")}
-          </article>`).join("")}
-      </div>`:`
-      <div class="empty-state">
-        <h3>Les formations arrivent bientôt</h3>
-        <p>Les programmes détaillés et les prochaines sessions seront présentés ici.</p>
-      </div>`}
+         <article class="training-card">
+          ${photo(c.title,"",c.image)}
+          <h3>${esc(c.title)}</h3>
+          <p>${esc(c.description)}</p>
+          ${orderButton("S'inscrire","Bonjour, je souhaite m'inscrire à "+c.title+".")}
+         </article>
+        `).join("")}
+       </div>`
+    : `<div class="empty">
+        <h3>Les programmes arrivent bientôt.</h3>
+        <p>Les formations et les prochaines sessions seront présentées ici.</p>
+       </div>`
+   }
   </div>
-</section>
-${contactBanner()}`;
+ </section>
+
+ ${contactBanner()}
+ `;
 }
 
-/* ==========================================
+/* =========================================
    CUSTOMER REVIEWS
-========================================== */
+========================================= */
 
-function reviewCard(r) {
-return `<article class="review">
-  <div class="quote">“</div>
-  <p>${escapeHTML(r.text)}</p>
-  <small>${escapeHTML(r.name||"Client")}</small>
-</article>`;
+function reviewCard(r){
+ return `<article class="review-card">
+  <div class="review-quote">“</div>
+  <p>${esc(r.text)}</p>
+  <small>${esc(r.name||"Client")}</small>
+ </article>`;
 }
 
-function avisPage() {
-return `
-<section class="page-hero">
-  <div class="eyebrow">Ils nous font confiance</div>
+function avis(){
+ return `
+ <section class="page-hero">
+  <span class="kicker">Témoignages</span>
   <h1>Vos beaux messages</h1>
-  <p>Vos mots et vos retours sont précieux.</p>
-</section>
-<section class="section">
+  <p>Vos retours sont précieux.</p>
+ </section>
+
+ <section class="section">
   <div class="container">
-    ${reviews.length?`
-      <div class="review-grid">
-        ${reviews.map(reviewCard).join("")}
-      </div>`:`
-      <div class="empty-state">
-        <h2>Les avis de nos clients</h2>
-        <p>Les témoignages authentiques seront ajoutés prochainement.</p>
-      </div>`}
+   ${reviews.length
+    ? `<div class="review-grid">${reviews.map(reviewCard).join("")}</div>`
+    : `<div class="empty">
+        <h3>Vos témoignages</h3>
+        <p>Les avis authentiques de nos clients seront bientôt disponibles.</p>
+       </div>`
+   }
   </div>
-</section>`;
+ </section>
+ `;
 }
 
-/* ==========================================
+/* =========================================
    CONTACT PAGE
-========================================== */
+========================================= */
 
-function contactPage() {
-const socialLinks=[
+function contact(){
+ const social=[
   ["Instagram",CONFIG.instagram],
   ["Facebook",CONFIG.facebook]
-].filter(item=>item[1]);
+ ].filter(x=>x[1]);
 
-return `
-<section class="page-hero">
-  <div class="eyebrow">Contact & Commandes</div>
-  <h1>Parlons de votre projet</h1>
-  <p>Une question, une commande personnalisée ou une demande de formation ?</p>
-</section>
-<section class="section">
+ return `
+ <section class="page-hero">
+  <span class="kicker">Contact & Commandes</span>
+  <h1>Parlons de votre projet.</h1>
+  <p>Nous serons ravis d'imaginer une création qui vous ressemble.</p>
+ </section>
+
+ <section class="section">
   <div class="container center">
-    <div class="eyebrow">Tatev Gateux</div>
-    <h2>Créons ensemble un moment unique</h2>
-    <p>Nous serons ravis d'échanger avec vous au sujet de votre projet.</p>
-    <p><strong>Orléans, France</strong></p>
-    <div class="btn-group" style="justify-content:center;margin-top:30px">
-      ${CONFIG.whatsapp?
-        contactButton("Écrire sur WhatsApp","Bonjour, je souhaite vous contacter."):
-        `<p>Coordonnées de contact à venir.</p>`}
-      ${socialLinks.map(([name,url])=>
-        `<a class="btn outline" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${name} →</a>`
-      ).join("")}
-    </div>
-    <div style="margin-top:75px">
-      <div class="eyebrow">Collaborations</div>
-      <h2>Travaillons ensemble</h2>
-      <p>Pour toute proposition de collaboration, contactez Tatev Gateux via ses coordonnées officielles.</p>
-    </div>
-  </div>
-</section>`;
-}
+   <span class="kicker">Tatev Gateux · Orléans</span>
+   <h2>Chaque belle création commence par une rencontre.</h2>
+   <p>Pour une commande personnalisée, une formation ou une collaboration, contactez-nous.</p>
 
-/* ==========================================
-   LEGAL PAGE TEMPLATES
-========================================== */
-
-function legalPage() {
-return `
-<section class="page-hero">
-  <h1>Mentions légales</h1>
-</section>
-<section class="section">
-  <div class="container" style="max-width:850px">
-    <h2>Informations légales</h2>
-    <p>Les informations légales de Tatev Gateux seront complétées avant la publication officielle du site.</p>
-    <p>Éditeur du site, coordonnées professionnelles, numéro d'immatriculation et informations relatives à l'hébergement : à compléter.</p>
-  </div>
-</section>`;
-}
-
-function privacyPage() {
-return `
-<section class="page-hero">
-  <h1>Politique de confidentialité</h1>
-</section>
-<section class="section">
-  <div class="container" style="max-width:850px">
-    <h2>Protection des données</h2>
-    <p>Cette page devra être complétée selon les données réellement collectées, les services utilisés et les obligations légales applicables.</p>
-    <p>Version provisoire à finaliser avant la mise en ligne publique.</p>
-  </div>
-</section>`;
-}
-
-function notFound() {
-return `
-<section class="section center">
-  <div class="container">
-    <div class="eyebrow">404</div>
-    <h1>Page introuvable</h1>
-    <p>La page demandée n'est pas disponible.</p>
-    ${btn("Retour à l'accueil","?page=home")}
-  </div>
-</section>`;
-}
-
-/* ==========================================
-   ROUTER
-   All views work from one index.html file.
-========================================== */
-
-function render() {
-const params=new URLSearchParams(window.location.search);
-const page=params.get("page")||"home";
-const id=params.get("id");
-
-const routes={
-  home:homePage,
-  creations:creationsPage,
-  histoire:histoirePage,
-  formations:formationsPage,
-  avis:avisPage,
-  contact:contactPage,
-  legal:legalPage,
-  privacy:privacyPage
-};
-
-if(page==="collection") app.innerHTML=collectionPage(id);
-else if(page==="produit") app.innerHTML=productPage(id);
-else if(routes[page]) app.innerHTML=routes[page]();
-else app.innerHTML=notFound();
-
-document.title=(page==="home"?"Tatev Gateux":page.charAt(0).toUpperCase()+page.slice(1)+" | Tatev Gateux");
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+   <div class="actions" style="justify-content:center;margin-top:35px">
+    ${CONFIG.whatsapp
+      ? orderButton("WhatsApp","Bonjour, je souhaite vous contacter.")
+      : `<p>Coordonnées WhatsApp à ajouter.</p>`
     }
-  });
-},{threshold:.08});
+    ${social.map(([name,url])=>
+      `<a class="btn light" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`
+    ).join("")}
+   </div>
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-window.scrollTo(0,0);
+   <div class="rule" style="margin:75px 0"></div>
+
+   <span class="kicker">Collaborations</span>
+   <h2>Créons ensemble.</h2>
+   <p>Pour toute proposition de collaboration ou demande professionnelle, contactez Tatev Gateux.</p>
+  </div>
+ </section>
+ `;
 }
 
-document.getElementById("menuToggle").addEventListener("click",()=>{
-  const menu=document.getElementById("mobileNav");
-  const opened=menu.classList.toggle("open");
-  document.getElementById("menuToggle").setAttribute("aria-expanded",String(opened));
+/* =========================================
+   LEGAL TEMPLATES
+========================================= */
+
+function legal(){
+ return `<section class="page-hero">
+  <h1>Mentions légales</h1>
+ </section>
+ <section class="section">
+  <div class="container">
+   <h2>Informations légales</h2>
+   <p>À compléter avant la publication définitive : identité de l'entreprise, immatriculation, coordonnées professionnelles et hébergeur.</p>
+  </div>
+ </section>`;
+}
+
+function privacy(){
+ return `<section class="page-hero">
+  <h1>Confidentialité</h1>
+ </section>
+ <section class="section">
+  <div class="container">
+   <h2>Protection des données</h2>
+   <p>La politique de confidentialité sera complétée selon les données collectées et les services réellement utilisés sur le site.</p>
+  </div>
+ </section>`;
+}
+
+function notFound(){
+ return `<section class="section center">
+  <div class="container">
+   <span class="kicker">404</span>
+   <h1>Page introuvable</h1>
+   <p>Cette page n'est pas disponible.</p>
+   ${btn("Retour à l'accueil","?page=home")}
+  </div>
+ </section>`;
+}
+
+/* =========================================
+   PAGE ROUTER
+========================================= */
+
+function render(){
+ const params=new URLSearchParams(location.search);
+ const page=params.get("page")||"home";
+ const id=params.get("id");
+
+ const pages={
+  home,
+  creations,
+  histoire,
+  formations,
+  avis,
+  contact,
+  legal,
+  privacy
+ };
+
+ if(page==="collection")app.innerHTML=collection(id);
+ else if(page==="produit")app.innerHTML=product(id);
+ else if(pages[page])app.innerHTML=pages[page]();
+ else app.innerHTML=notFound();
+
+ document.title=page==="home"
+  ?"Tatev Gateux — Maison de Pâtisserie"
+  :page.charAt(0).toUpperCase()+page.slice(1)+" | Tatev Gateux";
+
+ if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(e=>{
+    if(e.isIntersecting){
+     e.target.classList.add("visible");
+     observer.unobserve(e.target);
+    }
+   });
+  },{threshold:.07});
+
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+ }else{
+  document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+ }
+
+ window.scrollTo(0,0);
+}
+
+document.getElementById("mobileToggle").addEventListener("click",()=>{
+ const menu=document.getElementById("mobileMenu");
+ const open=menu.classList.toggle("open");
+ document.getElementById("mobileToggle").setAttribute("aria-expanded",String(open));
 });
 
 document.getElementById("year").textContent=new Date().getFullYear();
+
+const footerSocial=document.getElementById("footerSocial");
+[
+ ["Instagram",CONFIG.instagram],
+ ["Facebook",CONFIG.facebook],
+ ["WhatsApp",whatsapp("Bonjour, je souhaite vous contacter.")]
+].forEach(([name,url])=>{
+ if(!url)return;
+ const a=document.createElement("a");
+ a.href=url;
+ a.textContent=name+" ↗";
+ a.target="_blank";
+ a.rel="noopener noreferrer";
+ footerSocial.appendChild(a);
+});
 
 render();
 </script>
 </body>
 </html>
-
