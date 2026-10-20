@@ -9,7 +9,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -21,9 +20,13 @@
   --plum: #624563;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -32,9 +35,19 @@ body {
   background: #ffffff;
 }
 
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-img { display: block; max-width: 100%; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
 
 /* ================= HEADER ================= */
 
@@ -71,7 +84,9 @@ img { display: block; max-width: 100%; }
   transition: opacity .3s;
 }
 
-.site-nav a:hover { opacity: .55; }
+.site-nav a:hover {
+  opacity: .55;
+}
 
 .menu-toggle {
   display: none;
@@ -88,83 +103,93 @@ img { display: block; max-width: 100%; }
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
+  background-image:
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* ================= MON HISTOIRE ================= */
-/* TEXT STYLE MATCHED TO REFERENCE */
+/* ==============================================
+   MON HISTOIRE — FULL WIDTH EDITORIAL DESIGN
+   ONLY THIS SECTION HAS BEEN CHANGED
+============================================== */
 
 .story {
   width: 100%;
-  padding: 95px 5%;
-  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  background: #f9f2ec;
 }
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: 25% 50% 25%;
   width: 100%;
-  max-width: 1350px;
-  height: 400px;
-  margin: 0 auto;
+  max-width: none;
+  min-height: 550px;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
 }
 
 .story-photo {
   display: block;
   width: 100%;
-  height: 400px;
+  max-width: none;
+  height: 550px;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 .story-center {
-  height: 400px;
-  padding: 24px 34px;
-  background: #f8f0e9;
+  width: 100%;
+  height: 550px;
+  padding: 32px 7%;
+  background: #faf3ed;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .story-content {
   width: 100%;
-  max-width: 460px;
-  margin: auto;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-/* Small centered introductory line */
+.story-center h2 {
+  margin: 0 0 9px;
+  font-family: 'Allura', cursive;
+  font-size: clamp(54px, 5.5vw, 92px);
+  font-weight: 400;
+  line-height: 1;
+  color: #49343e;
+}
+
 .story-eyebrow {
   display: block;
-  text-align: center;
+  margin-bottom: 27px;
   font-family: 'Jost', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 3.5px;
+  line-height: 1.7;
   text-transform: uppercase;
+  color: #49343e;
 }
 
-/* Script heading + classic serif styling */
-.story-center h2 {
-  margin: 8px 0 19px;
-  text-align: center;
-  font-family: 'Allura', cursive;
-  font-size: clamp(48px, 4.6vw, 67px);
-  font-weight: 400;
-  line-height: 1.05;
-}
-
-/* Reference-inspired editorial body typography */
 .story-center p {
-  margin: 0;
-  text-align: left;
+  max-width: 670px;
+  margin: 0 auto;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
+  font-size: clamp(22px, 1.8vw, 29px);
   font-weight: 400;
-  line-height: 1.32;
-  letter-spacing: 0;
+  line-height: 1.55;
+  letter-spacing: .1px;
+  text-align: center;
+  color: #49343e;
 }
 
 /* ================= CATEGORIES ================= */
@@ -173,7 +198,10 @@ img { display: block; max-width: 100%; }
   position: relative;
   padding: 110px 5% 125px;
   background:
-    linear-gradient(rgba(255,246,246,.77), rgba(255,246,246,.77)),
+    linear-gradient(
+      rgba(255,246,246,.77),
+      rgba(255,246,246,.77)
+    ),
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107")
     center / cover no-repeat;
 }
@@ -223,13 +251,18 @@ img { display: block; max-width: 100%; }
   transition: transform .8s ease;
 }
 
-.category-card:hover img { transform: scale(1.06); }
+.category-card:hover img {
+  transform: scale(1.06);
+}
 
 .category-card::after {
   content: "";
   position: absolute;
   inset: 45% 0 0;
-  background: linear-gradient(transparent, rgba(34,21,28,.42));
+  background: linear-gradient(
+    transparent,
+    rgba(34,21,28,.42)
+  );
   pointer-events: none;
 }
 
@@ -260,7 +293,9 @@ img { display: block; max-width: 100%; }
   background: rgba(31,21,30,.83);
 }
 
-.gallery-modal.open { display: block; }
+.gallery-modal.open {
+  display: block;
+}
 
 .gallery-panel {
   position: relative;
@@ -328,7 +363,8 @@ img { display: block; max-width: 100%; }
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651");
+  background-image:
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651");
   background-repeat: repeat;
   background-size: 420px auto;
   background-position: center top;
@@ -372,12 +408,25 @@ img { display: block; max-width: 100%; }
   transform: translateY(0);
 }
 
-.js .tg-saveurs.is-visible .saveur-card:nth-child(2) { transition-delay: .15s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(3) { transition-delay: .30s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(4) { transition-delay: .45s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(5) { transition-delay: .60s; }
+.js .tg-saveurs.is-visible .saveur-card:nth-child(2) {
+  transition-delay: .15s;
+}
 
-.saveur-card-content { padding: 24px 4px 0; }
+.js .tg-saveurs.is-visible .saveur-card:nth-child(3) {
+  transition-delay: .30s;
+}
+
+.js .tg-saveurs.is-visible .saveur-card:nth-child(4) {
+  transition-delay: .45s;
+}
+
+.js .tg-saveurs.is-visible .saveur-card:nth-child(5) {
+  transition-delay: .60s;
+}
+
+.saveur-card-content {
+  padding: 24px 4px 0;
+}
 
 .saveur-card h3 {
   margin: 0 0 13px;
@@ -493,63 +542,98 @@ img { display: block; max-width: 100%; }
 /* ================= TABLET ================= */
 
 @media (max-width: 1100px) {
+
   .categories-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .category-card { height: 360px; }
-
-  .story-grid { height: 400px; }
-
-  .story-photo,
-  .story-center { height: 400px; }
-
-  .story-center { padding: 20px; }
-
-  .story-center p {
-    font-size: 18px;
-    line-height: 1.28;
+  .category-card {
+    height: 360px;
   }
 
-  .saveurs-grid { gap: 12px; }
-  .saveur-photo { height: 300px; }
+  /* MON HISTOIRE TABLET */
+  .story-grid {
+    grid-template-columns: 25% 50% 25%;
+    min-height: 500px;
+  }
+
+  .story-photo,
+  .story-center {
+    height: 500px;
+  }
+
+  .story-center {
+    padding: 25px 5%;
+  }
+
+  .story-center h2 {
+    font-size: 64px;
+  }
+
+  .story-eyebrow {
+    font-size: 9px;
+    margin-bottom: 18px;
+  }
+
+  .story-center p {
+    font-size: 21px;
+    line-height: 1.42;
+  }
+
+  .saveurs-grid {
+    gap: 12px;
+  }
+
+  .saveur-photo {
+    height: 300px;
+  }
 
   .saveur-card h3 {
     font-size: 17px;
     letter-spacing: 2px;
   }
 
-  .saveur-card p { font-size: 16px; }
+  .saveur-card p {
+    font-size: 16px;
+  }
 }
 
 /* ================= SMALL TABLET ================= */
 
 @media (max-width: 800px) {
-  .story { padding: 70px 5%; }
 
   .story-grid {
-    grid-template-columns: 1fr;
-    height: auto;
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
   }
 
   .story-photo {
-    width: 100%;
-    height: 340px;
+    height: 350px;
   }
 
   .story-center {
+    grid-column: 1 / -1;
+    grid-row: 2;
     height: auto;
-    min-height: 370px;
-    padding: 45px 30px;
+    padding: 60px 8%;
+  }
+
+  .story-center h2 {
+    font-size: 76px;
   }
 
   .story-center p {
-    font-size: 21px;
-    line-height: 1.4;
+    font-size: 25px;
+    line-height: 1.5;
   }
 
-  .site-header { align-items: flex-start; }
-  .menu-toggle { display: block; }
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 
   .site-nav {
     display: none;
@@ -563,15 +647,22 @@ img { display: block; max-width: 100%; }
     gap: 22px;
   }
 
-  .site-nav.open { display: flex; }
+  .site-nav.open {
+    display: flex;
+  }
 
   .saveurs-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px 15px;
   }
 
-  .saveur-photo { height: 300px; }
-  .tg-saveurs-velvet { top: 135px; }
+  .saveur-photo {
+    height: 300px;
+  }
+
+  .tg-saveurs-velvet {
+    top: 135px;
+  }
 
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -581,26 +672,42 @@ img { display: block; max-width: 100%; }
 /* ================= MOBILE ================= */
 
 @media (max-width: 550px) {
-  .site-logo img { width: 120px; }
+
+  .site-logo img {
+    width: 120px;
+  }
 
   .hero {
     min-height: 85svh;
     background-position: center;
   }
 
-  .story { padding: 60px 5%; }
-  .story-photo { height: 290px; }
-
-  .story-center {
-    min-height: 360px;
-    padding: 45px 25px;
+  /* MON HISTOIRE MOBILE */
+  .story-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .story-center h2 { font-size: 58px; }
+  .story-photo {
+    height: 270px;
+  }
+
+  .story-center {
+    padding: 45px 22px 55px;
+  }
+
+  .story-center h2 {
+    font-size: clamp(53px, 13vw, 70px);
+  }
+
+  .story-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2.2px;
+    margin-bottom: 20px;
+  }
 
   .story-center p {
-    font-size: 20px;
-    line-height: 1.38;
+    font-size: 21px;
+    line-height: 1.48;
   }
 
   .categories-grid {
@@ -608,7 +715,9 @@ img { display: block; max-width: 100%; }
     gap: 12px;
   }
 
-  .category-card { height: 270px; }
+  .category-card {
+    height: 270px;
+  }
 
   .category-label {
     width: calc(100% - 16px);
@@ -617,23 +726,35 @@ img { display: block; max-width: 100%; }
     font-size: 17px;
   }
 
-  .saveurs-separator { height: 150px; }
+  .saveurs-separator {
+    height: 150px;
+  }
 
   .saveurs-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px 12px;
   }
 
-  .saveur-photo { height: 250px; }
-  .tg-saveurs-velvet { top: 110px; }
-  .saveur-card-content { padding: 18px 2px 0; }
+  .saveur-photo {
+    height: 250px;
+  }
+
+  .tg-saveurs-velvet {
+    top: 110px;
+  }
+
+  .saveur-card-content {
+    padding: 18px 2px 0;
+  }
 
   .saveur-card h3 {
     font-size: 17px;
     letter-spacing: 1.5px;
   }
 
-  .saveur-card p { font-size: 16px; }
+  .saveur-card p {
+    font-size: 16px;
+  }
 
   .saveur-card:last-child {
     grid-column: 1 / -1;
@@ -641,17 +762,32 @@ img { display: block; max-width: 100%; }
     justify-self: center;
   }
 
-  .saveurs-heading { padding-top: 45px; }
+  .saveurs-heading {
+    padding-top: 45px;
+  }
 
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-grid img { height: 350px; }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .gallery-panel { padding: 55px 15px 25px; }
-  .gallery-title { font-size: 37px; }
+  .gallery-grid img {
+    height: 350px;
+  }
+
+  .gallery-panel {
+    padding: 55px 15px 25px;
+  }
+
+  .gallery-title {
+    font-size: 37px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+
+  html {
+    scroll-behavior: auto;
+  }
 
   .js .saveur-card {
     opacity: 1;
@@ -659,6 +795,7 @@ img { display: block; max-width: 100%; }
     transition: none;
   }
 }
+
 </style>
 
 <script>
@@ -672,6 +809,7 @@ document.documentElement.classList.add("js");
 <!-- ================= HEADER ================= -->
 
 <header class="site-header">
+
   <a class="site-logo" href="#accueil">
     <img
       src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
@@ -682,7 +820,9 @@ document.documentElement.classList.add("js");
     class="menu-toggle"
     id="menuToggle"
     aria-label="Ouvrir le menu"
-    aria-expanded="false">☰</button>
+    aria-expanded="false">
+    ☰
+  </button>
 
   <nav class="site-nav" id="siteNav">
     <a href="#categories">Catégories</a>
@@ -690,6 +830,7 @@ document.documentElement.classList.add("js");
     <a href="#saveurs">Nos Saveurs</a>
     <a href="#formations">Formations</a>
   </nav>
+
 </header>
 
 <!-- ================= HERO ================= -->
@@ -699,7 +840,10 @@ document.documentElement.classList.add("js");
 <!-- ================= MON HISTOIRE ================= -->
 
 <section class="story" id="mon-histoire">
+
   <div class="story-grid">
+
+    <!-- LEFT IMAGE -->
 
     <img
       class="story-photo"
@@ -707,14 +851,17 @@ document.documentElement.classList.add("js");
       alt="Création pâtissière de Tatev"
       loading="lazy">
 
+    <!-- CENTER TEXT -->
+
     <div class="story-center">
+
       <div class="story-content">
+
+        <h2>Un doux bienvenue</h2>
 
         <span class="story-eyebrow">
           Bienvenue dans mon univers
         </span>
-
-        <h2>Un doux bienvenue</h2>
 
         <p>
           Bienvenue dans mon univers gourmand, où chaque gâteau
@@ -727,7 +874,10 @@ document.documentElement.classList.add("js");
         </p>
 
       </div>
+
     </div>
+
+    <!-- RIGHT IMAGE -->
 
     <img
       class="story-photo"
@@ -736,65 +886,109 @@ document.documentElement.classList.add("js");
       loading="lazy">
 
   </div>
+
 </section>
 
 <!-- ================= CATEGORIES ================= -->
 
 <section class="tg-categories" id="categories">
+
   <div class="categories-inner">
 
-    <div class="section-eyebrow">L'univers de Tatev</div>
+    <div class="section-eyebrow">
+      L'univers de Tatev
+    </div>
+
     <h2 class="section-title">Nos Créations</h2>
 
     <div class="categories-grid">
 
       <button class="category-card" data-gallery="mariage">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506" alt="Gâteaux de mariage" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506"
+          alt="Gâteaux de mariage"
+          loading="lazy">
         <span class="category-label">Gâteaux de mariage</span>
       </button>
 
       <button class="category-card" data-gallery="anniversaire">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692" alt="Gâteaux d'anniversaire" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692"
+          alt="Gâteaux d'anniversaire"
+          loading="lazy">
         <span class="category-label">Gâteaux d'anniversaire</span>
       </button>
 
       <button class="category-card" data-gallery="gender">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541" alt="Gender Reveal" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541"
+          alt="Gender Reveal"
+          loading="lazy">
         <span class="category-label">Gender Reveal</span>
       </button>
 
       <button class="category-card" data-gallery="enfants">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140" alt="Gâteaux pour enfants" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140"
+          alt="Gâteaux pour enfants"
+          loading="lazy">
         <span class="category-label">Gâteaux pour enfants</span>
       </button>
 
       <button class="category-card" data-gallery="bapteme">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476" alt="Gâteaux de baptême" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476"
+          alt="Gâteaux de baptême"
+          loading="lazy">
         <span class="category-label">Gâteaux de baptême</span>
       </button>
 
       <button class="category-card" data-gallery="bento">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814" alt="Bento Cakes" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814"
+          alt="Bento Cakes"
+          loading="lazy">
         <span class="category-label">Bento Cakes</span>
       </button>
 
       <button class="category-card" data-gallery="fraises">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826" alt="Fraises et Chocolats" loading="lazy">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826"
+          alt="Fraises et Chocolats"
+          loading="lazy">
         <span class="category-label">Fraises &amp; Chocolats</span>
       </button>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- ================= GALLERY MODAL ================= -->
 
-<div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Galerie de créations">
+<div
+  class="gallery-modal"
+  id="galleryModal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Galerie de créations">
+
   <div class="gallery-panel">
-    <button class="gallery-close" id="galleryClose" aria-label="Fermer">×</button>
+
+    <button
+      class="gallery-close"
+      id="galleryClose"
+      aria-label="Fermer">
+      ×
+    </button>
+
     <h2 class="gallery-title" id="galleryTitle"></h2>
+
     <div class="gallery-grid" id="galleryGrid"></div>
+
   </div>
+
 </div>
 
 <!-- ================= WHITE GAP ================= -->
@@ -804,90 +998,194 @@ document.documentElement.classList.add("js");
 <!-- ================= NOS SAVEURS ================= -->
 
 <section class="tg-saveurs" id="saveurs">
+
   <div class="tg-saveurs-velvet" aria-hidden="true"></div>
 
   <div class="saveurs-inner">
+
     <div class="saveurs-grid">
 
+      <!-- VANILLE CITRON -->
+
       <article class="saveur-card">
-        <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549" alt="Vanille Citron" loading="lazy">
+
+        <img
+          class="saveur-photo"
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549"
+          alt="Vanille Citron"
+          loading="lazy">
+
         <div class="saveur-card-content">
+
           <h3>Vanille Citron</h3>
+
           <span class="saveur-card-line"></span>
-          <p>Une crème vanillée douce et une touche de citron frais.</p>
+
+          <p>
+            Une crème vanillée douce et
+            une touche de citron frais.
+          </p>
+
         </div>
+
       </article>
 
+      <!-- CHOCOLAT -->
+
       <article class="saveur-card">
-        <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549" alt="Chocolat" loading="lazy">
+
+        <img
+          class="saveur-photo"
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549"
+          alt="Chocolat"
+          loading="lazy">
+
         <div class="saveur-card-content">
+
           <h3>Chocolat</h3>
+
           <span class="saveur-card-line"></span>
-          <p>Un biscuit moelleux et une ganache au chocolat fondante.</p>
+
+          <p>
+            Un biscuit moelleux et une
+            ganache au chocolat fondante.
+          </p>
+
         </div>
+
       </article>
 
+      <!-- FRUITS ROUGES -->
+
       <article class="saveur-card">
-        <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549" alt="Fruits Rouges" loading="lazy">
+
+        <img
+          class="saveur-photo"
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549"
+          alt="Fruits Rouges"
+          loading="lazy">
+
         <div class="saveur-card-content">
+
           <h3>Fruits Rouges</h3>
+
           <span class="saveur-card-line"></span>
-          <p>Une crème légère et des fruits rouges délicatement acidulés.</p>
+
+          <p>
+            Une crème légère et des fruits
+            rouges délicatement acidulés.
+          </p>
+
         </div>
+
       </article>
 
+      <!-- DUBAI -->
+
       <article class="saveur-card">
-        <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554" alt="Dubaï" loading="lazy">
+
+        <img
+          class="saveur-photo"
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554"
+          alt="Dubaï"
+          loading="lazy">
+
         <div class="saveur-card-content">
+
           <h3>Dubaï</h3>
+
           <span class="saveur-card-line"></span>
-          <p>Pistache, chocolat et kadaïf croustillant.</p>
+
+          <p>
+            Pistache, chocolat et
+            kadaïf croustillant.
+          </p>
+
         </div>
+
       </article>
 
+      <!-- CARAMEL -->
+
       <article class="saveur-card">
-        <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555" alt="Caramel" loading="lazy">
+
+        <img
+          class="saveur-photo"
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555"
+          alt="Caramel"
+          loading="lazy">
+
         <div class="saveur-card-content">
+
           <h3>Caramel</h3>
+
           <span class="saveur-card-line"></span>
-          <p>Un caramel onctueux et une crème délicate.</p>
+
+          <p>
+            Un caramel onctueux et
+            une crème délicate.
+          </p>
+
         </div>
+
       </article>
 
     </div>
 
+    <!-- NOS SAVEURS TITLE AND HEART -->
+
     <div class="saveurs-heading">
+
       <span>NOS</span>
+
       <h2>SAVEURS</h2>
 
       <div class="saveurs-ornament" aria-hidden="true">
+
         <span class="ornament-line"></span>
+
         <svg viewBox="0 0 24 24">
           <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
         </svg>
+
         <span class="ornament-line"></span>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
 <!-- ================= FORMATIONS ================= -->
 
 <section class="formations" id="formations">
-  <div class="section-eyebrow">L'art de la pâtisserie</div>
+
+  <div class="section-eyebrow">
+    L'art de la pâtisserie
+  </div>
+
   <h2>Formations</h2>
-  <p>Un univers de créativité, de passion et de savoir-faire.</p>
+
+  <p>
+    Un univers de créativité, de passion et de savoir-faire.
+  </p>
+
 </section>
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
+
   <div class="footer-name">Tatev Gâteaux</div>
+
   <p>Créations pâtissières sur mesure</p>
+
 </footer>
 
 <script>
+
 /* ================= MOBILE MENU ================= */
 
 const menuToggle = document.getElementById("menuToggle");
@@ -907,9 +1205,11 @@ siteNav.querySelectorAll("a").forEach(link => {
 
 /* ================= GALLERY DATA ================= */
 
-const base = "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
+const base =
+  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
 
 const galleries = {
+
   mariage: {
     title: "Gâteaux de mariage",
     images: [
@@ -1013,6 +1313,7 @@ const galleries = {
       "Screenshot_2026-10-20_232706.png?v=1792524472"
     ]
   }
+
 };
 
 /* ================= GALLERY OPEN / CLOSE ================= */
@@ -1025,28 +1326,37 @@ const galleryClose = document.getElementById("galleryClose");
 let previousFocus = null;
 
 function openGallery(key, trigger) {
+
   const gallery = galleries[key];
+
   if (!gallery) return;
 
   previousFocus = trigger;
+
   galleryTitle.textContent = gallery.title;
   galleryGrid.replaceChildren();
 
   gallery.images.forEach((path, index) => {
+
     const img = document.createElement("img");
+
     img.src = base + path;
     img.alt = gallery.title + " " + (index + 1);
     img.loading = index < 6 ? "eager" : "lazy";
+
     galleryGrid.appendChild(img);
+
   });
 
   galleryModal.classList.add("open");
   galleryModal.scrollTop = 0;
+
   document.body.style.overflow = "hidden";
   galleryClose.focus();
 }
 
 function closeGallery() {
+
   if (!galleryModal.classList.contains("open")) return;
 
   galleryModal.classList.remove("open");
@@ -1056,9 +1366,11 @@ function closeGallery() {
 }
 
 document.querySelectorAll("[data-gallery]").forEach(card => {
+
   card.addEventListener("click", () => {
     openGallery(card.dataset.gallery, card);
   });
+
 });
 
 galleryClose.addEventListener("click", closeGallery);
@@ -1076,25 +1388,37 @@ document.addEventListener("keydown", event => {
 const saveursSection = document.querySelector(".tg-saveurs");
 
 if (saveursSection) {
+
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if ("IntersectionObserver" in window && !reducedMotion) {
+
     const observer = new IntersectionObserver(entries => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         }
+
       });
-    }, { threshold: 0.12 });
+
+    }, {
+      threshold: 0.12
+    });
 
     observer.observe(saveursSection);
+
   } else {
+
     saveursSection.classList.add("is-visible");
+
   }
 }
+
 </script>
 
 </body>
