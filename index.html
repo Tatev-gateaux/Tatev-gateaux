@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Tatev Gâteaux | Créations pâtissières</title>
+  <meta name="description" content="Tatev Gâteaux — créations pâtissières pour vos plus beaux moments.">
+  <title>Tatev Gâteaux | Créations Pâtissières</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --ivory: #fffaf4;
-      --dark: #493a36;
       --cream: #faf7ef;
+      --pink: #f5e6e5;
+      --dark: #493a36;
     }
 
     * {
@@ -31,32 +31,36 @@
 
     body {
       background: var(--cream);
-      color: #231b17;
+      color: var(--dark);
       font-family: 'Jost', sans-serif;
       overflow-x: hidden;
     }
 
-    /* =========================
-       FULL SCREEN HERO
-    ========================= */
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===================================
+       1. FULL SCREEN HERO
+    =================================== */
 
     .hero {
+      position: relative;
+      isolation: isolate;
       width: 100%;
       min-height: 650px;
       height: 100svh;
-      position: relative;
       overflow: hidden;
-      isolation: isolate;
     }
 
     .hero-background {
       position: absolute;
       inset: 0;
+      z-index: -2;
       background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: -2;
       animation: heroAppear 1.5s ease-out both;
     }
 
@@ -64,36 +68,46 @@
       content: "";
       position: absolute;
       inset: 0;
+      z-index: -1;
       background: linear-gradient(
         to bottom,
-        rgba(50, 32, 29, 0.13),
-        transparent 35%
+        rgba(50, 32, 29, .14),
+        transparent 36%
       );
-      z-index: -1;
       pointer-events: none;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    @keyframes heroAppear {
+      from {
+        opacity: .5;
+        transform: scale(1.035);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* HEADER */
 
     .header {
       position: relative;
+      z-index: 10;
       width: 100%;
       padding: 40px 5% 0;
-      z-index: 10;
     }
 
     .header-inner {
+      width: 100%;
       max-width: 1700px;
       margin: auto;
       display: grid;
       grid-template-columns: 320px minmax(0, 1fr);
-      gap: 50px;
       align-items: start;
+      gap: 50px;
     }
 
-    /* LOGO */
+    /* NEW LOGO */
 
     .logo {
       display: block;
@@ -112,7 +126,7 @@
       mix-blend-mode: multiply;
     }
 
-    /* FRENCH NAVIGATION */
+    /* FRENCH MENU */
 
     .menu-area {
       width: 100%;
@@ -125,25 +139,23 @@
       justify-content: flex-end;
       gap: clamp(20px, 4vw, 65px);
       padding: 18px 0 25px;
-      border-bottom: 1px solid rgba(255, 250, 244, 0.6);
+      border-bottom: 1px solid rgba(255, 250, 244, .6);
     }
 
     .primary-menu a {
       color: var(--ivory);
-      text-decoration: none;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 2.2px;
+      text-decoration: none;
       text-transform: uppercase;
       white-space: nowrap;
-      transition: opacity 0.3s ease;
+      transition: opacity .3s;
     }
 
     .primary-menu a:hover {
-      opacity: 0.65;
+      opacity: .65;
     }
-
-    /* MOBILE MENU BUTTON */
 
     .mobile-toggle {
       display: none;
@@ -163,32 +175,17 @@
       background: white;
     }
 
-    @keyframes heroAppear {
-      from {
-        opacity: 0.5;
-        transform: scale(1.035);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* =========================
-       SECOND SECTION
-       SWEET WELCOME
-    ========================= */
+    /* ===================================
+       2. MON HISTOIRE — WELCOME
+    =================================== */
 
     .welcome {
       display: grid;
       grid-template-columns: 1fr minmax(390px, 44%) 1fr;
       min-height: 780px;
       max-width: 1920px;
-      margin: auto;
+      margin: 0 auto;
     }
-
-    /* SIDE PHOTOS */
 
     .welcome-photo {
       position: relative;
@@ -213,41 +210,37 @@
       object-position: 50% 46%;
     }
 
-    /* CENTER CONTENT */
-
     .welcome-copy {
-      background: var(--cream);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 54px clamp(26px, 4.1vw, 80px);
+      background: var(--cream);
     }
 
     .welcome-inner {
-      max-width: 650px;
       width: 100%;
+      max-width: 650px;
     }
-
-    /* HANDWRITTEN TITLE */
 
     .welcome h1 {
       font-family: 'Allura', 'Brush Script MT', cursive;
       font-size: clamp(65px, 6vw, 112px);
       font-weight: 400;
-      line-height: 0.95;
-      margin: 0 0 30px;
+      line-height: .95;
+      margin-bottom: 30px;
       white-space: nowrap;
     }
 
-    /* TEXT WITHOUT EMPTY PARAGRAPHS */
+    /* NO EMPTY LINES BETWEEN PARAGRAPHS */
 
     .welcome p {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(19px, 1.42vw, 25px);
       font-weight: 400;
       line-height: 1.18;
-      letter-spacing: 0.015em;
+      letter-spacing: .015em;
       margin: 0;
       padding: 0;
     }
@@ -255,38 +248,251 @@
     .welcome-cta {
       display: inline-block;
       margin-top: 46px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #a68c7f;
       color: #251914;
       text-decoration: none;
-      border-bottom: 1px solid #a68c7f;
-      padding-bottom: 7px;
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
       font-size: 22px;
+      transition: opacity .3s;
     }
 
     .welcome-cta:hover {
-      opacity: 0.65;
+      opacity: .65;
     }
 
-    /* =========================
-       NEXT SECTIONS
-    ========================= */
+    /* ===================================
+       3. CATÉGORIES
+       ORIGINAL USER IMAGES ONLY
+    =================================== */
 
-    .section-placeholder {
-      padding: 85px 20px;
+    .tg-categories {
+      position: relative;
+      isolation: isolate;
+      width: 100%;
+      padding: 90px 5% 105px;
+      overflow: hidden;
+      background: #f5e5e0;
+      color: #493b39;
+    }
+
+    /* ORIGINAL PINK ROSES BACKGROUND */
+
+    .tg-categories::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* VERY LIGHT OVERLAY */
+
+    .tg-categories::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(255, 242, 239, .58);
+      pointer-events: none;
+    }
+
+    .tg-categories-inner {
+      width: 100%;
+      max-width: 1550px;
+      margin: 0 auto;
+    }
+
+    .tg-categories-heading {
       text-align: center;
-      background: #fff;
+      margin-bottom: 47px;
     }
 
-    .section-placeholder h2 {
+    .tg-eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      font-family: 'Jost', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    .tg-heading-line {
+      display: block;
+      width: 85px;
+      height: 1px;
+      background: rgba(73, 59, 57, .38);
+      margin: 0 auto 16px;
+    }
+
+    .tg-categories-heading h2 {
+      margin: 0;
+      font-family: 'Allura', 'Brush Script MT', cursive;
+      font-size: clamp(52px, 5vw, 83px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #6e5554;
+    }
+
+    /* 4 CARDS FIRST ROW, 3 SECOND ROW */
+
+    .tg-categories-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .tg-category-card {
+      position: relative;
+      display: block;
+      flex: 0 0 calc((100% - 60px) / 4);
+      min-width: 0;
+      aspect-ratio: .79;
+      overflow: hidden;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,.95);
+      background: #e9d9d5;
+      box-shadow: 0 5px 20px rgba(65,39,36,.07);
+      cursor: pointer;
+    }
+
+    .tg-category-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s ease;
+    }
+
+    .tg-category-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .tg-category-label {
+      position: absolute;
+      bottom: 20px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 55px;
+      padding: 10px 8px;
+      background: rgba(248, 231, 233, .91);
+      border: 1px solid white;
+      outline: 1px solid rgba(255,255,255,.65);
+      outline-offset: 3px;
+      color: #453837;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 48px;
+      font-size: clamp(12px, 1.1vw, 17px);
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* ===================================
+       CATEGORY GALLERIES
+    =================================== */
+
+    .tg-gallery {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      overflow-y: auto;
+      background: rgba(250,244,241,.98);
+      padding: 80px 5% 65px;
+    }
+
+    .tg-gallery.is-open {
+      display: block;
+    }
+
+    .tg-gallery-close {
+      position: fixed;
+      top: 22px;
+      right: 30px;
+      z-index: 2;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      background: transparent;
+      color: #493b39;
+      font-size: 35px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .tg-gallery-inner {
+      max-width: 1250px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .tg-gallery-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 66px);
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .tg-gallery-subtitle {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-style: italic;
+      margin-bottom: 45px;
+    }
+
+    .tg-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .tg-gallery-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: .8;
+      object-fit: cover;
+      background: #ead9d3;
+    }
+
+    /* ===================================
+       FORMATIONS PLACEHOLDER
+    =================================== */
+
+    .formations {
+      padding: 100px 20px;
+      text-align: center;
+      background: #fffaf7;
+    }
+
+    .formations .eyebrow {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #a98583;
+    }
+
+    .formations h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(42px, 5vw, 64px);
       font-weight: 400;
     }
 
-    /* =========================
+    /* ===================================
        TABLET
-    ========================= */
+    =================================== */
 
     @media (max-width: 1100px) {
       .header-inner {
@@ -302,17 +508,19 @@
         font-size: 10px;
         letter-spacing: 1.2px;
       }
+
+      .tg-category-card {
+        flex-basis: calc((100% - 40px) / 3);
+      }
+
+      .tg-category-label {
+        font-size: 15px;
+      }
     }
 
     @media (max-width: 900px) {
       .welcome {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .welcome-copy {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        padding: 60px 7%;
       }
 
       .welcome-photo {
@@ -329,9 +537,15 @@
         grid-row: 1;
       }
 
+      .welcome-copy {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 60px 7%;
+      }
+
       .welcome h1 {
-        white-space: normal;
         font-size: 75px;
+        white-space: normal;
       }
 
       .welcome p {
@@ -339,9 +553,9 @@
       }
     }
 
-    /* =========================
+    /* ===================================
        MOBILE
-    ========================= */
+    =================================== */
 
     @media (max-width: 760px) {
       .hero {
@@ -383,8 +597,8 @@
         left: 0;
         width: 100%;
         padding: 28px 25px 35px;
-        background: rgba(248, 240, 234, 0.98);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        background: rgba(248,240,234,.98);
+        box-shadow: 0 12px 25px rgba(0,0,0,.08);
       }
 
       .header.menu-open .menu-area {
@@ -392,12 +606,11 @@
       }
 
       .primary-menu {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 22px;
-        border: 0;
         padding: 0;
+        border: 0;
       }
 
       .primary-menu a {
@@ -411,6 +624,46 @@
 
       .welcome-copy {
         padding: 55px 7%;
+      }
+
+      .tg-categories {
+        padding: 65px 15px 75px;
+      }
+
+      .tg-categories-heading {
+        margin-bottom: 30px;
+      }
+
+      .tg-categories-heading h2 {
+        font-size: 55px;
+      }
+
+      .tg-categories-grid {
+        gap: 12px;
+      }
+
+      .tg-category-card {
+        flex-basis: calc((100% - 12px) / 2);
+        aspect-ratio: .76;
+      }
+
+      .tg-category-label {
+        left: 8px;
+        right: 8px;
+        bottom: 12px;
+        min-height: 46px;
+        padding: 8px 5px;
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+
+      .tg-gallery {
+        padding: 80px 18px 45px;
+      }
+
+      .tg-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
     }
 
@@ -434,9 +687,20 @@
       }
     }
 
+    @media (max-width: 420px) {
+      .tg-category-label {
+        font-size: 10px;
+        letter-spacing: .5px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-background {
         animation: none;
+      }
+
+      .tg-category-card img {
+        transition: none;
       }
     }
   </style>
@@ -446,9 +710,9 @@
 
   <main>
 
-    <!-- =========================
-         FIRST SECTION — HERO
-    ========================= -->
+    <!-- =================================
+         SECTION 1 — HERO
+    ================================= -->
 
     <section class="hero" id="home">
 
@@ -458,26 +722,38 @@
 
         <div class="header-inner">
 
-          <!-- NEW LOGO -->
-          <a href="#home" class="logo" aria-label="Tatev Gâteaux — Accueil">
+          <!-- YOUR NEW LOGO -->
+
+          <a href="#home"
+             class="logo"
+             aria-label="Tatev Gâteaux — Accueil">
+
             <img
               src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
               alt="Tatev Gâteaux"
             >
+
           </a>
 
           <!-- FRENCH MENU -->
+
           <div class="menu-area" id="menuArea">
 
-            <nav class="primary-menu" aria-label="Navigation principale">
+            <nav class="primary-menu"
+                 aria-label="Navigation principale">
+
               <a href="#categories">Catégories</a>
+
               <a href="#mon-histoire">Mon Histoire</a>
+
               <a href="#formations">Formations</a>
+
             </nav>
 
           </div>
 
-          <!-- MOBILE MENU BUTTON -->
+          <!-- MOBILE MENU -->
+
           <button
             class="mobile-toggle"
             id="menuToggle"
@@ -497,26 +773,27 @@
 
     </section>
 
-    <!-- =========================
-         SECOND SECTION — WELCOME
-    ========================= -->
 
-    <section
-      class="welcome"
-      id="mon-histoire"
-      aria-label="Bienvenue chez Tatev Gâteaux"
-    >
+    <!-- =================================
+         SECTION 2 — MON HISTOIRE
+    ================================= -->
 
-      <!-- LEFT PHOTO: TATEV -->
+    <section class="welcome" id="mon-histoire">
+
+      <!-- LEFT: TATEV PHOTO -->
+
       <div class="welcome-photo left">
+
         <img
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/f87d23e3-9d73-4e39-9271-37d6425430df.jpg?v=1792518863"
-          alt="Tatev avec un gâteau rose"
+          alt="Tatev avec son gâteau rose"
           loading="lazy"
         >
+
       </div>
 
-      <!-- CENTER TEXT -->
+      <!-- CENTER: FRENCH TEXT -->
+
       <div class="welcome-copy">
 
         <div class="welcome-inner">
@@ -525,7 +802,7 @@
 
           <p>Bienvenue dans mon univers, où chaque gâteau raconte une histoire et chaque détail est imaginé avec amour. Je suis Tatev, passionnée par l’art de la pâtisserie et par la beauté des moments que nous partageons. À travers Tatev Gâteaux, je donne vie à des créations uniques, où les saveurs délicates rencontrent l’élégance et la créativité. Des fleurs raffinées aux finitions les plus minutieuses, chaque gâteau est pensé pour rendre vos célébrations inoubliables. Plus qu’un dessert, c’est une émotion, un souvenir précieux et une petite part de bonheur que j’ai le plaisir de créer pour vous.</p>
 
-          <a class="welcome-cta" href="#categories">
+          <a href="#categories" class="welcome-cta">
             Découvrir mon univers
           </a>
 
@@ -533,54 +810,459 @@
 
       </div>
 
-      <!-- RIGHT PHOTO: WEDDING CAKE -->
+      <!-- RIGHT: WEDDING CAKE -->
+
       <div class="welcome-photo right">
+
         <img
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/MMM.jpg?v=1792518864"
-          alt="Gâteau de cérémonie à étages"
+          alt="Gâteau de cérémonie"
           loading="lazy"
         >
+
       </div>
 
     </section>
 
-    <!-- =========================
-         FUTURE CATEGORIES SECTION
-    ========================= -->
 
-    <section class="section-placeholder" id="categories">
-      <h2>Catégories</h2>
+    <!-- =================================
+         SECTION 3 — CATÉGORIES
+         YOUR 7 ORIGINAL IMAGES
+    ================================= -->
+
+    <section class="tg-categories" id="categories">
+
+      <div class="tg-categories-inner">
+
+        <div class="tg-categories-heading">
+
+          <span class="tg-eyebrow">
+            CATÉGORIES
+          </span>
+
+          <span class="tg-heading-line"></span>
+
+          <h2>
+            Découvrez nos créations par occasion
+          </h2>
+
+        </div>
+
+        <div class="tg-categories-grid">
+
+          <!-- 1. WEDDING -->
+
+          <a class="tg-category-card"
+             href="#galerie-mariage"
+             data-gallery="mariage">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506"
+              alt="Gâteaux de mariage"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Gâteaux de mariage
+            </span>
+
+          </a>
+
+
+          <!-- 2. BIRTHDAY -->
+
+          <a class="tg-category-card"
+             href="#galerie-anniversaire"
+             data-gallery="anniversaire">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692"
+              alt="Gâteaux d'anniversaire"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Gâteaux d'anniversaire
+            </span>
+
+          </a>
+
+
+          <!-- 3. GENDER REVEAL -->
+
+          <a class="tg-category-card"
+             href="#galerie-gender"
+             data-gallery="gender">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541"
+              alt="Gâteaux Gender Reveal"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Gâteaux Gender Reveal
+            </span>
+
+          </a>
+
+
+          <!-- 4. CHILDREN -->
+
+          <a class="tg-category-card"
+             href="#galerie-enfants"
+             data-gallery="enfants">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140"
+              alt="Gâteaux pour enfants"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Gâteaux pour enfants
+            </span>
+
+          </a>
+
+
+          <!-- 5. BAPTISM -->
+
+          <a class="tg-category-card"
+             href="#galerie-bapteme"
+             data-gallery="bapteme">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476"
+              alt="Gâteaux de baptême"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Gâteaux de baptême
+            </span>
+
+          </a>
+
+
+          <!-- 6. BENTO CAKES -->
+
+          <a class="tg-category-card"
+             href="#galerie-bento"
+             data-gallery="bento">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814"
+              alt="Bento Cakes"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Bento Cakes
+            </span>
+
+          </a>
+
+
+          <!-- 7. STRAWBERRIES & CHOCOLATES -->
+
+          <a class="tg-category-card"
+             href="#galerie-fraises"
+             data-gallery="fraises">
+
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826"
+              alt="Fraises et chocolats"
+              loading="lazy"
+            >
+
+            <span class="tg-category-label">
+              Fraises & Chocolats
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- =========================
-         FUTURE FORMATIONS SECTION
-    ========================= -->
 
-    <section class="section-placeholder" id="formations">
+    <!-- =================================
+         SECTION 4 — FORMATIONS
+         WE WILL DESIGN THIS NEXT
+    ================================= -->
+
+    <section class="formations" id="formations">
+
+      <span class="eyebrow">
+        L'ART DE LA PÂTISSERIE
+      </span>
+
       <h2>Formations</h2>
+
     </section>
 
   </main>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const siteHeader = document.getElementById('siteHeader');
 
-    menuToggle.addEventListener('click', function () {
-      const isOpen = siteHeader.classList.toggle('menu-open');
+  <!-- =================================
+       CATEGORY GALLERY POPUP
+  ================================= -->
+
+  <div
+    class="tg-gallery"
+    id="tgGallery"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Galerie de créations"
+    aria-hidden="true"
+  >
+
+    <button
+      class="tg-gallery-close"
+      id="tgGalleryClose"
+      type="button"
+      aria-label="Fermer la galerie"
+    >
+      &times;
+    </button>
+
+    <div class="tg-gallery-inner">
+
+      <h2
+        class="tg-gallery-title"
+        id="tgGalleryTitle">
+      </h2>
+
+      <p class="tg-gallery-subtitle">
+        Une création pour chaque moment précieux
+      </p>
+
+      <div
+        class="tg-gallery-grid"
+        id="tgGalleryGrid">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    /* =================================
+       MOBILE NAVIGATION
+    ================================= */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const siteHeader =
+      document.getElementById("siteHeader");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen =
+        siteHeader.classList.toggle("menu-open");
 
       menuToggle.setAttribute(
-        'aria-expanded',
+        "aria-expanded",
         String(isOpen)
       );
+
     });
 
-    document.querySelectorAll('.menu-area a').forEach(link => {
-      link.addEventListener('click', function () {
-        siteHeader.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+    document.querySelectorAll(
+      ".menu-area a"
+    ).forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        siteHeader.classList.remove("menu-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       });
+
     });
+
+
+    /* =================================
+       CATEGORY GALLERIES
+
+       LATER WE WILL ADD MORE IMAGES
+       TO EACH CATEGORY'S images ARRAY
+    ================================= */
+
+    (function () {
+
+      const galleries = {
+
+        mariage: {
+          title: "Gâteaux de mariage",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506"
+          ]
+        },
+
+        anniversaire: {
+          title: "Gâteaux d'anniversaire",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692"
+          ]
+        },
+
+        gender: {
+          title: "Gâteaux Gender Reveal",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541"
+          ]
+        },
+
+        enfants: {
+          title: "Gâteaux pour enfants",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140"
+          ]
+        },
+
+        bapteme: {
+          title: "Gâteaux de baptême",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476"
+          ]
+        },
+
+        bento: {
+          title: "Bento Cakes",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814"
+          ]
+        },
+
+        fraises: {
+          title: "Fraises & Chocolats",
+          images: [
+            "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826"
+          ]
+        }
+
+      };
+
+      const modal =
+        document.getElementById("tgGallery");
+
+      const closeButton =
+        document.getElementById("tgGalleryClose");
+
+      const titleElement =
+        document.getElementById("tgGalleryTitle");
+
+      const gridElement =
+        document.getElementById("tgGalleryGrid");
+
+      let lastTrigger = null;
+
+      function openGallery(category, trigger) {
+
+        const gallery = galleries[category];
+
+        if (!gallery) return;
+
+        lastTrigger = trigger;
+
+        titleElement.textContent = gallery.title;
+
+        gridElement.innerHTML = "";
+
+        gallery.images.forEach(function (imageUrl) {
+
+          const image = document.createElement("img");
+
+          image.src = imageUrl;
+          image.alt = gallery.title;
+          image.loading = "lazy";
+
+          gridElement.appendChild(image);
+
+        });
+
+        modal.classList.add("is-open");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+        closeButton.focus();
+
+      }
+
+      function closeGallery() {
+
+        modal.classList.remove("is-open");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        document.body.style.overflow = "";
+
+        if (lastTrigger) {
+          lastTrigger.focus();
+        }
+
+      }
+
+      document.querySelectorAll(
+        ".tg-category-card[data-gallery]"
+      ).forEach(function (card) {
+
+        card.addEventListener("click", function (event) {
+
+          event.preventDefault();
+
+          openGallery(
+            card.dataset.gallery,
+            card
+          );
+
+        });
+
+      });
+
+      closeButton.addEventListener(
+        "click",
+        closeGallery
+      );
+
+      modal.addEventListener("click", function (event) {
+
+        if (event.target === modal) {
+          closeGallery();
+        }
+
+      });
+
+      document.addEventListener("keydown", function (event) {
+
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("is-open")
+        ) {
+          closeGallery();
+        }
+
+      });
+
+    })();
   </script>
 
 </body>
