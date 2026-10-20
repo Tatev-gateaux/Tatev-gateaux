@@ -3,16 +3,19 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatev Gâteaux | Créations sur mesure</title>
 
-<title>Tatev Gâteaux | Créations Pâtissières</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --cream: #faf7ef;
-  --brown: #493a36;
+  --cream: #fffaf7;
+  --rose: #f6e6e7;
+  --ink: #45323e;
+  --plum: #624563;
 }
 
 * {
@@ -25,1236 +28,887 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
-  color: var(--brown);
   font-family: 'Jost', sans-serif;
+  color: var(--ink);
+  background: white;
 }
 
-a {
-  text-decoration: none;
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
-  cursor: pointer;
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
-/* ================================
-   1. HOME
-================================ */
+/* ================= HEADER ================= */
 
-.hero {
-  min-height: 650px;
-  height: 100svh;
-  position: relative;
-
-  background:
-    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078")
-    center center / cover no-repeat;
-}
-
-.header {
-  padding: 38px 5%;
-  position: relative;
-  z-index: 10;
-}
-
-.header-inner {
-  max-width: 1700px;
-  margin: auto;
+.site-header {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 5%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 30px;
 }
 
-.logo {
-  display: block;
-  width: 310px;
-  max-width: 35%;
-}
-
-.logo img {
-  width: 100%;
-  height: auto;
-  max-height: 205px;
+.site-logo img {
+  width: 155px;
+  max-height: 95px;
   object-fit: contain;
-  display: block;
 }
 
-.nav {
+.site-nav {
   display: flex;
-  gap: clamp(18px, 3vw, 55px);
-  padding: 24px 0;
-  border-bottom: 1px solid #ffffffa0;
+  align-items: center;
+  gap: 36px;
 }
 
-.nav a {
-  color: white;
+.site-nav a {
   font-size: 12px;
-  letter-spacing: 1.7px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  transition: opacity .3s ease;
+  transition: opacity .3s;
 }
 
-.nav a:hover {
-  opacity: .65;
+.site-nav a:hover {
+  opacity: .55;
 }
 
 .menu-toggle {
   display: none;
+  background: none;
+  border: 0;
+  font-size: 29px;
+  cursor: pointer;
 }
 
-/* ================================
-   2. MON HISTOIRE
-================================ */
+/* ================= HERO ================= */
 
-.welcome {
-  display: grid;
-  grid-template-columns: 1fr minmax(390px, 44%) 1fr;
-  max-width: 1920px;
-  min-height: 780px;
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 170px 20px 100px;
+  background-image:
+    linear-gradient(rgba(255,247,245,.10),rgba(255,247,245,.18)),
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 850px;
+}
+
+.hero-small {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(68px, 11vw, 145px);
+  font-weight: 400;
+  line-height: .95;
+  margin: 18px 0;
+}
+
+.hero-script {
+  font-family: 'Allura', cursive;
+  font-size: clamp(35px, 5vw, 65px);
+  margin: 0;
+}
+
+/* ================= MON HISTOIRE ================= */
+
+.story {
+  background: #fff;
+  padding: 105px 5%;
+}
+
+.story-grid {
+  max-width: 1350px;
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr 1fr;
+  min-height: 600px;
 }
 
-.welcome-photo {
-  min-height: 780px;
-  overflow: hidden;
-}
-
-.welcome-photo img {
-  display: block;
+.story-photo {
   width: 100%;
   height: 100%;
+  min-height: 550px;
   object-fit: cover;
 }
 
-.welcome-copy {
+.story-center {
+  background: #f8f0e9;
+  padding: 60px 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 54px clamp(26px, 4vw, 80px);
-  background: var(--cream);
 }
 
-.welcome-inner {
-  max-width: 650px;
+.story-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.welcome h1 {
+.story-center h2 {
   font-family: 'Allura', cursive;
+  font-size: clamp(48px, 5vw, 72px);
   font-weight: 400;
-  font-size: clamp(64px, 6vw, 110px);
   line-height: 1;
-  margin: 0 0 30px;
+  margin: 25px 0;
 }
 
-.welcome p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(19px, 1.45vw, 25px);
-  line-height: 1.2;
+.story-center p {
+  font-size: 14px;
+  line-height: 2.1;
+  font-weight: 300;
   margin: 0;
 }
 
-.welcome-cta {
-  display: inline-block;
-  margin-top: 42px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #a68c7f;
-  color: #251914;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
-}
+/* ================= CATEGORIES ================= */
 
-/* ================================
-   3. CATEGORIES
-================================ */
-
-.categories {
+.tg-categories {
   position: relative;
-  isolation: isolate;
-  padding: 90px 5% 105px;
-  background: #f5e5e0;
-}
-
-.categories::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-
+  padding: 110px 5% 125px;
   background:
+    linear-gradient(rgba(255,246,246,.77),rgba(255,246,246,.77)),
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107")
     center / cover no-repeat;
 }
 
-.categories::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(255, 242, 239, .62);
-}
-
 .categories-inner {
-  max-width: 1550px;
+  max-width: 1400px;
   margin: auto;
 }
 
-.categories-heading {
+.section-eyebrow {
   text-align: center;
-  margin-bottom: 48px;
-}
-
-.eyebrow {
-  font-size: 12px;
-  letter-spacing: 5px;
   text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3.5px;
 }
 
-.categories-heading h2 {
-  font-family: 'Allura', cursive;
-  font-size: clamp(48px, 5vw, 80px);
+.section-title {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(46px, 6vw, 76px);
   font-weight: 400;
-  line-height: 1.1;
-  margin: 18px 0 0;
-  color: #6e5554;
+  margin: 10px 0 52px;
 }
 
-.category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 24px;
 }
 
 .category-card {
   position: relative;
   display: block;
-  flex: 0 0 calc((100% - 60px) / 4);
-  aspect-ratio: .79;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  height: 420px;
+  background: #eee5e3;
+  cursor: pointer;
   overflow: hidden;
-  background: #e9d9d5;
-  border: 2px solid white;
-  box-shadow: 0 5px 20px #41272412;
 }
 
 .category-card img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  transition: transform .7s ease;
+  transition: transform .8s ease;
 }
 
 .category-card:hover img {
-  transform: scale(1.045);
+  transform: scale(1.06);
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent,rgba(34,21,28,.42));
+  pointer-events: none;
 }
 
 .category-label {
   position: absolute;
-  bottom: 20px;
-  left: 12px;
-  right: 12px;
-  min-height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  background: rgba(255,250,247,.94);
+  padding: 14px 12px;
+  width: calc(100% - 36px);
   text-align: center;
-  padding: 9px;
-  background: rgba(248, 231, 233, .91);
-  border: 1px solid white;
-  outline: 1px solid #ffffffaa;
-  outline-offset: 3px;
-  color: #453837;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(12px, 1.2vw, 17px);
-  line-height: 1.2;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  font-family: 'Cormorant Garamond',serif;
+  font-size: 22px;
+  line-height: 1.1;
 }
 
-/* ================================
-   CATEGORY GALLERY
-================================ */
+.category-card:nth-child(5) {
+  grid-column: 1;
+}
 
-.gallery {
+/* ================= GALLERY MODAL ================= */
+
+.gallery-modal {
   position: fixed;
+  z-index: 100;
   inset: 0;
-  z-index: 9999;
+  background: rgba(31,21,30,.83);
   display: none;
   overflow-y: auto;
-  padding: 75px 5% 65px;
-  background: #faf4f1;
+  padding: 60px 22px;
 }
 
-.gallery.open {
+.gallery-modal.open {
   display: block;
 }
 
-.gallery-close {
-  position: fixed;
-  right: 25px;
-  top: 16px;
-  z-index: 2;
-  border: 0;
-  background: #faf4f1;
-  color: #493b39;
-  font-size: 38px;
-  width: 46px;
-  height: 46px;
+.gallery-panel {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 55px 35px;
+  background: #fffaf8;
 }
 
-.gallery-inner {
-  max-width: 1250px;
-  margin: auto;
-  text-align: center;
+.gallery-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 35px;
 }
 
 .gallery-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(38px, 5vw, 66px);
+  font-family: 'Cormorant Garamond',serif;
   font-weight: 400;
-  margin: 0 0 10px;
-}
-
-.gallery-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-style: italic;
-  margin: 0 0 40px;
+  text-align: center;
+  font-size: 52px;
+  margin: 0 0 35px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 20px;
 }
 
 .gallery-grid img {
-  display: block;
   width: 100%;
-  aspect-ratio: .8;
+  height: 360px;
   object-fit: cover;
-  background: #ead9d3;
+  background: #f0e9e6;
 }
 
-/* ================================
-   4. NOS SAVEURS
+/* ================= WHITE GAP ================= */
 
-   WHITE GAP
-   VELVET LAVENDER TEXTURE
-   SLOW DROP ANIMATION
-================================ */
-
-/* White space between previous
-   section and cake photographs */
+/*
+  Սա է քո ուզած մեծ ՍՊԻՏԱԿ տարածքը։
+  Այն ամբողջությամբ բաժանում է կատեգորիաներն
+  ու միջուկների բաժինը։
+*/
 
 .saveurs-separator {
   width: 100%;
-  height: 110px;
+  height: 250px;
   background: #ffffff;
 }
 
-/* Main section */
+/* ================= SAVEURS ================= */
 
 .tg-saveurs {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
   background: #ffffff;
-  padding: 0 24px 68px;
-  color: #ffffff;
+  padding: 0 20px 90px;
+  overflow: hidden;
+  color: #fff;
 }
 
-/* Lavender begins below
-   the top edge of photographs */
+/*
+  Հենց քո ուղարկած իրական հյուսվածքն է։
+  Այն սկսվում է նկարների վերևից 150px ներքև,
+  որպեսզի նկարները մասամբ լինեն սպիտակի վրա։
+*/
 
 .tg-saveurs-velvet {
   position: absolute;
   top: 150px;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   z-index: -1;
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      ellipse 62% 75% at 8% 20%,
-      rgba(74, 39, 88, .42),
-      transparent 78%
-    ),
-    radial-gradient(
-      ellipse 55% 85% at 86% 40%,
-      rgba(90, 49, 106, .37),
-      transparent 80%
-    ),
-    radial-gradient(
-      ellipse 60% 60% at 50% 80%,
-      rgba(218, 180, 220, .24),
-      transparent 80%
-    ),
-    linear-gradient(
-      115deg,
-      #ad8aaa 0%,
-      #987398 25%,
-      #a783a7 53%,
-      #8e6b96 78%,
-      #ac89a9 100%
-    );
-}
-
-/* Layer 1: pronounced fine grain */
-
-.tg-saveurs-velvet::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.48' numOctaves='5' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+    linear-gradient(rgba(89,61,106,.12),rgba(89,61,106,.12)),
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651");
 
-  background-size: 280px 280px;
-  opacity: .55;
-  mix-blend-mode: multiply;
+  background-repeat: repeat;
+  background-size: auto, 420px auto;
+  background-position: center top;
 }
 
-/* Layer 2: soft uneven velvet fibers */
-
-.tg-saveurs-velvet::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background:
-    repeating-linear-gradient(
-      123deg,
-      rgba(255, 238, 255, .028) 0px,
-      rgba(255, 238, 255, .028) 1px,
-      transparent 2px,
-      transparent 5px
-    ),
-    radial-gradient(
-      ellipse at 48% 18%,
-      rgba(255,255,255,.09),
-      transparent 58%
-    );
-
-  opacity: .8;
+.saveurs-inner {
+  max-width: 1600px;
+  margin: auto;
 }
 
-.tg-saveurs-inner {
-  position: relative;
-  max-width: 1420px;
-  margin: 0 auto;
-}
-
-/* Five images in one row */
-
-.tg-saveurs-grid {
+.saveurs-photos {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 22px;
-  align-items: start;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 24px;
 }
 
-.tg-saveur {
-  min-width: 0;
-  text-align: center;
-}
-
-/* Photos */
-
-.tg-saveur-photo {
+.saveur-photo {
+  height: 365px;
   width: 100%;
-  height: 390px;
-  margin: 0;
-  overflow: hidden;
-  background: #f1e5e5;
-}
-
-.tg-saveur-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  object-position: center;
-}
-
-/* Slow downward entrance */
-
-.js .tg-saveur {
+  background: #f5e9e7;
   opacity: 0;
-  transform: translateY(-105px);
+  transform: translateY(-100px);
   transition:
-    opacity 1.25s ease,
-    transform 1.8s cubic-bezier(.22, 1, .36, 1);
-  will-change: transform, opacity;
+    opacity 1.4s ease,
+    transform 1.8s cubic-bezier(.22,1,.36,1);
 }
 
-.js .tg-saveurs.is-visible .tg-saveur {
+.tg-saveurs.is-visible .saveur-photo {
   opacity: 1;
   transform: translateY(0);
 }
 
-.js .tg-saveurs.is-visible .tg-saveur:nth-child(1) {
-  transition-delay: .05s;
+.saveur-photo:nth-child(2) {
+  transition-delay: .15s;
 }
 
-.js .tg-saveurs.is-visible .tg-saveur:nth-child(2) {
-  transition-delay: .22s;
+.saveur-photo:nth-child(3) {
+  transition-delay: .3s;
 }
 
-.js .tg-saveurs.is-visible .tg-saveur:nth-child(3) {
-  transition-delay: .39s;
+.saveur-photo:nth-child(4) {
+  transition-delay: .45s;
 }
 
-.js .tg-saveurs.is-visible .tg-saveur:nth-child(4) {
-  transition-delay: .56s;
+.saveur-photo:nth-child(5) {
+  transition-delay: .6s;
 }
 
-.js .tg-saveurs.is-visible .tg-saveur:nth-child(5) {
-  transition-delay: .73s;
-}
-
-/* Flavor names */
-
-.tg-saveur-name {
-  margin: 25px 0 11px;
-  color: #fff;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 1.4vw, 23px);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-}
-
-.tg-saveur-line {
-  display: block;
-  width: 44px;
-  height: 1px;
-  margin: 0 auto 14px;
-  background: rgba(255,255,255,.8);
-}
-
-.tg-saveur-description {
-  max-width: 230px;
-  margin: 0 auto;
-  color: #fffafc;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 1.2vw, 20px);
-  font-weight: 500;
-  line-height: 1.28;
-}
-
-/* Bottom editorial title */
-
-.tg-saveurs-footer {
-  padding: 52px 0 0;
+.saveurs-heading {
   text-align: center;
+  padding: 55px 10px 25px;
 }
 
-.tg-saveurs-small {
+.saveurs-heading span {
   display: block;
-  margin-bottom: 5px;
-  font-family: 'Jost', sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  letter-spacing: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-.tg-saveurs-footer h2 {
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 5vw, 80px);
+.saveurs-heading h2 {
+  font-family: 'Cormorant Garamond',serif;
+  font-size: clamp(48px,6vw,76px);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: 1px;
+  margin: 14px 0;
 }
 
-.tg-saveurs-ornament {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 17px;
-  margin: 16px auto 0;
+.saveurs-descriptions {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 24px;
+  text-align: center;
+  padding: 15px 0 20px;
 }
 
-.tg-saveurs-ornament span {
-  width: 100px;
-  height: 1px;
-  background: rgba(255,255,255,.8);
+.saveur-description h3 {
+  font-family: 'Cormorant Garamond',serif;
+  font-weight: 500;
+  font-size: 27px;
+  margin: 0 0 9px;
 }
 
-.tg-saveurs-ornament svg {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: #fff;
-  stroke-width: 1.6;
+.saveur-description p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+  color: rgba(255,255,255,.9);
 }
 
-/* ================================
-   5. FORMATIONS
-================================ */
+/* ================= FORMATIONS ================= */
 
 .formations {
+  padding: 110px 20px 140px;
   text-align: center;
-  padding: 100px 20px;
   background: #fffaf7;
 }
 
 .formations h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond',serif;
+  font-size: 65px;
   font-weight: 400;
-  font-size: clamp(42px, 5vw, 64px);
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+.formations p {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
 
-@media (max-width: 1100px) {
+/* ================= FOOTER ================= */
+
+.footer {
+  padding: 42px 20px;
+  text-align: center;
+  background: #f1e4e3;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond',serif;
+  font-size: 32px;
+}
+
+.footer p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px) {
+  .categories-grid {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
 
   .category-card {
-    flex-basis: calc((100% - 40px) / 3);
+    height: 360px;
   }
 
-  .logo {
-    width: 220px;
-  }
-
-  .nav {
-    gap: 18px;
-  }
-
-  .nav a {
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  .tg-saveurs-grid {
+  .saveurs-photos,
+  .saveurs-descriptions {
     gap: 12px;
   }
 
-  .tg-saveur-photo {
-    height: 310px;
-  }
-
-  .tg-saveur-name {
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-
-  .tg-saveur-description {
-    font-size: 16px;
+  .saveur-photo {
+    height: 300px;
   }
 }
 
-@media (max-width: 900px) {
-
-  .welcome {
-    grid-template-columns: 1fr 1fr;
+@media(max-width:800px) {
+  .story-grid {
+    grid-template-columns: 1fr;
   }
 
-  .welcome-photo {
-    min-height: 390px;
-    height: 390px;
+  .story-photo {
+    min-height: 0;
+    height: 480px;
   }
 
-  .welcome-photo.left {
-    grid-area: 1 / 1;
+  .story-center {
+    min-height: 450px;
   }
 
-  .welcome-photo.right {
-    grid-area: 1 / 2;
-  }
-
-  .welcome-copy {
-    grid-area: 2 / 1 / 3 / 3;
-    padding: 60px 7%;
-  }
-
-  .welcome h1 {
-    font-size: 75px;
-  }
-
-  .welcome p {
-    font-size: 23px;
-  }
-}
-
-@media (max-width: 760px) {
-
-  .hero {
-    min-height: 600px;
-  }
-
-  .header {
-    padding: 20px 5%;
-  }
-
-  .logo {
-    width: 165px;
+  .site-header {
+    align-items: flex-start;
   }
 
   .menu-toggle {
     display: block;
-    position: relative;
-    z-index: 5;
-    background: transparent;
-    border: 0;
-    width: 44px;
-    height: 44px;
   }
 
-  .menu-toggle span {
-    display: block;
-    height: 1px;
-    width: 28px;
-    background: white;
-    margin: 7px auto;
-  }
-
-  .nav {
+  .site-nav {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #faf1ed;
+    right: 5%;
+    top: 90px;
+    background: rgba(255,250,248,.97);
+    padding: 25px;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 30px;
-    gap: 24px;
-    border: 0;
+    gap: 22px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
   }
 
-  .header.menu-open .nav {
+  .site-nav.open {
     display: flex;
   }
 
-  .nav a {
-    color: var(--brown);
-    font-size: 12px;
+  .saveurs-photos {
+    grid-template-columns: repeat(3,minmax(0,1fr));
   }
 
-  .welcome-photo {
-    min-height: 290px;
-    height: 290px;
+  .saveur-photo {
+    height: 320px;
   }
 
-  .welcome h1 {
+  .saveurs-descriptions {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 28px;
+  }
+
+  .tg-saveurs-velvet {
+    top: 135px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:550px) {
+  .site-logo img {
+    width: 120px;
+  }
+
+  .hero h1 {
     font-size: 65px;
   }
 
-  .welcome p {
-    font-size: 21px;
-  }
-
-  .categories {
-    padding: 65px 15px 75px;
-  }
-
-  .category-grid {
+  .categories-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
   }
 
   .category-card {
-    flex-basis: calc((100% - 12px) / 2);
+    height: 270px;
   }
 
   .category-label {
-    left: 8px;
-    right: 8px;
-    bottom: 12px;
-    min-height: 45px;
-    font-size: 11px;
-    letter-spacing: .5px;
+    font-size: 17px;
+    width: calc(100% - 16px);
+    bottom: 10px;
+    padding: 10px 5px;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .saveurs-separator,
+  .saveurs-separator {
+    height: 150px;
+  }
+
+  .saveurs-photos {
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
   }
 
-  .gallery {
-    padding: 75px 16px 40px;
-  }
-}
-
-@media (max-width: 700px) {
-
-  .saveurs-separator {
-    height: 75px;
-  }
-
-  .tg-saveurs {
-    padding: 0 15px 45px;
+  .saveur-photo {
+    height: 260px;
   }
 
   .tg-saveurs-velvet {
-    top: 90px;
+    top: 110px;
   }
 
-  .tg-saveurs-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 14px;
-  }
-
-  .tg-saveur-photo {
-    height: 255px;
-  }
-
-  .tg-saveur-name {
-    margin-top: 17px;
-    font-size: 17px;
-    letter-spacing: 1px;
-  }
-
-  .tg-saveur-description {
-    font-size: 17px;
-  }
-
-  .tg-saveur:last-child {
-    grid-column: 1 / -1;
-    width: min(100%, 230px);
-    justify-self: center;
-  }
-
-  .tg-saveurs-footer {
+  .saveurs-heading {
     padding-top: 40px;
   }
 
-  .tg-saveurs-footer h2 {
-    font-size: 60px;
+  .saveurs-descriptions {
+    grid-template-columns: 1fr;
   }
 
-  .tg-saveurs-ornament span {
-    width: 65px;
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
-  .js .tg-saveur {
-    transform: translateY(-65px);
-  }
-}
-
-@media (max-width: 380px) {
-
-  .tg-saveur-photo {
-    height: 210px;
+  .gallery-grid img {
+    height: 350px;
   }
 
-  .tg-saveur-name {
-    font-size: 15px;
+  .gallery-panel {
+    padding: 55px 15px 25px;
   }
 
-  .tg-saveur-description {
-    font-size: 15px;
+  .gallery-title {
+    font-size: 37px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  .js .tg-saveur {
+@media(prefers-reduced-motion:reduce) {
+  .saveur-photo {
     opacity: 1;
     transform: none;
     transition: none;
   }
-
-  .category-card img {
-    transition: none;
-  }
 }
 </style>
-
-<script>
-document.documentElement.classList.add("js");
-</script>
-
 </head>
 
 <body>
 
-<main>
+<!-- HEADER -->
 
-<!-- =========================
-     HOME
-========================= -->
+<header class="site-header">
+  <a class="site-logo" href="#accueil">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
+      alt="Tatev Gâteaux">
+  </a>
 
-<section class="hero" id="home">
+  <button class="menu-toggle" id="menuToggle"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false">
+    ☰
+  </button>
 
-  <header class="header" id="siteHeader">
+  <nav class="site-nav" id="siteNav">
+    <a href="#categories">Catégories</a>
+    <a href="#mon-histoire">Mon Histoire</a>
+    <a href="#saveurs">Nos Saveurs</a>
+    <a href="#formations">Formations</a>
+  </nav>
+</header>
 
-    <div class="header-inner">
+<!-- HERO -->
 
-      <a
-        class="logo"
-        href="#home"
-        aria-label="Tatev Gâteaux">
-
-        <img
-          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
-          alt="Tatev Gâteaux">
-
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
-      <nav class="nav" aria-label="Navigation principale">
-
-        <a href="#categories">Catégories</a>
-
-        <a href="#mon-histoire">Mon Histoire</a>
-
-        <a href="#nos-saveurs">Nos Saveurs</a>
-
-        <a href="#formations">Formations</a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <span class="hero-small">Créations pâtissières sur mesure</span>
+    <h1>Tatev Gâteaux</h1>
+    <p class="hero-script">L'art de la douceur</p>
+  </div>
 </section>
 
+<!-- MON HISTOIRE -->
 
-<!-- =========================
-     MON HISTOIRE
-========================= -->
-
-<section class="welcome" id="mon-histoire">
-
-  <div class="welcome-photo left">
+<section class="story" id="mon-histoire">
+  <div class="story-grid">
 
     <img
+      class="story-photo"
       src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/f87d23e3-9d73-4e39-9271-37d6425430df.jpg?v=1792518863"
-      alt="Tatev avec son gâteau rose"
+      alt="Tatev et sa création pâtissière"
       loading="lazy">
 
-  </div>
-
-  <div class="welcome-copy">
-
-    <div class="welcome-inner">
-
-      <h1>Un doux bienvenue</h1>
-
-      <p>Bienvenue dans mon univers, où chaque gâteau raconte une histoire et chaque détail est imaginé avec amour. Je suis Tatev, passionnée par l’art de la pâtisserie et par la beauté des moments que nous partageons. À travers Tatev Gâteaux, je donne vie à des créations uniques, où les saveurs délicates rencontrent l’élégance et la créativité. Des fleurs raffinées aux finitions les plus minutieuses, chaque gâteau est pensé pour rendre vos célébrations inoubliables. Plus qu’un dessert, c’est une émotion, un souvenir précieux et une petite part de bonheur que j’ai le plaisir de créer pour vous.</p>
-
-      <a class="welcome-cta" href="#categories">
-        Découvrir mon univers
-      </a>
-
+    <div class="story-center">
+      <div>
+        <span class="story-eyebrow">Bienvenue dans mon univers</span>
+        <h2>Un doux bienvenue</h2>
+        <p>Bienvenue dans mon univers gourmand, où chaque gâteau est imaginé avec passion, délicatesse et amour du détail. À travers mes créations, je souhaite apporter une touche de douceur à vos plus beaux moments et transformer chaque occasion en un souvenir inoubliable. Chaque gâteau est unique, pensé spécialement pour vous, avec le cœur et le plaisir de créer.</p>
+      </div>
     </div>
 
-  </div>
-
-  <div class="welcome-photo right">
-
     <img
+      class="story-photo"
       src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/MMM.jpg?v=1792518864"
-      alt="Gâteau de cérémonie"
+      alt="Création pâtissière"
       loading="lazy">
 
   </div>
-
 </section>
 
+<!-- CATEGORIES -->
 
-<!-- =========================
-     CATEGORIES
-========================= -->
-
-<section class="categories" id="categories">
-
+<section class="tg-categories" id="categories">
   <div class="categories-inner">
 
-    <div class="categories-heading">
+    <div class="section-eyebrow">L'univers de Tatev</div>
+    <h2 class="section-title">Nos Créations</h2>
 
-      <span class="eyebrow">CATÉGORIES</span>
+    <div class="categories-grid">
 
-      <h2>Découvrez nos créations par occasion</h2>
+      <button class="category-card" data-gallery="mariage">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506" alt="Gâteaux de mariage" loading="lazy">
+        <span class="category-label">Gâteaux de mariage</span>
+      </button>
+
+      <button class="category-card" data-gallery="anniversaire">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692" alt="Gâteaux d'anniversaire" loading="lazy">
+        <span class="category-label">Gâteaux d'anniversaire</span>
+      </button>
+
+      <button class="category-card" data-gallery="gender">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541" alt="Gender Reveal" loading="lazy">
+        <span class="category-label">Gender Reveal</span>
+      </button>
+
+      <button class="category-card" data-gallery="enfants">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140" alt="Gâteaux pour enfants" loading="lazy">
+        <span class="category-label">Gâteaux pour enfants</span>
+      </button>
+
+      <button class="category-card" data-gallery="bapteme">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476" alt="Gâteaux de baptême" loading="lazy">
+        <span class="category-label">Gâteaux de baptême</span>
+      </button>
+
+      <button class="category-card" data-gallery="bento">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814" alt="Bento Cakes" loading="lazy">
+        <span class="category-label">Bento Cakes</span>
+      </button>
+
+      <button class="category-card" data-gallery="fraises">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826" alt="Fraises et Chocolats" loading="lazy">
+        <span class="category-label">Fraises &amp; Chocolats</span>
+      </button>
 
     </div>
-
-    <div class="category-grid" id="categoryGrid"></div>
-
   </div>
-
 </section>
 
+<!-- GALLERY -->
 
-<!-- =========================
-     WHITE SEPARATION
-========================= -->
+<div class="gallery-modal" id="galleryModal"
+     role="dialog" aria-modal="true"
+     aria-label="Galerie de créations">
+  <div class="gallery-panel">
+
+    <button class="gallery-close" id="galleryClose"
+            aria-label="Fermer">×</button>
+
+    <h2 class="gallery-title" id="galleryTitle"></h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+  </div>
+</div>
+
+<!-- ՄԵԾ ՍՊԻՏԱԿ ԴԱՏԱՐԿ ՏԱՐԱԾՔ -->
 
 <div class="saveurs-separator" aria-hidden="true"></div>
 
+<!-- SAVEURS -->
 
-<!-- =========================
-     NOS SAVEURS
-========================= -->
-
-<section class="tg-saveurs" id="nos-saveurs">
+<section class="tg-saveurs" id="saveurs">
 
   <div class="tg-saveurs-velvet" aria-hidden="true"></div>
 
-  <div class="tg-saveurs-inner">
+  <div class="saveurs-inner">
 
-    <div class="tg-saveurs-grid">
+    <div class="saveurs-photos">
 
-      <!-- VANILLE CITRON -->
+      <img class="saveur-photo"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549"
+        alt="Gâteau au citron" loading="lazy">
 
-      <article class="tg-saveur">
+      <img class="saveur-photo"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549"
+        alt="Gâteau au caramel" loading="lazy">
 
-        <div class="tg-saveur-photo">
+      <img class="saveur-photo"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549"
+        alt="Gâteau façon Dubaï" loading="lazy">
 
-          <img
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549"
-            alt="Gâteau vanille citron"
-            loading="lazy">
+      <img class="saveur-photo"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554"
+        alt="Gâteau au chocolat" loading="lazy">
 
-        </div>
-
-        <h3 class="tg-saveur-name">Vanille Citron</h3>
-
-        <span class="tg-saveur-line"></span>
-
-        <p class="tg-saveur-description">
-          Une crème vanillée douce et une touche de citron frais.
-        </p>
-
-      </article>
-
-
-      <!-- CHOCOLAT -->
-
-      <article class="tg-saveur">
-
-        <div class="tg-saveur-photo">
-
-          <img
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549"
-            alt="Gâteau au chocolat"
-            loading="lazy">
-
-        </div>
-
-        <h3 class="tg-saveur-name">Chocolat</h3>
-
-        <span class="tg-saveur-line"></span>
-
-        <p class="tg-saveur-description">
-          Un biscuit moelleux et une ganache au chocolat fondante.
-        </p>
-
-      </article>
-
-
-      <!-- FRUITS ROUGES -->
-
-      <article class="tg-saveur">
-
-        <div class="tg-saveur-photo">
-
-          <img
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549"
-            alt="Gâteau aux fruits rouges"
-            loading="lazy">
-
-        </div>
-
-        <h3 class="tg-saveur-name">Fruits Rouges</h3>
-
-        <span class="tg-saveur-line"></span>
-
-        <p class="tg-saveur-description">
-          Une crème légère et des fruits rouges délicatement acidulés.
-        </p>
-
-      </article>
-
-
-      <!-- DUBAI -->
-
-      <article class="tg-saveur">
-
-        <div class="tg-saveur-photo">
-
-          <img
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554"
-            alt="Gâteau Dubaï pistache"
-            loading="lazy">
-
-        </div>
-
-        <h3 class="tg-saveur-name">Dubaï</h3>
-
-        <span class="tg-saveur-line"></span>
-
-        <p class="tg-saveur-description">
-          Pistache, chocolat et kadaïf croustillant.
-        </p>
-
-      </article>
-
-
-      <!-- CARAMEL -->
-
-      <article class="tg-saveur">
-
-        <div class="tg-saveur-photo">
-
-          <img
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555"
-            alt="Gâteau au caramel"
-            loading="lazy">
-
-        </div>
-
-        <h3 class="tg-saveur-name">Caramel</h3>
-
-        <span class="tg-saveur-line"></span>
-
-        <p class="tg-saveur-description">
-          Un caramel onctueux et une crème délicate.
-        </p>
-
-      </article>
+      <img class="saveur-photo"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555"
+        alt="Gâteau aux fruits rouges" loading="lazy">
 
     </div>
 
+    <div class="saveurs-heading">
+      <span>Une expérience gourmande</span>
+      <h2>Nos Saveurs</h2>
+    </div>
 
-    <!-- BOTTOM TITLE -->
+    <div class="saveurs-descriptions">
 
-    <div class="tg-saveurs-footer">
+      <div class="saveur-description">
+        <h3>Citron</h3>
+        <p>Une crème légère au citron, fraîche et délicatement acidulée.</p>
+      </div>
 
-      <span class="tg-saveurs-small">NOS</span>
+      <div class="saveur-description">
+        <h3>Caramel</h3>
+        <p>Un caramel fondant aux notes douces et gourmandes.</p>
+      </div>
 
-      <h2>SAVEURS</h2>
+      <div class="saveur-description">
+        <h3>Façon Dubaï</h3>
+        <p>Pistache, chocolat et kadaïf croustillant.</p>
+      </div>
 
-      <div class="tg-saveurs-ornament" aria-hidden="true">
+      <div class="saveur-description">
+        <h3>Chocolat</h3>
+        <p>Un chocolat intense et une ganache onctueuse.</p>
+      </div>
 
-        <span></span>
-
-        <svg viewBox="0 0 24 24">
-          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
-        </svg>
-
-        <span></span>
-
+      <div class="saveur-description">
+        <h3>Fruits rouges</h3>
+        <p>Une crème délicate et des fruits rouges légèrement acidulés.</p>
       </div>
 
     </div>
 
   </div>
-
 </section>
 
-
-<!-- =========================
-     FORMATIONS
-========================= -->
+<!-- FORMATIONS -->
 
 <section class="formations" id="formations">
-
-  <span class="eyebrow">L'ART DE LA PÂTISSERIE</span>
-
+  <div class="section-eyebrow">L'art de la pâtisserie</div>
   <h2>Formations</h2>
-
+  <p>Un univers de créativité, de passion et de savoir-faire.</p>
 </section>
 
-</main>
+<!-- FOOTER -->
 
-
-<!-- =========================
-     GALLERY MODAL
-========================= -->
-
-<div
-  class="gallery"
-  id="gallery"
-  role="dialog"
-  aria-modal="true"
-  aria-hidden="true"
-  aria-label="Galerie de gâteaux">
-
-  <button
-    type="button"
-    class="gallery-close"
-    id="galleryClose"
-    aria-label="Fermer la galerie">
-
-    &times;
-
-  </button>
-
-  <div class="gallery-inner">
-
-    <h2 class="gallery-title" id="galleryTitle"></h2>
-
-    <p class="gallery-subtitle">
-      Une création pour chaque moment précieux
-    </p>
-
-    <div class="gallery-grid" id="galleryGrid"></div>
-
-  </div>
-
-</div>
-
+<footer class="footer">
+  <div class="footer-name">Tatev Gâteaux</div>
+  <p>Créations pâtissières sur mesure</p>
+</footer>
 
 <script>
+/* MOBILE MENU */
 
-/* =========================
-   SHOPIFY IMAGE BASE
-========================= */
+const menuToggle = document.getElementById("menuToggle");
+const siteNav = document.getElementById("siteNav");
 
-const CDN =
-  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
+menuToggle.addEventListener("click", () => {
+  const opened = siteNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(opened));
+});
 
+siteNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    siteNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
 
-/* =========================
-   ALL 7 CATEGORIES
-========================= */
+/* GALLERY IMAGES */
 
-const categories = [
+const base = "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
 
-  {
-    id: "mariage",
+const galleries = {
+
+  mariage: {
     title: "Gâteaux de mariage",
-
-    cover:
-      "471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506",
-
     images: [
       "Screenshot_2026-10-20_225251.png?v=1792522392",
       "Screenshot_2026-10-20_225509.png?v=1792522611",
@@ -1266,13 +920,8 @@ const categories = [
     ]
   },
 
-  {
-    id: "anniversaire",
+  anniversaire: {
     title: "Gâteaux d'anniversaire",
-
-    cover:
-      "fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692",
-
     images: [
       "Screenshot_2026-10-20_230111.png?v=1792523010",
       "Screenshot_2026-10-20_225933.png?v=1792523010",
@@ -1291,29 +940,8 @@ const categories = [
     ]
   },
 
-  {
-    id: "gender",
-    title: "Gâteaux Gender Reveal",
-
-    cover:
-      "811664990_18577121188069880_6892209599690323244_n_2106ddff-b31f-498a-a2bf-5f2d6342948a.jpg?v=1792520541",
-
-    images: [
-      "Screenshot_2026-10-20_231342.png?v=1792524109",
-      "Screenshot_2026-10-20_231808.png?v=1792524110",
-      "Screenshot_2026-10-20_231652.png?v=1792524110",
-      "Screenshot_2026-10-20_231757.png?v=1792524110",
-      "Screenshot_2026-10-20_231720.png?v=1792524110"
-    ]
-  },
-
-  {
-    id: "enfants",
+  enfants: {
     title: "Gâteaux pour enfants",
-
-    cover:
-      "471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140",
-
     images: [
       "Screenshot_2026-10-20_231011.png?v=1792523465",
       "Screenshot_2026-10-20_230716.png?v=1792523464",
@@ -1331,13 +959,8 @@ const categories = [
     ]
   },
 
-  {
-    id: "bapteme",
+  bapteme: {
     title: "Gâteaux de baptême",
-
-    cover:
-      "854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476",
-
     images: [
       "Screenshot_2026-10-20_231353.png?v=1792523917",
       "Screenshot_2026-10-20_231417.png?v=1792523918",
@@ -1349,13 +972,19 @@ const categories = [
     ]
   },
 
-  {
-    id: "bento",
+  gender: {
+    title: "Gender Reveal",
+    images: [
+      "Screenshot_2026-10-20_231342.png?v=1792524109",
+      "Screenshot_2026-10-20_231808.png?v=1792524110",
+      "Screenshot_2026-10-20_231652.png?v=1792524110",
+      "Screenshot_2026-10-20_231757.png?v=1792524110",
+      "Screenshot_2026-10-20_231720.png?v=1792524110"
+    ]
+  },
+
+  bento: {
     title: "Bento Cakes",
-
-    cover:
-      "7b5deb09-4121-4354-bc76-116895fbe8a3.jpg?v=1792520814",
-
     images: [
       "a658b0af-6ff8-49a2-aacd-447c184f4263.jpg?v=1792524237",
       "1ab783aa-1824-481b-a563-33b2a554e3d5.jpg?v=1792524237",
@@ -1366,13 +995,8 @@ const categories = [
     ]
   },
 
-  {
-    id: "fraises",
+  fraises: {
     title: "Fraises & Chocolats",
-
-    cover:
-      "ce944775-d4d3-4bc5-a033-1d0b8d25e545.jpg?v=1792520826",
-
     images: [
       "9a0a50b4-48ec-46ee-af07-12befafe0321.jpg?v=1792524457",
       "d4a3d071-2fa6-43cf-95be-6d9e8ba879dc.jpg?v=1792524457",
@@ -1387,233 +1011,81 @@ const categories = [
     ]
   }
 
-];
+};
 
+/* GALLERY OPEN / CLOSE */
 
-/* =========================
-   CREATE CATEGORY CARDS
-========================= */
+const galleryModal = document.getElementById("galleryModal");
+const galleryTitle = document.getElementById("galleryTitle");
+const galleryGrid = document.getElementById("galleryGrid");
+const galleryClose = document.getElementById("galleryClose");
 
-const categoryGrid =
-  document.getElementById("categoryGrid");
+function openGallery(key) {
+  const gallery = galleries[key];
+  if (!gallery) return;
 
-categories.forEach(function(category) {
+  galleryTitle.textContent = gallery.title;
+  galleryGrid.innerHTML = "";
 
-  const card = document.createElement("a");
-
-  card.className = "category-card";
-  card.href = "#categories";
-  card.dataset.gallery = category.id;
-
-  card.setAttribute(
-    "aria-label",
-    "Voir " + category.title
-  );
-
-  const image = document.createElement("img");
-
-  image.src = CDN + category.cover;
-  image.alt = category.title;
-  image.loading = "lazy";
-
-  const label = document.createElement("span");
-
-  label.className = "category-label";
-  label.textContent = category.title;
-
-  card.appendChild(image);
-  card.appendChild(label);
-
-  categoryGrid.appendChild(card);
-
-});
-
-
-/* =========================
-   GALLERY MODAL
-========================= */
-
-const modal =
-  document.getElementById("gallery");
-
-const closeButton =
-  document.getElementById("galleryClose");
-
-const galleryTitle =
-  document.getElementById("galleryTitle");
-
-const galleryGrid =
-  document.getElementById("galleryGrid");
-
-let previousFocus = null;
-
-function openGallery(id, trigger) {
-
-  const category =
-    categories.find(function(item) {
-      return item.id === id;
-    });
-
-  if (!category) return;
-
-  previousFocus = trigger;
-
-  galleryTitle.textContent = category.title;
-  galleryGrid.replaceChildren();
-
-  category.images.forEach(function(filename, index) {
-
-    const image = document.createElement("img");
-
-    image.src = CDN + filename;
-    image.alt = category.title + " — " + (index + 1);
-    image.loading = index < 6 ? "eager" : "lazy";
-
-    galleryGrid.appendChild(image);
-
+  gallery.images.forEach((path,index) => {
+    const img = document.createElement("img");
+    img.src = base + path;
+    img.alt = gallery.title + " " + (index + 1);
+    img.loading = "lazy";
+    galleryGrid.appendChild(img);
   });
 
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-
+  galleryModal.classList.add("open");
+  galleryModal.scrollTop = 0;
   document.body.style.overflow = "hidden";
-  modal.scrollTop = 0;
-
-  closeButton.focus();
-
+  galleryClose.focus();
 }
 
 function closeGallery() {
-
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
-
+  galleryModal.classList.remove("open");
   document.body.style.overflow = "";
-
-  if (previousFocus) {
-    previousFocus.focus();
-  }
-
 }
 
-categoryGrid.addEventListener("click", function(event) {
-
-  const card =
-    event.target.closest("[data-gallery]");
-
-  if (!card) return;
-
-  event.preventDefault();
-
-  openGallery(card.dataset.gallery, card);
-
+document.querySelectorAll("[data-gallery]").forEach(card => {
+  card.addEventListener("click", () => {
+    openGallery(card.dataset.gallery);
+  });
 });
 
-closeButton.addEventListener("click", closeGallery);
+galleryClose.addEventListener("click", closeGallery);
 
-modal.addEventListener("click", function(event) {
-
-  if (event.target === modal) {
+galleryModal.addEventListener("click", event => {
+  if (event.target === galleryModal) {
     closeGallery();
   }
-
 });
 
-document.addEventListener("keydown", function(event) {
-
-  if (
-    event.key === "Escape" &&
-    modal.classList.contains("open")
-  ) {
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
     closeGallery();
   }
-
 });
 
+/* SLOW PHOTO ENTRANCE */
 
-/* =========================
-   MOBILE MENU
-========================= */
+const saveursSection = document.querySelector(".tg-saveurs");
 
-const header =
-  document.getElementById("siteHeader");
-
-const toggle =
-  document.getElementById("menuToggle");
-
-toggle.addEventListener("click", function() {
-
-  const opened =
-    header.classList.toggle("menu-open");
-
-  toggle.setAttribute(
-    "aria-expanded",
-    String(opened)
-  );
-
-});
-
-document.querySelectorAll(".nav a").forEach(function(link) {
-
-  link.addEventListener("click", function() {
-
-    header.classList.remove("menu-open");
-
-    toggle.setAttribute("aria-expanded", "false");
-
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        saveursSection.classList.add("is-visible");
+        observer.unobserve(saveursSection);
+      }
+    });
+  }, {
+    threshold: 0.12
   });
 
-});
-
-
-/* =========================
-   SLOW DOWNWARD ANIMATION
-
-   Starts when the section
-   enters the viewport.
-========================= */
-
-const saveursSection =
-  document.querySelector(".tg-saveurs");
-
-if (saveursSection) {
-
-  if (
-    "IntersectionObserver" in window &&
-    !window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
-  ) {
-
-    const saveursObserver =
-      new IntersectionObserver(function(entries, observer) {
-
-        entries.forEach(function(entry) {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("is-visible");
-
-            observer.unobserve(entry.target);
-
-          }
-
-        });
-
-      }, {
-        threshold: 0.12
-      });
-
-    saveursObserver.observe(saveursSection);
-
-  } else {
-
-    saveursSection.classList.add("is-visible");
-
-  }
-
+  observer.observe(saveursSection);
+} else {
+  saveursSection.classList.add("is-visible");
 }
-
 </script>
 
 </body>
