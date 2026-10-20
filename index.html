@@ -1,22 +1,22 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tatev Cakes | Elegant Cake Boutique</title>
+  <title>Tatev Gâteaux | Créations pâtissières</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --ivory: #fffaf4;
-      --rose: #b58f89;
       --dark: #493a36;
+      --cream: #faf7ef;
     }
 
     * {
@@ -30,7 +30,8 @@
     }
 
     body {
-      background: #f5e8e2;
+      background: var(--cream);
+      color: #231b17;
       font-family: 'Jost', sans-serif;
       overflow-x: hidden;
     }
@@ -53,7 +54,7 @@
       inset: 0;
       background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
       z-index: -2;
       animation: heroAppear 1.5s ease-out both;
@@ -65,7 +66,7 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(50, 32, 29, 0.13) 0%,
+        rgba(50, 32, 29, 0.13),
         transparent 35%
       );
       z-index: -1;
@@ -92,9 +93,7 @@
       align-items: start;
     }
 
-    /* =========================
-       LOGO ON LEFT
-    ========================= */
+    /* LOGO */
 
     .logo {
       display: block;
@@ -113,9 +112,7 @@
       mix-blend-mode: multiply;
     }
 
-    /* =========================
-       TWO ROW NAVIGATION
-    ========================= */
+    /* FRENCH NAVIGATION */
 
     .menu-area {
       width: 100%;
@@ -125,10 +122,10 @@
     .primary-menu {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 25px;
-      border-bottom: 1px solid rgba(255, 250, 244, 0.42);
+      justify-content: flex-end;
+      gap: clamp(20px, 4vw, 65px);
+      padding: 18px 0 25px;
+      border-bottom: 1px solid rgba(255, 250, 244, 0.6);
     }
 
     .primary-menu a {
@@ -142,32 +139,11 @@
       transition: opacity 0.3s ease;
     }
 
-    .secondary-menu {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 3vw, 55px);
-      padding-top: 20px;
-    }
-
-    .secondary-menu a {
-      color: var(--ivory);
-      text-decoration: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px;
-      font-style: italic;
-      font-weight: 400;
-      white-space: nowrap;
-      transition: opacity 0.3s ease;
-    }
-
-    .primary-menu a:hover,
-    .secondary-menu a:hover {
+    .primary-menu a:hover {
       opacity: 0.65;
     }
 
-    /* =========================
-       MOBILE MENU BUTTON
-    ========================= */
+    /* MOBILE MENU BUTTON */
 
     .mobile-toggle {
       display: none;
@@ -185,7 +161,6 @@
       height: 1px;
       margin: 7px auto;
       background: white;
-      transition: 0.3s ease;
     }
 
     @keyframes heroAppear {
@@ -198,6 +173,115 @@
         opacity: 1;
         transform: scale(1);
       }
+    }
+
+    /* =========================
+       SECOND SECTION
+       SWEET WELCOME
+    ========================= */
+
+    .welcome {
+      display: grid;
+      grid-template-columns: 1fr minmax(390px, 44%) 1fr;
+      min-height: 780px;
+      max-width: 1920px;
+      margin: auto;
+    }
+
+    /* SIDE PHOTOS */
+
+    .welcome-photo {
+      position: relative;
+      min-height: 780px;
+      overflow: hidden;
+    }
+
+    .welcome-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .welcome-photo.left img {
+      object-position: 50% 35%;
+    }
+
+    .welcome-photo.right img {
+      object-position: 50% 46%;
+    }
+
+    /* CENTER CONTENT */
+
+    .welcome-copy {
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 54px clamp(26px, 4.1vw, 80px);
+    }
+
+    .welcome-inner {
+      max-width: 650px;
+      width: 100%;
+    }
+
+    /* HANDWRITTEN TITLE */
+
+    .welcome h1 {
+      font-family: 'Allura', 'Brush Script MT', cursive;
+      font-size: clamp(65px, 6vw, 112px);
+      font-weight: 400;
+      line-height: 0.95;
+      margin: 0 0 30px;
+      white-space: nowrap;
+    }
+
+    /* TEXT WITHOUT EMPTY PARAGRAPHS */
+
+    .welcome p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(19px, 1.42vw, 25px);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.015em;
+      margin: 0;
+      padding: 0;
+    }
+
+    .welcome-cta {
+      display: inline-block;
+      margin-top: 46px;
+      color: #251914;
+      text-decoration: none;
+      border-bottom: 1px solid #a68c7f;
+      padding-bottom: 7px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+    }
+
+    .welcome-cta:hover {
+      opacity: 0.65;
+    }
+
+    /* =========================
+       NEXT SECTIONS
+    ========================= */
+
+    .section-placeholder {
+      padding: 85px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .section-placeholder h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 48px;
+      font-weight: 400;
     }
 
     /* =========================
@@ -218,13 +302,40 @@
         font-size: 10px;
         letter-spacing: 1.2px;
       }
+    }
 
-      .secondary-menu {
-        gap: 20px;
+    @media (max-width: 900px) {
+      .welcome {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .secondary-menu a {
-        font-size: 17px;
+      .welcome-copy {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 60px 7%;
+      }
+
+      .welcome-photo {
+        min-height: 420px;
+      }
+
+      .welcome-photo.left {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .welcome-photo.right {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .welcome h1 {
+        white-space: normal;
+        font-size: 75px;
+      }
+
+      .welcome p {
+        font-size: 23px;
       }
     }
 
@@ -236,10 +347,6 @@
       .hero {
         min-height: 600px;
         height: 100svh;
-      }
-
-      .hero-background {
-        background-position: center center;
       }
 
       .header {
@@ -284,35 +391,46 @@
         display: block;
       }
 
-      .primary-menu,
-      .secondary-menu {
+      .primary-menu {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 22px;
-      }
-
-      .primary-menu {
-        padding-bottom: 25px;
-        border-bottom: 1px solid rgba(73,58,54,.15);
-      }
-
-      .secondary-menu {
-        padding-top: 25px;
-      }
-
-      .primary-menu a,
-      .secondary-menu a {
-        color: var(--dark);
-        text-shadow: none;
+        border: 0;
+        padding: 0;
       }
 
       .primary-menu a {
+        color: var(--dark);
         font-size: 12px;
       }
 
-      .secondary-menu a {
-        font-size: 23px;
+      .welcome-photo {
+        min-height: 350px;
+      }
+
+      .welcome-copy {
+        padding: 55px 7%;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .welcome-photo {
+        min-height: 300px;
+      }
+
+      .welcome h1 {
+        font-size: 62px;
+        margin-bottom: 23px;
+      }
+
+      .welcome p {
+        font-size: 21px;
+        line-height: 1.2;
+      }
+
+      .welcome-cta {
+        margin-top: 30px;
       }
     }
 
@@ -328,6 +446,10 @@
 
   <main>
 
+    <!-- =========================
+         FIRST SECTION — HERO
+    ========================= -->
+
     <section class="hero" id="home">
 
       <div class="hero-background"></div>
@@ -336,29 +458,21 @@
 
         <div class="header-inner">
 
-          <!-- LEFT LOGO -->
-          <a href="#home" class="logo" aria-label="Tatev Cakes Home">
+          <!-- NEW LOGO -->
+          <a href="#home" class="logo" aria-label="Tatev Gâteaux — Accueil">
             <img
-              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719"
-              alt="Tatev Cakes"
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
+              alt="Tatev Gâteaux"
             >
           </a>
 
-          <!-- RIGHT NAVIGATION -->
+          <!-- FRENCH MENU -->
           <div class="menu-area" id="menuArea">
 
-            <nav class="primary-menu" aria-label="Main menu">
-              <a href="#home">Home</a>
-              <a href="#design-process">Design Process</a>
-              <a href="#portfolio">Portfolio</a>
-              <a href="#shop">Shop</a>
-              <a href="#enquire">Enquire</a>
-            </nav>
-
-            <nav class="secondary-menu" aria-label="Additional menu">
-              <a href="#about">About</a>
-              <a href="#menu">The Menu</a>
-              <a href="#faq">Frequently Asked Questions</a>
+            <nav class="primary-menu" aria-label="Navigation principale">
+              <a href="#categories">Catégories</a>
+              <a href="#mon-histoire">Mon Histoire</a>
+              <a href="#formations">Formations</a>
             </nav>
 
           </div>
@@ -368,7 +482,7 @@
             class="mobile-toggle"
             id="menuToggle"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Ouvrir le menu"
             aria-controls="menuArea"
             aria-expanded="false"
           >
@@ -381,6 +495,69 @@
 
       </header>
 
+    </section>
+
+    <!-- =========================
+         SECOND SECTION — WELCOME
+    ========================= -->
+
+    <section
+      class="welcome"
+      id="mon-histoire"
+      aria-label="Bienvenue chez Tatev Gâteaux"
+    >
+
+      <!-- LEFT PHOTO: TATEV -->
+      <div class="welcome-photo left">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/f87d23e3-9d73-4e39-9271-37d6425430df.jpg?v=1792518863"
+          alt="Tatev avec un gâteau rose"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- CENTER TEXT -->
+      <div class="welcome-copy">
+
+        <div class="welcome-inner">
+
+          <h1>Un doux bienvenue</h1>
+
+          <p>Bienvenue dans mon univers, où chaque gâteau raconte une histoire et chaque détail est imaginé avec amour. Je suis Tatev, passionnée par l’art de la pâtisserie et par la beauté des moments que nous partageons. À travers Tatev Gâteaux, je donne vie à des créations uniques, où les saveurs délicates rencontrent l’élégance et la créativité. Des fleurs raffinées aux finitions les plus minutieuses, chaque gâteau est pensé pour rendre vos célébrations inoubliables. Plus qu’un dessert, c’est une émotion, un souvenir précieux et une petite part de bonheur que j’ai le plaisir de créer pour vous.</p>
+
+          <a class="welcome-cta" href="#categories">
+            Découvrir mon univers
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT PHOTO: WEDDING CAKE -->
+      <div class="welcome-photo right">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/MMM.jpg?v=1792518864"
+          alt="Gâteau de cérémonie à étages"
+          loading="lazy"
+        >
+      </div>
+
+    </section>
+
+    <!-- =========================
+         FUTURE CATEGORIES SECTION
+    ========================= -->
+
+    <section class="section-placeholder" id="categories">
+      <h2>Catégories</h2>
+    </section>
+
+    <!-- =========================
+         FUTURE FORMATIONS SECTION
+    ========================= -->
+
+    <section class="section-placeholder" id="formations">
+      <h2>Formations</h2>
     </section>
 
   </main>
