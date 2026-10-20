@@ -14,7 +14,6 @@
 <style>
 :root {
   --ink: #45323e;
-  --cream: #faf3ed;
 }
 
 * {
@@ -50,9 +49,7 @@ a {
   text-decoration: none;
 }
 
-/* =========================================
-   HEADER
-========================================= */
+/* HEADER */
 
 .site-header {
   position: absolute;
@@ -101,9 +98,7 @@ a {
   cursor: pointer;
 }
 
-/* =========================================
-   HERO — NO CENTER TEXT
-========================================= */
+/* HERO */
 
 .hero {
   width: 100%;
@@ -114,9 +109,7 @@ a {
     center / cover no-repeat;
 }
 
-/* =========================================
-   MON HISTOIRE — OVERLAPPING CIRCLE
-========================================= */
+/* MON HISTOIRE */
 
 .story {
   position: relative;
@@ -127,7 +120,6 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
   background:
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/images_20e9066c-7731-4d9c-967b-2bf985b6c843.jpg?v=1792528341")
     center / cover no-repeat;
@@ -137,7 +129,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 244, 238, .12);
+  background: rgba(255,244,238,.12);
   pointer-events: none;
 }
 
@@ -150,8 +142,6 @@ a {
   justify-content: flex-end;
 }
 
-/* Cream text panel on the right */
-
 .story-panel {
   position: relative;
   z-index: 1;
@@ -161,8 +151,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: rgba(255, 250, 245, .87);
+  background: rgba(255,250,245,.87);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -220,22 +209,18 @@ a {
   stroke-width: 1.4;
 }
 
-/* The circle intentionally overlaps the text panel */
-
 .story-circle {
   position: absolute;
   z-index: 3;
   top: 50%;
   left: 1%;
   transform: translateY(-50%);
-
   width: 46%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-
   background: #e8d4cb;
-  box-shadow: 0 18px 50px rgba(56, 30, 37, .13);
+  box-shadow: 0 18px 50px rgba(56,30,37,.13);
 }
 
 .story-circle img {
@@ -245,18 +230,13 @@ a {
   object-position: center;
 }
 
-/* =========================================
-   CATEGORIES
-========================================= */
+/* CATEGORIES */
 
 .tg-categories {
   position: relative;
   padding: 110px 5% 125px;
   background:
-    linear-gradient(
-      rgba(255,246,246,.77),
-      rgba(255,246,246,.77)
-    ),
+    linear-gradient(rgba(255,246,246,.77),rgba(255,246,246,.77)),
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107")
     center / cover no-repeat;
 }
@@ -313,10 +293,7 @@ a {
   content: "";
   position: absolute;
   inset: 45% 0 0;
-  background: linear-gradient(
-    transparent,
-    rgba(34,21,28,.42)
-  );
+  background: linear-gradient(transparent,rgba(34,21,28,.42));
   pointer-events: none;
 }
 
@@ -335,9 +312,7 @@ a {
   line-height: 1.1;
 }
 
-/* =========================================
-   GALLERY MODAL
-========================================= */
+/* GALLERY */
 
 .gallery-modal {
   position: fixed;
@@ -392,9 +367,7 @@ a {
   background: #f0e9e6;
 }
 
-/* =========================================
-   200px WHITE GAP
-========================================= */
+/* WHITE GAP */
 
 .saveurs-separator {
   width: 100%;
@@ -402,9 +375,7 @@ a {
   background: #fff;
 }
 
-/* =========================================
-   NOS SAVEURS
-========================================= */
+/* NOS SAVEURS */
 
 .tg-saveurs {
   position: relative;
@@ -423,7 +394,6 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-
   background-image:
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651");
   background-repeat: repeat;
@@ -563,31 +533,45 @@ a {
 }
 
 /* =========================================
-   FORMATIONS
+   FORMATIONS — ORIGINAL DESIGN IMAGE
 ========================================= */
 
 .formations {
-  padding: 110px 20px 140px;
-  text-align: center;
-  background: #fffaf7;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #f8eee9;
 }
 
-.formations h2 {
-  margin: 10px 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 65px;
-  font-weight: 400;
+.formations-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
 }
 
-.formations p {
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1px;
+/* The CTA is positioned over the button
+   already visible inside the supplied image. */
+
+.formations-cta {
+  position: absolute;
+  z-index: 2;
+  left: 45.9%;
+  top: 87.4%;
+  width: 28.1%;
+  height: 7.2%;
+  display: block;
+  cursor: pointer;
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+.formations-cta:focus-visible {
+  outline: 3px solid #652c48;
+  outline-offset: 4px;
+}
+
+/* FOOTER */
 
 .footer {
   padding: 42px 20px;
@@ -606,9 +590,7 @@ a {
   text-transform: uppercase;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* TABLET */
 
 @media (max-width: 1200px) {
 
@@ -666,9 +648,7 @@ a {
   }
 }
 
-/* =========================================
-   SMALL TABLET
-========================================= */
+/* SMALL TABLET */
 
 @media (max-width: 850px) {
 
@@ -713,7 +693,6 @@ a {
     top: auto;
     left: auto;
     transform: none;
-
     width: min(75vw, 450px);
     margin-bottom: -85px;
     align-self: flex-start;
@@ -752,9 +731,7 @@ a {
   }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 550px) {
 
@@ -894,9 +871,7 @@ document.documentElement.classList.add("js");
 
 <body>
 
-<!-- =========================================
-     HEADER
-========================================= -->
+<!-- HEADER -->
 
 <header class="site-header">
 
@@ -923,21 +898,15 @@ document.documentElement.classList.add("js");
 
 </header>
 
-<!-- =========================================
-     HERO
-========================================= -->
+<!-- HERO -->
 
 <section class="hero" id="accueil"></section>
 
-<!-- =========================================
-     MON HISTOIRE
-========================================= -->
+<!-- MON HISTOIRE -->
 
 <section class="story" id="mon-histoire">
 
   <div class="story-layout">
-
-    <!-- CREAM TEXT PANEL -->
 
     <div class="story-panel">
 
@@ -1002,8 +971,6 @@ document.documentElement.classList.add("js");
 
     </div>
 
-    <!-- OVERLAPPING CIRCULAR PHOTO -->
-
     <div class="story-circle">
 
       <img
@@ -1017,9 +984,7 @@ document.documentElement.classList.add("js");
 
 </section>
 
-<!-- =========================================
-     CATEGORIES
-========================================= -->
+<!-- CATEGORIES -->
 
 <section class="tg-categories" id="categories">
 
@@ -1095,9 +1060,7 @@ document.documentElement.classList.add("js");
 
 </section>
 
-<!-- =========================================
-     GALLERY MODAL
-========================================= -->
+<!-- GALLERY MODAL -->
 
 <div
   class="gallery-modal"
@@ -1123,15 +1086,11 @@ document.documentElement.classList.add("js");
 
 </div>
 
-<!-- =========================================
-     WHITE GAP
-========================================= -->
+<!-- WHITE GAP -->
 
 <div class="saveurs-separator" aria-hidden="true"></div>
 
-<!-- =========================================
-     NOS SAVEURS
-========================================= -->
+<!-- NOS SAVEURS -->
 
 <section class="tg-saveurs" id="saveurs">
 
@@ -1141,151 +1100,84 @@ document.documentElement.classList.add("js");
 
     <div class="saveurs-grid">
 
-      <!-- VANILLE CITRON -->
-
       <article class="saveur-card">
-
         <img
           class="saveur-photo"
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549"
           alt="Vanille Citron"
           loading="lazy">
-
         <div class="saveur-card-content">
-
           <h3>Vanille Citron</h3>
-
           <span class="saveur-card-line"></span>
-
-          <p>
-            Une crème vanillée douce et
-            une touche de citron frais.
-          </p>
-
+          <p>Une crème vanillée douce et une touche de citron frais.</p>
         </div>
-
       </article>
 
-      <!-- CHOCOLAT -->
-
       <article class="saveur-card">
-
         <img
           class="saveur-photo"
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549"
           alt="Chocolat"
           loading="lazy">
-
         <div class="saveur-card-content">
-
           <h3>Chocolat</h3>
-
           <span class="saveur-card-line"></span>
-
-          <p>
-            Un biscuit moelleux et une
-            ganache au chocolat fondante.
-          </p>
-
+          <p>Un biscuit moelleux et une ganache au chocolat fondante.</p>
         </div>
-
       </article>
 
-      <!-- FRUITS ROUGES -->
-
       <article class="saveur-card">
-
         <img
           class="saveur-photo"
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549"
           alt="Fruits Rouges"
           loading="lazy">
-
         <div class="saveur-card-content">
-
           <h3>Fruits Rouges</h3>
-
           <span class="saveur-card-line"></span>
-
-          <p>
-            Une crème légère et des fruits
-            rouges délicatement acidulés.
-          </p>
-
+          <p>Une crème légère et des fruits rouges délicatement acidulés.</p>
         </div>
-
       </article>
 
-      <!-- DUBAI -->
-
       <article class="saveur-card">
-
         <img
           class="saveur-photo"
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554"
           alt="Dubaï"
           loading="lazy">
-
         <div class="saveur-card-content">
-
           <h3>Dubaï</h3>
-
           <span class="saveur-card-line"></span>
-
-          <p>
-            Pistache, chocolat et
-            kadaïf croustillant.
-          </p>
-
+          <p>Pistache, chocolat et kadaïf croustillant.</p>
         </div>
-
       </article>
 
-      <!-- CARAMEL -->
-
       <article class="saveur-card">
-
         <img
           class="saveur-photo"
           src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555"
           alt="Caramel"
           loading="lazy">
-
         <div class="saveur-card-content">
-
           <h3>Caramel</h3>
-
           <span class="saveur-card-line"></span>
-
-          <p>
-            Un caramel onctueux et
-            une crème délicate.
-          </p>
-
+          <p>Un caramel onctueux et une crème délicate.</p>
         </div>
-
       </article>
 
     </div>
 
-    <!-- SAVEURS TITLE AND HEART -->
-
     <div class="saveurs-heading">
 
       <span>NOS</span>
-
       <h2>SAVEURS</h2>
 
       <div class="saveurs-ornament" aria-hidden="true">
-
         <span class="ornament-line"></span>
-
         <svg viewBox="0 0 24 24">
           <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
         </svg>
-
         <span class="ornament-line"></span>
-
       </div>
 
     </div>
@@ -1295,26 +1187,20 @@ document.documentElement.classList.add("js");
 </section>
 
 <!-- =========================================
-     FORMATIONS
+     FORMATIONS — AFTER NOS SAVEURS
 ========================================= -->
 
 <section class="formations" id="formations">
 
-  <div class="section-eyebrow">
-    L'art de la pâtisserie
-  </div>
-
-  <h2>Formations</h2>
-
-  <p>
-    Un univers de créativité, de passion et de savoir-faire.
-  </p>
+  <img
+    class="formations-artwork"
+    src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/1f90630d-1a06-4231-8879-937211409de5.jpg?v=1792529011"
+    alt="Les Ateliers de Tatev — Formations de pâtisserie en ligne et en présentiel"
+    loading="lazy">
 
 </section>
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -1326,42 +1212,24 @@ document.documentElement.classList.add("js");
 
 <script>
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* MOBILE MENU */
 
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
 
 menuToggle.addEventListener("click", () => {
-
   const opened = siteNav.classList.toggle("open");
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    String(opened)
-  );
-
+  menuToggle.setAttribute("aria-expanded", String(opened));
 });
 
 siteNav.querySelectorAll("a").forEach(link => {
-
   link.addEventListener("click", () => {
-
     siteNav.classList.remove("open");
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
+    menuToggle.setAttribute("aria-expanded", "false");
   });
-
 });
 
-/* =========================================
-   GALLERY DATA
-========================================= */
+/* GALLERY DATA */
 
 const base =
   "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
@@ -1474,21 +1342,12 @@ const galleries = {
 
 };
 
-/* =========================================
-   GALLERY OPEN / CLOSE
-========================================= */
+/* GALLERY OPEN / CLOSE */
 
-const galleryModal =
-  document.getElementById("galleryModal");
-
-const galleryTitle =
-  document.getElementById("galleryTitle");
-
-const galleryGrid =
-  document.getElementById("galleryGrid");
-
-const galleryClose =
-  document.getElementById("galleryClose");
+const galleryModal = document.getElementById("galleryModal");
+const galleryTitle = document.getElementById("galleryTitle");
+const galleryGrid = document.getElementById("galleryGrid");
+const galleryClose = document.getElementById("galleryClose");
 
 let previousFocus = null;
 
@@ -1499,9 +1358,7 @@ function openGallery(key, trigger) {
   if (!gallery) return;
 
   previousFocus = trigger;
-
   galleryTitle.textContent = gallery.title;
-
   galleryGrid.replaceChildren();
 
   gallery.images.forEach((path, index) => {
@@ -1509,9 +1366,7 @@ function openGallery(key, trigger) {
     const img = document.createElement("img");
 
     img.src = base + path;
-
     img.alt = gallery.title + " " + (index + 1);
-
     img.loading = index < 6 ? "eager" : "lazy";
 
     galleryGrid.appendChild(img);
@@ -1519,65 +1374,40 @@ function openGallery(key, trigger) {
   });
 
   galleryModal.classList.add("open");
-
   galleryModal.scrollTop = 0;
-
   document.body.classList.add("modal-open");
-
   galleryClose.focus();
-
 }
 
 function closeGallery() {
 
-  if (!galleryModal.classList.contains("open")) {
-    return;
-  }
+  if (!galleryModal.classList.contains("open")) return;
 
   galleryModal.classList.remove("open");
-
   document.body.classList.remove("modal-open");
 
-  if (previousFocus) {
-    previousFocus.focus();
-  }
-
+  if (previousFocus) previousFocus.focus();
 }
 
 document.querySelectorAll("[data-gallery]").forEach(card => {
-
   card.addEventListener("click", () => {
-
     openGallery(card.dataset.gallery, card);
-
   });
-
 });
 
 galleryClose.addEventListener("click", closeGallery);
 
 galleryModal.addEventListener("click", event => {
-
-  if (event.target === galleryModal) {
-    closeGallery();
-  }
-
+  if (event.target === galleryModal) closeGallery();
 });
 
 document.addEventListener("keydown", event => {
-
-  if (event.key === "Escape") {
-    closeGallery();
-  }
-
+  if (event.key === "Escape") closeGallery();
 });
 
-/* =========================================
-   SAVEURS SCROLL ANIMATION
-========================================= */
+/* SAVEURS ANIMATION */
 
-const saveursSection =
-  document.querySelector(".tg-saveurs");
+const saveursSection = document.querySelector(".tg-saveurs");
 
 if (saveursSection) {
 
@@ -1592,11 +1422,8 @@ if (saveursSection) {
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
-
           entry.target.classList.add("is-visible");
-
           observer.unobserve(entry.target);
-
         }
 
       });
@@ -1612,7 +1439,6 @@ if (saveursSection) {
     saveursSection.classList.add("is-visible");
 
   }
-
 }
 
 </script>
