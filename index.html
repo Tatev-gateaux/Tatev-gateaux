@@ -5,19 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tatev Gâteaux | Créations sur mesure</title>
+<title>Tatev Gâteaux | Créations pâtissières</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ================= GENERAL ================= */
-
 :root {
-  --cream: #fffaf7;
   --ink: #45323e;
-  --plum: #624563;
+  --cream: #faf3ed;
 }
 
 * {
@@ -30,18 +27,13 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Jost', sans-serif;
   color: var(--ink);
-  background: #ffffff;
+  font-family: 'Jost', sans-serif;
+  background: #fff;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
+body.modal-open {
+  overflow: hidden;
 }
 
 img {
@@ -49,19 +41,30 @@ img {
   max-width: 100%;
 }
 
-/* ================= HEADER ================= */
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
   width: 100%;
+  z-index: 30;
   padding: 22px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 25px;
 }
 
 .site-logo img {
@@ -90,109 +93,161 @@ img {
 
 .menu-toggle {
   display: none;
-  background: transparent;
+  padding: 6px;
   border: 0;
-  font-size: 29px;
+  background: transparent;
   color: var(--ink);
+  font-size: 30px;
   cursor: pointer;
 }
 
-/* ================= HERO ================= */
+/* =========================================
+   HERO — NO CENTER TEXT
+========================================= */
 
 .hero {
-  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image:
-    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  min-height: 100svh;
+  background:
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078")
+    center / cover no-repeat;
 }
 
-/* ==============================================
-   MON HISTOIRE — FULL WIDTH EDITORIAL DESIGN
-   ONLY THIS SECTION HAS BEEN CHANGED
-============================================== */
+/* =========================================
+   MON HISTOIRE — OVERLAPPING CIRCLE
+========================================= */
 
 .story {
+  position: relative;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  background: #f9f2ec;
-}
-
-.story-grid {
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-  width: 100%;
-  max-width: none;
-  min-height: 550px;
-  margin: 0;
-  padding: 0;
-  align-items: stretch;
-}
-
-.story-photo {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: 550px;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.story-center {
-  width: 100%;
-  height: 550px;
-  padding: 32px 7%;
-  background: #faf3ed;
+  min-height: 780px;
+  padding: 100px 5%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  overflow: hidden;
+
+  background:
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/images_20e9066c-7731-4d9c-967b-2bf985b6c843.jpg?v=1792528341")
+    center / cover no-repeat;
+}
+
+.story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 244, 238, .12);
+  pointer-events: none;
+}
+
+.story-layout {
+  position: relative;
+  width: min(100%, 1480px);
+  min-height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Cream text panel on the right */
+
+.story-panel {
+  position: relative;
+  z-index: 1;
+  width: 67%;
+  min-height: 620px;
+  padding: 55px 65px 55px 185px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 250, 245, .87);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .story-content {
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 630px;
+  text-align: center;
 }
 
-.story-center h2 {
-  margin: 0 0 9px;
+.story-title {
+  margin: 0 0 25px;
   font-family: 'Allura', cursive;
-  font-size: clamp(54px, 5.5vw, 92px);
+  font-size: clamp(65px, 6.5vw, 105px);
   font-weight: 400;
   line-height: 1;
-  color: #49343e;
+  color: #604754;
 }
 
-.story-eyebrow {
-  display: block;
-  margin-bottom: 27px;
-  font-family: 'Jost', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 3.5px;
-  line-height: 1.7;
-  text-transform: uppercase;
-  color: #49343e;
-}
-
-.story-center p {
-  max-width: 670px;
-  margin: 0 auto;
+.story-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 1.8vw, 29px);
+  font-size: clamp(20px, 1.55vw, 25px);
   font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: .1px;
-  text-align: center;
-  color: #49343e;
+  line-height: 1.26;
+  color: #493640;
 }
 
-/* ================= CATEGORIES ================= */
+.story-text p {
+  margin: 0 0 15px;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-heart {
+  margin: 23px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.story-heart span {
+  width: 85px;
+  height: 1px;
+  background: #775e6d;
+}
+
+.story-heart svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: #775e6d;
+  stroke-width: 1.4;
+}
+
+/* The circle intentionally overlaps the text panel */
+
+.story-circle {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+
+  width: 46%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: #e8d4cb;
+  box-shadow: 0 18px 50px rgba(56, 30, 37, .13);
+}
+
+.story-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   CATEGORIES
+========================================= */
 
 .tg-categories {
   position: relative;
@@ -219,11 +274,11 @@ img {
 }
 
 .section-title {
+  margin: 10px 0 52px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(46px, 6vw, 76px);
   font-weight: 400;
-  margin: 10px 0 52px;
 }
 
 .categories-grid {
@@ -234,14 +289,13 @@ img {
 
 .category-card {
   position: relative;
-  display: block;
-  border: 0;
-  padding: 0;
   width: 100%;
   height: 420px;
+  padding: 0;
+  border: 0;
   background: #eee5e3;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .category-card img {
@@ -281,7 +335,9 @@ img {
   line-height: 1.1;
 }
 
-/* ================= GALLERY ================= */
+/* =========================================
+   GALLERY MODAL
+========================================= */
 
 .gallery-modal {
   position: fixed;
@@ -336,15 +392,19 @@ img {
   background: #f0e9e6;
 }
 
-/* ================= WHITE GAP ================= */
+/* =========================================
+   200px WHITE GAP
+========================================= */
 
 .saveurs-separator {
   width: 100%;
   height: 200px;
-  background: #ffffff;
+  background: #fff;
 }
 
-/* ================= NOS SAVEURS ================= */
+/* =========================================
+   NOS SAVEURS
+========================================= */
 
 .tg-saveurs {
   position: relative;
@@ -352,17 +412,18 @@ img {
   width: 100%;
   padding: 0 20px 45px;
   overflow: hidden;
-  background: #ffffff;
-  color: #ffffff;
+  background: #fff;
+  color: #fff;
 }
 
 .tg-saveurs-velvet {
   position: absolute;
+  z-index: 0;
   top: 150px;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+
   background-image:
     url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651");
   background-repeat: repeat;
@@ -371,6 +432,8 @@ img {
 }
 
 .saveurs-inner {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -494,12 +557,14 @@ img {
 .saveurs-ornament svg {
   width: 23px;
   height: 23px;
-  stroke: #ffffff;
+  stroke: #fff;
   stroke-width: 1.5;
   fill: none;
 }
 
-/* ================= FORMATIONS ================= */
+/* =========================================
+   FORMATIONS
+========================================= */
 
 .formations {
   padding: 110px 20px 140px;
@@ -520,7 +585,9 @@ img {
   letter-spacing: 1px;
 }
 
-/* ================= FOOTER ================= */
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
   padding: 42px 20px;
@@ -539,9 +606,39 @@ img {
   text-transform: uppercase;
 }
 
-/* ================= TABLET ================= */
+/* =========================================
+   TABLET
+========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+
+  .story {
+    min-height: 720px;
+    padding: 75px 3%;
+  }
+
+  .story-layout {
+    min-height: 620px;
+  }
+
+  .story-panel {
+    width: 70%;
+    min-height: 590px;
+    padding: 45px 35px 45px 145px;
+  }
+
+  .story-circle {
+    width: 45%;
+    left: 0;
+  }
+
+  .story-title {
+    font-size: 75px;
+  }
+
+  .story-text {
+    font-size: 21px;
+  }
 
   .categories-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -549,35 +646,6 @@ img {
 
   .category-card {
     height: 360px;
-  }
-
-  /* MON HISTOIRE TABLET */
-  .story-grid {
-    grid-template-columns: 25% 50% 25%;
-    min-height: 500px;
-  }
-
-  .story-photo,
-  .story-center {
-    height: 500px;
-  }
-
-  .story-center {
-    padding: 25px 5%;
-  }
-
-  .story-center h2 {
-    font-size: 64px;
-  }
-
-  .story-eyebrow {
-    font-size: 9px;
-    margin-bottom: 18px;
-  }
-
-  .story-center p {
-    font-size: 21px;
-    line-height: 1.42;
   }
 
   .saveurs-grid {
@@ -598,34 +666,11 @@ img {
   }
 }
 
-/* ================= SMALL TABLET ================= */
+/* =========================================
+   SMALL TABLET
+========================================= */
 
-@media (max-width: 800px) {
-
-  .story-grid {
-    grid-template-columns: 1fr 1fr;
-    min-height: 0;
-  }
-
-  .story-photo {
-    height: 350px;
-  }
-
-  .story-center {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    height: auto;
-    padding: 60px 8%;
-  }
-
-  .story-center h2 {
-    font-size: 76px;
-  }
-
-  .story-center p {
-    font-size: 25px;
-    line-height: 1.5;
-  }
+@media (max-width: 850px) {
 
   .site-header {
     align-items: flex-start;
@@ -651,6 +696,44 @@ img {
     display: flex;
   }
 
+  .story {
+    min-height: auto;
+    padding: 80px 5%;
+  }
+
+  .story-layout {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .story-circle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: min(75vw, 450px);
+    margin-bottom: -85px;
+    align-self: flex-start;
+  }
+
+  .story-panel {
+    width: 100%;
+    min-height: 0;
+    padding: 125px 8% 55px;
+  }
+
+  .story-title {
+    font-size: 80px;
+  }
+
+  .story-text {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
   .saveurs-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px 15px;
@@ -669,7 +752,9 @@ img {
   }
 }
 
-/* ================= MOBILE ================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 550px) {
 
@@ -679,35 +764,39 @@ img {
 
   .hero {
     min-height: 85svh;
-    background-position: center;
   }
 
-  /* MON HISTOIRE MOBILE */
-  .story-grid {
-    grid-template-columns: 1fr 1fr;
+  .story {
+    padding: 55px 14px 65px;
   }
 
-  .story-photo {
-    height: 270px;
+  .story-circle {
+    width: min(80vw, 330px);
+    margin-left: 0;
+    margin-bottom: -60px;
   }
 
-  .story-center {
-    padding: 45px 22px 55px;
+  .story-panel {
+    padding: 90px 20px 45px;
+    background: rgba(255,250,245,.9);
   }
 
-  .story-center h2 {
-    font-size: clamp(53px, 13vw, 70px);
-  }
-
-  .story-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2.2px;
+  .story-title {
+    font-size: 64px;
     margin-bottom: 20px;
   }
 
-  .story-center p {
-    font-size: 21px;
-    line-height: 1.48;
+  .story-text {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+
+  .story-text p {
+    margin-bottom: 15px;
+  }
+
+  .story-heart span {
+    width: 65px;
   }
 
   .categories-grid {
@@ -795,7 +884,6 @@ img {
     transition: none;
   }
 }
-
 </style>
 
 <script>
@@ -806,7 +894,9 @@ document.documentElement.classList.add("js");
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
 <header class="site-header">
 
@@ -833,63 +923,103 @@ document.documentElement.classList.add("js");
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero" id="accueil"></section>
 
-<!-- ================= MON HISTOIRE ================= -->
+<!-- =========================================
+     MON HISTOIRE
+========================================= -->
 
 <section class="story" id="mon-histoire">
 
-  <div class="story-grid">
+  <div class="story-layout">
 
-    <!-- LEFT IMAGE -->
+    <!-- CREAM TEXT PANEL -->
 
-    <img
-      class="story-photo"
-      src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/f87d23e3-9d73-4e39-9271-37d6425430df.jpg?v=1792518863"
-      alt="Création pâtissière de Tatev"
-      loading="lazy">
-
-    <!-- CENTER TEXT -->
-
-    <div class="story-center">
+    <div class="story-panel">
 
       <div class="story-content">
 
-        <h2>Un doux bienvenue</h2>
+        <h2 class="story-title">Mon Histoire</h2>
 
-        <span class="story-eyebrow">
-          Bienvenue dans mon univers
-        </span>
+        <div class="story-text">
 
-        <p>
-          Bienvenue dans mon univers gourmand, où chaque gâteau
-          est imaginé avec passion, délicatesse et amour du détail.
-          À travers mes créations, je souhaite apporter une touche
-          de douceur à vos plus beaux moments et transformer chaque
-          occasion en un souvenir inoubliable. Chaque gâteau est
-          unique, pensé spécialement pour vous, avec le cœur
-          et le plaisir de créer.
-        </p>
+          <p>
+            Je suis née et j’ai grandi dans une famille où
+            la cuisine était bien plus qu’un métier :
+            c’était une passion. Avec des parents cuisiniers
+            et une tante pâtissière, j’ai grandi dans un
+            univers de saveurs et de créativité.
+          </p>
+
+          <p>
+            Pourtant, la vie m’a d’abord menée sur un autre
+            chemin. Après quatre années d’études universitaires,
+            je suis devenue traductrice d’allemand.
+          </p>
+
+          <p>
+            Mais au fond de moi, cette envie de créer ne m’a
+            jamais quittée. C’est en arrivant en France que
+            j’ai compris une chose essentielle : je pouvais
+            vivre sans beaucoup de choses, mais pas sans créer.
+          </p>
+
+          <p>
+            Alors, j’ai osé changer de vie, repartir de zéro
+            et suivre cette passion qui m’habitait depuis toujours.
+          </p>
+
+          <p>
+            Aujourd’hui, la pâtisserie est devenue ma plus belle
+            façon de m’exprimer.
+          </p>
+
+          <p>
+            Avant, je traduisais les mots. Aujourd’hui, je
+            traduis mes émotions en saveurs, mes idées en
+            créations et mes rêves en pâtisseries. 🤍
+          </p>
+
+        </div>
+
+        <div class="story-heart" aria-hidden="true">
+
+          <span></span>
+
+          <svg viewBox="0 0 24 24">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+          </svg>
+
+          <span></span>
+
+        </div>
 
       </div>
 
     </div>
 
-    <!-- RIGHT IMAGE -->
+    <!-- OVERLAPPING CIRCULAR PHOTO -->
 
-    <img
-      class="story-photo"
-      src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/MMM.jpg?v=1792518864"
-      alt="Gâteau décoré"
-      loading="lazy">
+    <div class="story-circle">
+
+      <img
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/b8a58664-449a-4cb8-9559-81ad22a04d82.jpg?v=1792528178"
+        alt="Tatev Gâteaux — Mon Histoire"
+        loading="lazy">
+
+    </div>
 
   </div>
 
 </section>
 
-<!-- ================= CATEGORIES ================= -->
+<!-- =========================================
+     CATEGORIES
+========================================= -->
 
 <section class="tg-categories" id="categories">
 
@@ -965,7 +1095,9 @@ document.documentElement.classList.add("js");
 
 </section>
 
-<!-- ================= GALLERY MODAL ================= -->
+<!-- =========================================
+     GALLERY MODAL
+========================================= -->
 
 <div
   class="gallery-modal"
@@ -991,11 +1123,15 @@ document.documentElement.classList.add("js");
 
 </div>
 
-<!-- ================= WHITE GAP ================= -->
+<!-- =========================================
+     WHITE GAP
+========================================= -->
 
 <div class="saveurs-separator" aria-hidden="true"></div>
 
-<!-- ================= NOS SAVEURS ================= -->
+<!-- =========================================
+     NOS SAVEURS
+========================================= -->
 
 <section class="tg-saveurs" id="saveurs">
 
@@ -1132,7 +1268,7 @@ document.documentElement.classList.add("js");
 
     </div>
 
-    <!-- NOS SAVEURS TITLE AND HEART -->
+    <!-- SAVEURS TITLE AND HEART -->
 
     <div class="saveurs-heading">
 
@@ -1158,7 +1294,9 @@ document.documentElement.classList.add("js");
 
 </section>
 
-<!-- ================= FORMATIONS ================= -->
+<!-- =========================================
+     FORMATIONS
+========================================= -->
 
 <section class="formations" id="formations">
 
@@ -1174,7 +1312,9 @@ document.documentElement.classList.add("js");
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer class="footer">
 
@@ -1186,24 +1326,42 @@ document.documentElement.classList.add("js");
 
 <script>
 
-/* ================= MOBILE MENU ================= */
+/* =========================================
+   MOBILE MENU
+========================================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
 
 menuToggle.addEventListener("click", () => {
+
   const opened = siteNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(opened));
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(opened)
+  );
+
 });
 
 siteNav.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     siteNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
   });
+
 });
 
-/* ================= GALLERY DATA ================= */
+/* =========================================
+   GALLERY DATA
+========================================= */
 
 const base =
   "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
@@ -1316,12 +1474,21 @@ const galleries = {
 
 };
 
-/* ================= GALLERY OPEN / CLOSE ================= */
+/* =========================================
+   GALLERY OPEN / CLOSE
+========================================= */
 
-const galleryModal = document.getElementById("galleryModal");
-const galleryTitle = document.getElementById("galleryTitle");
-const galleryGrid = document.getElementById("galleryGrid");
-const galleryClose = document.getElementById("galleryClose");
+const galleryModal =
+  document.getElementById("galleryModal");
+
+const galleryTitle =
+  document.getElementById("galleryTitle");
+
+const galleryGrid =
+  document.getElementById("galleryGrid");
+
+const galleryClose =
+  document.getElementById("galleryClose");
 
 let previousFocus = null;
 
@@ -1334,6 +1501,7 @@ function openGallery(key, trigger) {
   previousFocus = trigger;
 
   galleryTitle.textContent = gallery.title;
+
   galleryGrid.replaceChildren();
 
   gallery.images.forEach((path, index) => {
@@ -1341,7 +1509,9 @@ function openGallery(key, trigger) {
     const img = document.createElement("img");
 
     img.src = base + path;
+
     img.alt = gallery.title + " " + (index + 1);
+
     img.loading = index < 6 ? "eager" : "lazy";
 
     galleryGrid.appendChild(img);
@@ -1349,26 +1519,37 @@ function openGallery(key, trigger) {
   });
 
   galleryModal.classList.add("open");
+
   galleryModal.scrollTop = 0;
 
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("modal-open");
+
   galleryClose.focus();
+
 }
 
 function closeGallery() {
 
-  if (!galleryModal.classList.contains("open")) return;
+  if (!galleryModal.classList.contains("open")) {
+    return;
+  }
 
   galleryModal.classList.remove("open");
-  document.body.style.overflow = "";
 
-  if (previousFocus) previousFocus.focus();
+  document.body.classList.remove("modal-open");
+
+  if (previousFocus) {
+    previousFocus.focus();
+  }
+
 }
 
 document.querySelectorAll("[data-gallery]").forEach(card => {
 
   card.addEventListener("click", () => {
+
     openGallery(card.dataset.gallery, card);
+
   });
 
 });
@@ -1376,16 +1557,27 @@ document.querySelectorAll("[data-gallery]").forEach(card => {
 galleryClose.addEventListener("click", closeGallery);
 
 galleryModal.addEventListener("click", event => {
-  if (event.target === galleryModal) closeGallery();
+
+  if (event.target === galleryModal) {
+    closeGallery();
+  }
+
 });
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeGallery();
+
+  if (event.key === "Escape") {
+    closeGallery();
+  }
+
 });
 
-/* ================= SAVEURS ANIMATION ================= */
+/* =========================================
+   SAVEURS SCROLL ANIMATION
+========================================= */
 
-const saveursSection = document.querySelector(".tg-saveurs");
+const saveursSection =
+  document.querySelector(".tg-saveurs");
 
 if (saveursSection) {
 
@@ -1400,8 +1592,11 @@ if (saveursSection) {
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
+
           entry.target.classList.add("is-visible");
+
           observer.unobserve(entry.target);
+
         }
 
       });
@@ -1417,6 +1612,7 @@ if (saveursSection) {
     saveursSection.classList.add("is-visible");
 
   }
+
 }
 
 </script>
