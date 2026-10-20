@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tatev Cakes | Luxury Cake Boutique</title>
+
+  <title>Tatev Cakes | Elegant Cake Boutique</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f8f1e9;
-      --ink: #49372f;
+      --ivory: #fffaf4;
+      --rose: #b58f89;
+      --dark: #493a36;
     }
 
     * {
@@ -27,207 +30,295 @@
     }
 
     body {
+      background: #f5e8e2;
       font-family: 'Jost', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
+      overflow-x: hidden;
     }
 
-    /* MAIN HERO */
+    /* =========================
+       FULL SCREEN HERO
+    ========================= */
 
     .hero {
       width: 100%;
-      min-height: 700px;
+      min-height: 650px;
       height: 100svh;
       position: relative;
       overflow: hidden;
-      background: #d6b9a9;
+      isolation: isolate;
     }
 
-    .hero-image {
+    .hero-background {
       position: absolute;
       inset: 0;
-      background-image: url('https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078');
+      background-image: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      animation: heroReveal 1.5s ease both;
+      z-index: -2;
+      animation: heroAppear 1.5s ease-out both;
     }
 
-    /* TRANSPARENT HEADER */
-
-    .site-header {
+    .hero::after {
+      content: "";
       position: absolute;
-      z-index: 10;
-      top: 0;
-      left: 0;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(50, 32, 29, 0.13) 0%,
+        transparent 35%
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      position: relative;
       width: 100%;
-      padding: 24px 5%;
-      background: transparent;
+      padding: 40px 5% 0;
+      z-index: 10;
     }
 
     .header-inner {
-      max-width: 1600px;
+      max-width: 1700px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 35px;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 50px;
+      align-items: start;
     }
 
-    .navigation {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 2.4vw, 42px);
-    }
+    /* =========================
+       LOGO ON LEFT
+    ========================= */
 
-    .navigation.right {
-      justify-content: flex-end;
-    }
-
-    .navigation a {
-      position: relative;
-      color: #fffaf5;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 1.7px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      text-shadow: 0 1px 9px rgba(53, 33, 24, .4);
-      transition: opacity .3s ease;
-    }
-
-    .navigation a:hover {
-      opacity: .65;
-    }
-
-    .navigation a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: currentColor;
-      transition: width .35s ease;
-    }
-
-    .navigation a:hover::after {
+    .logo {
+      display: block;
       width: 100%;
-    }
-
-    /* CENTER LOGO */
-
-    .logo-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 180px;
+      max-width: 310px;
       text-decoration: none;
     }
 
-    .logo-link img {
+    .logo img {
       display: block;
       width: 100%;
       height: auto;
-      max-height: 115px;
+      max-height: 205px;
       object-fit: contain;
+      object-position: left top;
       mix-blend-mode: multiply;
     }
 
-    /* MOBILE MENU */
+    /* =========================
+       TWO ROW NAVIGATION
+    ========================= */
 
-    .menu-toggle {
+    .menu-area {
+      width: 100%;
+      padding-top: 10px;
+    }
+
+    .primary-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 250, 244, 0.42);
+    }
+
+    .primary-menu a {
+      color: var(--ivory);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .secondary-menu {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 55px);
+      padding-top: 20px;
+    }
+
+    .secondary-menu a {
+      color: var(--ivory);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-style: italic;
+      font-weight: 400;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .primary-menu a:hover,
+    .secondary-menu a:hover {
+      opacity: 0.65;
+    }
+
+    /* =========================
+       MOBILE MENU BUTTON
+    ========================= */
+
+    .mobile-toggle {
       display: none;
+      width: 42px;
+      height: 42px;
       border: 0;
       background: transparent;
-      color: #fff;
       cursor: pointer;
-      padding: 10px;
+      padding: 8px;
     }
 
-    .menu-toggle span {
+    .mobile-toggle span {
       display: block;
-      width: 26px;
+      width: 27px;
       height: 1px;
-      background: currentColor;
-      margin: 6px 0;
+      margin: 7px auto;
+      background: white;
+      transition: 0.3s ease;
     }
 
-    @keyframes heroReveal {
+    @keyframes heroAppear {
       from {
-        opacity: .5;
+        opacity: 0.5;
         transform: scale(1.035);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
       }
     }
 
-    @media (max-width: 900px) {
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 1100px) {
+      .header-inner {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 25px;
+      }
+
+      .logo img {
+        max-height: 150px;
+      }
+
+      .primary-menu a {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+      }
+
+      .secondary-menu {
+        gap: 20px;
+      }
+
+      .secondary-menu a {
+        font-size: 17px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
       .hero {
         min-height: 600px;
         height: 100svh;
       }
 
-      .hero-image {
-        background-position: center;
+      .hero-background {
+        background-position: center center;
       }
 
-      .site-header {
-        padding: 18px 5%;
+      .header {
+        padding: 20px 5% 0;
       }
 
       .header-inner {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        gap: 20px;
       }
 
-      .logo-link {
-        width: 135px;
+      .logo {
+        max-width: 165px;
       }
 
-      .menu-toggle {
+      .logo img {
+        max-height: 110px;
+      }
+
+      .mobile-toggle {
         display: block;
-        order: 2;
+        flex-shrink: 0;
+        margin-top: 5px;
+        position: relative;
+        z-index: 20;
       }
 
-      .navigation {
+      .menu-area {
         display: none;
-      }
-
-      .site-header.menu-open .navigation {
-        display: flex;
         position: absolute;
-        left: 0;
-        right: 0;
-        background: rgba(250, 245, 240, .98);
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 28px 20px;
-      }
-
-      .site-header.menu-open .navigation.left {
         top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 28px 25px 35px;
+        background: rgba(248, 240, 234, 0.98);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.08);
       }
 
-      .site-header.menu-open .navigation.right {
-        top: calc(100% + 140px);
+      .header.menu-open .menu-area {
+        display: block;
       }
 
-      .site-header.menu-open .navigation a {
-        color: var(--ink);
+      .primary-menu,
+      .secondary-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+      }
+
+      .primary-menu {
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(73,58,54,.15);
+      }
+
+      .secondary-menu {
+        padding-top: 25px;
+      }
+
+      .primary-menu a,
+      .secondary-menu a {
+        color: var(--dark);
         text-shadow: none;
+      }
+
+      .primary-menu a {
+        font-size: 12px;
+      }
+
+      .secondary-menu a {
+        font-size: 23px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+      .hero-background {
+        animation: none;
       }
     }
   </style>
@@ -235,100 +326,84 @@
 
 <body>
 
-  <section class="hero" id="home">
+  <main>
 
-    <div class="hero-image"></div>
+    <section class="hero" id="home">
 
-    <header class="site-header" id="siteHeader">
-      <div class="header-inner">
+      <div class="hero-background"></div>
 
-        <!-- LEFT MENU -->
-        <nav class="navigation left" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#collections">Our Cakes</a>
-          <a href="#about">About Us</a>
-        </nav>
+      <header class="header" id="siteHeader">
 
-        <!-- CENTER LOGO -->
-        <a href="#home" class="logo-link" aria-label="Tatev Cakes Home">
-          <img
-            id="brandLogo"
-            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719"
-            alt="Tatev Cakes Logo">
-        </a>
+        <div class="header-inner">
 
-        <!-- RIGHT MENU -->
-        <nav class="navigation right" aria-label="Additional navigation">
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </nav>
+          <!-- LEFT LOGO -->
+          <a href="#home" class="logo" aria-label="Tatev Cakes Home">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719"
+              alt="Tatev Cakes"
+            >
+          </a>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <!-- RIGHT NAVIGATION -->
+          <div class="menu-area" id="menuArea">
 
-      </div>
-    </header>
+            <nav class="primary-menu" aria-label="Main menu">
+              <a href="#home">Home</a>
+              <a href="#design-process">Design Process</a>
+              <a href="#portfolio">Portfolio</a>
+              <a href="#shop">Shop</a>
+              <a href="#enquire">Enquire</a>
+            </nav>
 
-  </section>
+            <nav class="secondary-menu" aria-label="Additional menu">
+              <a href="#about">About</a>
+              <a href="#menu">The Menu</a>
+              <a href="#faq">Frequently Asked Questions</a>
+            </nav>
+
+          </div>
+
+          <!-- MOBILE MENU BUTTON -->
+          <button
+            class="mobile-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="menuArea"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+      </header>
+
+    </section>
+
+  </main>
 
   <script>
-    function toggleMenu() {
-      const header = document.getElementById('siteHeader');
-      const button = document.querySelector('.menu-toggle');
-      const isOpen = header.classList.toggle('menu-open');
-      button.setAttribute('aria-expanded', String(isOpen));
-    }
+    const menuToggle = document.getElementById('menuToggle');
+    const siteHeader = document.getElementById('siteHeader');
 
-    // Remove a white background from the logo.
-    const logo = document.getElementById('brandLogo');
+    menuToggle.addEventListener('click', function () {
+      const isOpen = siteHeader.classList.toggle('menu-open');
 
-    logo.addEventListener('load', function () {
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = logo.naturalWidth;
-        canvas.height = logo.naturalHeight;
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+    });
 
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(logo, 0, 0);
-
-        const image = ctx.getImageData(
-          0, 0, canvas.width, canvas.height
-        );
-
-        const data = image.data;
-
-        for (let i = 0; i < data.length; i += 4) {
-          const r = data[i];
-          const g = data[i + 1];
-          const b = data[i + 2];
-
-          const min = Math.min(r, g, b);
-
-          if (min > 245) {
-            data[i + 3] = 0;
-          } else if (min > 215) {
-            data[i + 3] = Math.round(
-              data[i + 3] * (245 - min) / 30
-            );
-          }
-        }
-
-        ctx.putImageData(image, 0, 0);
-        logo.src = canvas.toDataURL('image/png');
-      } catch (error) {
-        // Keep original logo if browser restricts processing.
-      }
-    }, { once: true });
-
-    logo.crossOrigin = 'anonymous';
+    document.querySelectorAll('.menu-area a').forEach(link => {
+      link.addEventListener('click', function () {
+        siteHeader.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 
 </body>
