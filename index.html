@@ -1,1563 +1,335 @@
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tatev Gateux — Créations d'exception</title>
-<meta name="description" content="Tatev Gateux, pâtisserie et cake design à Orléans. Gâteaux sur mesure, chocolats et formations.">
-<meta name="theme-color" content="#f8f1ed">
-
-<link rel="icon" href="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --cream:#faf5ed;
-  --blush:#efd8dc;
-  --rose:#e6cbd2;
-  --plum:#513a4b;
-  --ink:#2b2329;
-  --white:#fffaf6;
-}
-
-* { box-sizing:border-box; }
-
-html { scroll-behavior:smooth; }
-
-body {
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:"Cormorant Garamond",serif;
-}
-
-a { color:inherit;text-decoration:none; }
-button { cursor:pointer; }
-img { display:block;width:100%;height:100%;object-fit:cover; }
-h1,h2,h3,p { margin:0; }
-
-.script {
-  font-family:"Great Vibes",cursive;
-  font-weight:400;
-}
-
-.eyebrow {
-  font:400 11px Jost,sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-.container {
-  max-width:1500px;
-  margin:auto;
-  padding:0 5%;
-}
-
-.section { padding:105px 0; }
-
-.heading {
-  font-size:clamp(52px,7vw,105px);
-  font-weight:300;
-  line-height:.95;
-}
-
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:35px;
-  border:1px solid currentColor;
-  padding:17px 24px;
-  font:400 10px Jost,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.3s;
-}
-
-.btn:hover {
-  background:var(--plum);
-  color:white;
-  border-color:var(--plum);
-}
-
-.placeholder {
-  position:relative;
-  background:linear-gradient(135deg,#e7d0d6,#f8ece8);
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:220px;
-}
-
-.placeholder img {
-  position:absolute;
-  inset:0;
-}
-
-.placeholder span {
-  text-align:center;
-  padding:25px;
-  font:11px Jost,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#957f8b;
-}
-
-/* HEADER */
-
-.header {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:50;
-  color:white;
-  background:linear-gradient(to bottom,rgba(35,20,30,.35),transparent);
-}
-
-.header-inner {
-  max-width:1600px;
-  margin:auto;
-  padding:22px 5%;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  gap:25px;
-  align-items:center;
-}
-
-.nav-left,.nav-right {
-  display:flex;
-  gap:35px;
-  align-items:center;
-}
-
-.nav-right { justify-content:flex-end; }
-
-.header nav a {
-  font:400 10px Jost,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-}
-
-.brand img {
-  width:65px;
-  height:65px;
-  object-fit:contain;
-}
-
-.brand strong {
-  font-size:30px;
-  font-weight:400;
-  white-space:nowrap;
-}
-
-.mobile-button {
-  display:none;
-  border:0;
-  background:none;
-  color:inherit;
-  font-size:28px;
-}
-
-.mobile-nav { display:none; }
-
-body:not(.home) .header {
-  position:relative;
-  color:var(--plum);
-  background:var(--cream);
-  border-bottom:1px solid #e4d5dc;
-}
-
-/* HERO */
-
-.hero {
-  height:95svh;
-  min-height:650px;
-  max-height:980px;
-  position:relative;
-  overflow:hidden;
-  background:#d8bdc6;
-}
-
-.hero img {
-  position:absolute;
-  inset:0;
-  object-position:center;
-}
-
-.hero:after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(28,15,25,.38),transparent 65%);
-}
-
-.hero-content {
-  position:absolute;
-  z-index:2;
-  left:6%;
-  bottom:14%;
-  color:white;
-}
-
-.hero-content h1 {
-  font-size:clamp(95px,13vw,220px);
-  line-height:.72;
-  letter-spacing:-.07em;
-  font-weight:300;
-  margin:30px 0;
-}
-
-.hero-content p {
-  font-size:26px;
-  font-style:italic;
-  margin-bottom:30px;
-}
-
-/* WELCOME */
-
-.welcome {
-  display:grid;
-  grid-template-columns:28% 44% 28%;
-  min-height:680px;
-}
-
-.welcome>.placeholder { min-height:680px; }
-
-.welcome-center {
-  padding:75px 9%;
-  background:#fffaf1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.welcome-center h2 {
-  font-size:clamp(80px,9vw,140px);
-  line-height:.9;
-  margin-bottom:25px;
-}
-
-.welcome-center p {
-  font-size:clamp(20px,1.8vw,29px);
-  line-height:1.55;
-}
-
-.welcome-center a {
-  font-size:22px;
-  font-style:italic;
-  margin-top:35px;
-  border-bottom:1px solid;
-}
-
-/* PINK QUOTE */
-
-.quote {
-  background:var(--blush);
-  text-align:center;
-  padding:75px 10%;
-}
-
-.quote p {
-  font-size:clamp(25px,3vw,43px);
-  font-style:italic;
-  line-height:1.25;
-  max-width:1150px;
-  margin:auto;
-}
-
-.quote .script {
-  font-size:47px;
-  display:block;
-  margin-top:20px;
-}
-
-/* UNEQUAL COLLAGE */
-
-.collage-section {
-  background:#e5cfd0;
-  padding:100px 0 125px;
-  overflow:hidden;
-}
-
-.collage-section h2 {
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.collage {
-  display:grid;
-  grid-template-columns:1fr 1.15fr .85fr 1.1fr .9fr;
-  align-items:center;
-  padding:40px 0 65px;
-}
-
-.collage .photo {
-  border:9px solid #f9f1eb;
-  box-shadow:0 20px 40px #43263138;
-  position:relative;
-}
-
-.collage .photo:nth-child(1) {
-  height:310px;
-  transform:rotate(-7deg) translate(20px,40px);
-  z-index:1;
-}
-
-.collage .photo:nth-child(2) {
-  height:460px;
-  transform:rotate(4deg) translate(10px,-20px);
-  z-index:3;
-}
-
-.collage .photo:nth-child(3) {
-  height:350px;
-  transform:rotate(-5deg) translate(-10px,50px);
-  z-index:4;
-}
-
-.collage .photo:nth-child(4) {
-  height:440px;
-  transform:rotate(5deg) translate(-25px,-15px);
-  z-index:2;
-}
-
-.collage .photo:nth-child(5) {
-  height:310px;
-  transform:rotate(-5deg) translate(-40px,65px);
-  z-index:5;
-}
-
-.center { text-align:center; }
-
-/* STORY — LARGE OVAL */
-
-.story {
-  background:linear-gradient(110deg,#d6b9b7,#f8eee7,#ddc6cb);
-  padding:125px 0;
-  overflow:hidden;
-}
-
-.story-grid {
-  display:grid;
-  grid-template-columns:57% 43%;
-  align-items:center;
-}
-
-.story-visual {
-  position:relative;
-  min-height:570px;
-}
-
-.story-oval {
-  width:95%;
-  height:570px;
-  border-radius:50%;
-  border:12px solid #fff8ee;
-  overflow:hidden;
-}
-
-.story-oval .placeholder {
-  width:100%;
-  height:100%;
-}
-
-.story-small {
-  position:absolute;
-  width:32%;
-  height:250px;
-  bottom:-35px;
-  right:0;
-  border:9px solid #fff8ee;
-  transform:rotate(8deg);
-  box-shadow:0 15px 35px #402a3540;
-}
-
-.story-text {
-  position:relative;
-  z-index:3;
-  background:#fff8efdf;
-  padding:65px 45px;
-  text-align:center;
-  margin-left:-35px;
-}
-
-.story-text h2 {
-  font-size:clamp(65px,8vw,120px);
-  font-weight:300;
-  line-height:.85;
-  margin:20px 0 30px;
-}
-
-.story-text p {
-  font-size:29px;
-  font-style:italic;
-  line-height:1.3;
-  margin-bottom:35px;
-}
-
-/* CATEGORIES — STAGGERED */
-
-.categories { background:#fcf8f4; }
-
-.categories-header {
-  text-align:center;
-  margin-bottom:65px;
-}
-
-.categories-header h2 { margin-top:15px; }
-
-.categories-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:75px 35px;
-}
-
-.category:nth-child(3n+2) { margin-top:85px; }
-.category:nth-child(3n) { margin-top:35px; }
-
-.category .placeholder { height:470px; }
-
-.category:nth-child(3n+2) .placeholder { height:385px; }
-.category:nth-child(3n) .placeholder { height:425px; }
-
-.category h3 {
-  font-size:clamp(32px,3.5vw,52px);
-  font-weight:300;
-  margin:17px 0 8px;
-}
-
-.category small {
-  font:10px Jost,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  border-bottom:1px solid #a58c9b;
-  padding-bottom:9px;
-}
-
-/* CHOCOLATES */
-
-.sweets {
-  background:#ecd7dd;
-  padding:100px 0;
-}
-
-.sweets-grid {
-  display:grid;
-  grid-template-columns:.85fr 1.1fr 1fr;
-  gap:25px;
-  align-items:center;
-}
-
-.sweets-copy h2 {
-  font-size:clamp(55px,6vw,100px);
-  font-weight:300;
-  line-height:.9;
-  margin:20px 0;
-}
-
-.sweets-copy p {
-  font-size:25px;
-  font-style:italic;
-  margin-bottom:30px;
-}
-
-.sweet .placeholder { height:430px; }
-.sweet:last-child { transform:translateY(55px); }
-
-.sweet h3 {
-  font-size:32px;
-  font-weight:300;
-  margin-top:15px;
-}
-
-/* DARK TRAINING */
-
-.training {
-  min-height:730px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  background:#171216;
-  color:white;
-  overflow:hidden;
-}
-
-.training-bg {
-  position:absolute;
-  inset:0;
-  opacity:.45;
-}
-
-.training-bg img { filter:brightness(.5); }
-
-.training-content {
-  position:relative;
-  z-index:2;
-  padding:125px 8%;
-}
-
-.training-content h2 {
-  font-size:clamp(75px,10vw,160px);
-  font-weight:300;
-  line-height:.78;
-  margin:25px 0;
-}
-
-.training-content .script {
-  display:block;
-  font-size:.8em;
-  margin-left:10vw;
-}
-
-.training-content p {
-  font-size:27px;
-  font-style:italic;
-  max-width:570px;
-  margin:40px 0;
-}
-
-.training .btn:hover {
-  background:white;
-  color:#171216;
-  border-color:white;
-}
-
-/* ROUND CAROUSEL */
-
-.round-section {
-  background:#faf5f0;
-  padding:110px 0;
-}
-
-.round-section h2 {
-  text-align:center;
-  font-size:clamp(50px,6vw,90px);
-  font-weight:300;
-  margin-bottom:50px;
-}
-
-.carousel-row {
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.carousel-track {
-  display:flex;
-  gap:25px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  flex:1;
-}
-
-.carousel-track::-webkit-scrollbar { display:none; }
-
-.circle-card {
-  flex:0 0 clamp(190px,22vw,330px);
-  scroll-snap-align:center;
-  text-align:center;
-}
-
-.circle-card .placeholder {
-  aspect-ratio:1;
-  border-radius:50%;
-  border:6px solid #f1e5e7;
-}
-
-.circle-card p {
-  font-size:25px;
-  margin-top:15px;
-}
-
-.arrow {
-  flex:0 0 43px;
-  width:43px;
-  height:43px;
-  border-radius:50%;
-  border:1px solid #987e8e;
-  background:transparent;
-  color:var(--plum);
-  font-size:25px;
-}
-
-/* REVIEWS */
-
-.reviews {
-  background:#ead6db;
-  padding:100px 0;
-}
-
-.reviews h2 {
-  text-align:center;
-  font-size:clamp(55px,7vw,100px);
-  font-weight:300;
-  margin-bottom:50px;
-}
-
-.review-layout {
-  display:flex;
-  align-items:center;
-  gap:20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.review-panel {
-  background:#faf0ea;
-  flex:1;
-  min-height:360px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-}
-
-.review-copy {
-  padding:40px;
-  text-align:center;
-}
-
-.review-copy blockquote {
-  font-size:clamp(27px,3vw,43px);
-  font-style:italic;
-  margin:0 0 20px;
-}
-
-.review-copy small { font-size:19px; }
-
-.review-panel .placeholder {
-  height:360px;
-  transform:rotate(5deg) scale(.9);
-}
-
-/* CONTACT */
-
-.contact {
-  background:linear-gradient(110deg,#e7cbd2,#f8ece7,#e3cbd4);
-  padding:95px 0;
-}
-
-.contact-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.contact h2 {
-  font-size:clamp(50px,6vw,85px);
-  font-weight:300;
-  margin:15px 0 20px;
-}
-
-.contact p {
-  font-size:25px;
-  font-style:italic;
-  max-width:520px;
-  margin-bottom:30px;
-}
-
-.contact-links {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.contact-links a,
-.contact-links span {
-  padding:15px 0;
-  border-bottom:1px solid #bda8b3;
-  font:12px Jost,sans-serif;
-}
-
-/* FOOTER */
-
-footer {
-  background:#f8f1ed;
-  padding:65px 0 25px;
-}
-
-.footer-grid {
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:55px;
-}
-
-.footer-brand {
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.footer-brand img {
-  width:75px;
-  height:75px;
-  object-fit:contain;
-}
-
-.footer-brand strong {
-  font-size:35px;
-  font-weight:400;
-}
-
-footer h3 {
-  font-size:29px;
-  font-weight:400;
-  margin-bottom:20px;
-}
-
-footer a.footer-link {
-  display:block;
-  font-size:19px;
-  margin-bottom:12px;
-}
-
-footer p {
-  font-size:20px;
-  margin-top:20px;
-}
-
-.copyright {
-  margin-top:65px;
-  padding-top:20px;
-  border-top:1px solid #dfd2d8;
-  font:11px Jost,sans-serif;
-  letter-spacing:1px;
-}
-
-/* SUBPAGES */
-
-.subhero {
-  background:#ebd7dc;
-  padding:110px 25px;
-  text-align:center;
-}
-
-.subhero h1 {
-  font-size:clamp(60px,9vw,140px);
-  font-weight:300;
-  line-height:.9;
-  margin:20px 0;
-}
-
-.subhero p { font-size:26px;font-style:italic; }
-
-.subpage {
-  padding:100px 0;
-}
-
-.back {
-  display:inline-block;
-  margin-bottom:40px;
-  font:11px Jost,sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.empty-state {
-  background:#f2e5e7;
-  padding:90px 30px;
-  text-align:center;
-}
-
-.empty-state h2 {
-  font-size:55px;
-  font-weight:300;
-}
-
-.empty-state p {
-  font-size:25px;
-  margin:20px 0 30px;
-}
-
-.products {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.product .placeholder { height:440px; }
-.product h3 { font-size:35px;margin:20px 0 10px; }
-.product p { font-size:23px; }
-
-.detail {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.detail .placeholder { height:600px; }
-.detail h2 { font-size:75px;font-weight:300; }
-.detail p { font-size:27px;margin:25px 0; }
-
-/* MOBILE */
-
-@media(max-width:900px) {
-  .header-inner {
-    grid-template-columns:1fr auto;
-  }
-
-  .nav-left,.nav-right { display:none; }
-  .mobile-button { display:block; }
-
-  .mobile-nav.open {
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    padding:25px 5%;
-    background:#f8f1ed;
-    color:var(--plum);
-  }
-
-  .mobile-nav a {
-    font:12px Jost,sans-serif;
-    letter-spacing:2px;
-    text-transform:uppercase;
-  }
-
-  .welcome { grid-template-columns:1fr 1fr; }
-  .welcome-center { grid-column:1/-1;grid-row:1; }
-  .welcome>.placeholder { min-height:350px; }
-
-  .story-grid,.contact-grid,.detail {
-    grid-template-columns:1fr;
-  }
-
-  .story-text { margin-left:0;margin-top:40px; }
-
-  .categories-grid,.products {
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .sweets-grid { grid-template-columns:1fr 1fr; }
-  .sweets-copy { grid-column:1/-1; }
-
-  .footer-grid { grid-template-columns:1fr 1fr; }
-}
-
-@media(max-width:600px) {
-  .section,.subpage { padding:75px 0; }
-
-  .header-inner { padding:15px 5%; }
-  .brand img { width:50px;height:50px; }
-  .brand strong { font-size:24px; }
-
-  .hero { min-height:640px;height:85svh; }
-  .hero-content { left:6%;bottom:13%; }
-  .hero-content h1 { font-size:75px; }
-
-  .welcome-center { padding:70px 25px; }
-  .welcome-center h2 { font-size:85px; }
-  .welcome>.placeholder { min-height:250px; }
-
-  .collage {
-    display:flex;
-    width:max-content;
-    min-width:100%;
-    gap:0;
-    padding-left:15px;
-  }
-
-  .collage .photo {
-    width:180px;
-    flex:0 0 180px;
-    height:280px!important;
-  }
-
-  .story-visual { min-height:370px; }
-  .story-oval { height:370px; }
-  .story-small { height:145px; }
-
-  .categories-grid,.products,.sweets-grid {
-    grid-template-columns:1fr;
-  }
-
-  .category:nth-child(n) { margin-top:0; }
-  .category .placeholder { height:400px!important; }
-  .sweet:last-child { transform:none; }
-
-  .training { min-height:600px; }
-  .training-content { padding:100px 6%; }
-  .training-content h2 { font-size:70px; }
-
-  .review-panel { grid-template-columns:1fr; }
-  .review-panel .placeholder { height:240px; }
-
-  .contact-links { grid-template-columns:1fr; }
-  .footer-grid { grid-template-columns:1fr; }
-  .detail .placeholder { height:400px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tatev Cakes | Luxury Cake Boutique</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f1e9;
+      --ink: #49372f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    /* MAIN HERO */
+
+    .hero {
+      width: 100%;
+      min-height: 700px;
+      height: 100svh;
+      position: relative;
+      overflow: hidden;
+      background: #d6b9a9;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      animation: heroReveal 1.5s ease both;
+    }
+
+    /* TRANSPARENT HEADER */
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 5%;
+      background: transparent;
+    }
+
+    .header-inner {
+      max-width: 1600px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.4vw, 42px);
+    }
+
+    .navigation.right {
+      justify-content: flex-end;
+    }
+
+    .navigation a {
+      position: relative;
+      color: #fffaf5;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-shadow: 0 1px 9px rgba(53, 33, 24, .4);
+      transition: opacity .3s ease;
+    }
+
+    .navigation a:hover {
+      opacity: .65;
+    }
+
+    .navigation a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width .35s ease;
+    }
+
+    .navigation a:hover::after {
+      width: 100%;
+    }
+
+    /* CENTER LOGO */
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 180px;
+      text-decoration: none;
+    }
+
+    .logo-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 115px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    /* MOBILE MENU */
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      margin: 6px 0;
+    }
+
+    @keyframes heroReveal {
+      from {
+        opacity: .5;
+        transform: scale(1.035);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 600px;
+        height: 100svh;
+      }
+
+      .hero-image {
+        background-position: center;
+      }
+
+      .site-header {
+        padding: 18px 5%;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-link {
+        width: 135px;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
+      .navigation {
+        display: none;
+      }
+
+      .site-header.menu-open .navigation {
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: rgba(250, 245, 240, .98);
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 28px 20px;
+      }
+
+      .site-header.menu-open .navigation.left {
+        top: 100%;
+      }
+
+      .site-header.menu-open .navigation.right {
+        top: calc(100% + 140px);
+      }
+
+      .site-header.menu-open .navigation a {
+        color: var(--ink);
+        text-shadow: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="home">
+<body>
 
-<header class="header">
-  <div class="header-inner">
-    <nav class="nav-left">
-      <a href="?page=home">Accueil</a>
-      <a href="?page=creations">Nos créations</a>
-    </nav>
+  <section class="hero" id="home">
 
-    <a class="brand" href="?page=home">
-      <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719" alt="Logo Tatev Gateux">
-      <strong>Tatev Gateux</strong>
-    </a>
+    <div class="hero-image"></div>
 
-    <nav class="nav-right">
-      <a href="?page=contact">Contact</a>
-    </nav>
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
 
-    <button class="mobile-button" id="menuButton" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  </div>
+        <!-- LEFT MENU -->
+        <nav class="navigation left" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#collections">Our Cakes</a>
+          <a href="#about">About Us</a>
+        </nav>
 
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="?page=home">Accueil</a>
-    <a href="?page=creations">Nos créations</a>
-    <a href="?page=contact">Contact</a>
-  </nav>
-</header>
-
-<main id="app"></main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="?page=home" class="footer-brand">
-          <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719" alt="Logo Tatev Gateux">
-          <strong>Tatev Gateux</strong>
+        <!-- CENTER LOGO -->
+        <a href="#home" class="logo-link" aria-label="Tatev Cakes Home">
+          <img
+            id="brandLogo"
+            src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719"
+            alt="Tatev Cakes Logo">
         </a>
-        <p>Des créations uniques pour des instants précieux.</p>
-        <p>Orléans, France</p>
+
+        <!-- RIGHT MENU -->
+        <nav class="navigation right" aria-label="Additional navigation">
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
+    </header>
 
-      <div>
-        <h3>Découvrir</h3>
-        <a class="footer-link" href="?page=creations">Nos créations</a>
-        <a class="footer-link" href="?page=histoire">Mon histoire</a>
-        <a class="footer-link" href="?page=formations">Formations Cake Design</a>
-        <a class="footer-link" href="?page=avis">Avis clients</a>
-      </div>
+  </section>
 
-      <div>
-        <h3>Contact</h3>
-        <a class="footer-link" href="?page=contact">Contact & commandes</a>
-        <div id="footerSocial"></div>
-      </div>
-    </div>
-
-    <div class="copyright">
-      © <span id="year"></span> Tatev Gateux — Tous droits réservés.
-    </div>
-  </div>
-</footer>
-
-<script>
-/* =========================================
-   SETTINGS — ADD REAL IMAGES LATER
-========================================= */
-
-const SETTINGS = {
-  logo:"https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-18_203717.png?v=1792342719",
-
-  hero:"https://cdn.shopify.com/s/files/1/0840/7020/3650/files/add6a615-258a-4e5c-bc48-5cfc6c240994.jpg?v=1792343392",
-
-  welcomeLeft:"",
-  welcomeRight:"",
-
-  founderPortrait:"",
-  founderDetail:"",
-
-  trainingImage:"",
-
-  gallery:["","","","",""],
-
-  circlePhotos:["","","","","","",""],
-
-  whatsapp:"",
-  instagram:"",
-  facebook:"",
-  phone:"",
-  email:""
-};
-
-/* =========================================
-   CATEGORIES
-========================================= */
-
-const CATEGORIES = [
-  {
-    id:"mariage",
-    title:"Gâteaux de Mariage",
-    description:"Des créations d'exception pour célébrer votre union.",
-    image:""
-  },
-  {
-    id:"anniversaire",
-    title:"Gâteaux d'Anniversaire",
-    description:"Des gâteaux uniques pour vos moments précieux.",
-    image:""
-  },
-  {
-    id:"bapteme",
-    title:"Gâteaux de Baptême",
-    description:"Des créations délicates pour une célébration inoubliable.",
-    image:""
-  },
-  {
-    id:"gender-reveal",
-    title:"Gâteaux Gender Reveal",
-    description:"Une surprise gourmande à partager.",
-    image:""
-  },
-  {
-    id:"enfants",
-    title:"Gâteaux pour Enfants",
-    description:"Des créations imaginées pour les plus petits.",
-    image:""
-  },
-  {
-    id:"bento",
-    title:"Bento Cakes",
-    description:"De petites créations pleines de charme.",
-    image:""
-  },
-  {
-    id:"chocolats",
-    title:"Chocolats Artisanaux",
-    description:"Des douceurs chocolatées.",
-    image:""
-  },
-  {
-    id:"fraises",
-    title:"Fraises Enrobées de Chocolat",
-    description:"Une délicate gourmandise à offrir.",
-    image:""
-  }
-];
-
-/* REAL PRODUCTS, COURSES AND REVIEWS */
-
-const PRODUCTS = [];
-const COURSES = [];
-const REVIEWS = [];
-
-/* =========================================
-   HELPERS
-========================================= */
-
-function esc(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  }[c]));
-}
-
-function photo(src,label,className="") {
-  return `<div class="placeholder ${className}">
-    ${src
-      ? `<img src="${esc(src)}" alt="${esc(label)}" loading="lazy">`
-      : `<span>Photographie à venir<br>${esc(label)}</span>`
+  <script>
+    function toggleMenu() {
+      const header = document.getElementById('siteHeader');
+      const button = document.querySelector('.menu-toggle');
+      const isOpen = header.classList.toggle('menu-open');
+      button.setAttribute('aria-expanded', String(isOpen));
     }
-  </div>`;
-}
 
-function button(text,url) {
-  return `<a class="btn" href="${esc(url)}">${esc(text)} <span>→</span></a>`;
-}
+    // Remove a white background from the logo.
+    const logo = document.getElementById('brandLogo');
 
-function wa(message) {
-  const phone = SETTINGS.whatsapp.replace(/\D/g,"");
-  return phone
-    ? "https://wa.me/"+phone+"?text="+encodeURIComponent(message)
-    : "";
-}
+    logo.addEventListener('load', function () {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = logo.naturalWidth;
+        canvas.height = logo.naturalHeight;
 
-function order(text,message) {
-  const link = wa(message);
-  return link
-    ? `<a class="btn" href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(text)} →</a>`
-    : button(text,"?page=contact");
-}
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(logo, 0, 0);
 
-function categoryCard(c) {
-  return `<a class="category" href="?page=collection&id=${encodeURIComponent(c.id)}">
-    ${photo(c.image,c.title)}
-    <h3>${esc(c.title)}</h3>
-    <small>Découvrir la collection →</small>
-  </a>`;
-}
+        const image = ctx.getImageData(
+          0, 0, canvas.width, canvas.height
+        );
 
-/* =========================================
-   HOME
-========================================= */
+        const data = image.data;
 
-function home() {
-  return `
-  <section class="hero">
-    <img src="${esc(SETTINGS.hero)}" alt="Création signature Tatev Gateux">
-    <div class="hero-content">
-      <span class="eyebrow">Maison de pâtisserie · Orléans</span>
-      <h1>TATEV<br>GATEUX</h1>
-      <p>Créations pâtissières d'exception</p>
-      ${button("Découvrir nos créations","?page=creations")}
-    </div>
-  </section>
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
 
-  <section class="welcome">
-    ${photo(SETTINGS.welcomeLeft,"Création pâtissière")}
-    <div class="welcome-center">
-      <h2 class="script">Bienvenue</h2>
-      <p>Bienvenue dans l'univers de Tatev Gateux, où la pâtisserie rencontre l'élégance et l'émotion. Chaque création est imaginée avec soin pour célébrer les instants les plus précieux.</p>
-      <a href="?page=contact">Parlons de votre projet ↗</a>
-    </div>
-    ${photo(SETTINGS.welcomeRight,"Gâteau d'exception")}
-  </section>
+          const min = Math.min(r, g, b);
 
-  <section class="quote">
-    <p>« Chaque étage, chaque fleur et chaque détail racontent une histoire. La pâtisserie est l'art de transformer les plus beaux instants en souvenirs inoubliables. »</p>
-    <span class="script">Tatev Gateux</span>
-  </section>
-
-  <section class="collage-section">
-    <div class="container">
-      <h2 class="heading">L'art en images</h2>
-      <div class="collage">
-        ${SETTINGS.gallery.map((src,i)=>`
-          <div class="photo">
-            ${photo(src,"Création "+(i+1))}
-          </div>
-        `).join("")}
-      </div>
-      <div class="center">
-        ${button("Voir toutes les créations","?page=creations")}
-      </div>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="container story-grid">
-      <div class="story-visual">
-        <div class="story-oval">
-          ${photo(SETTINGS.founderPortrait,"Portrait de Tatev")}
-        </div>
-        <div class="story-small">
-          ${photo(SETTINGS.founderDetail,"À l'atelier")}
-        </div>
-      </div>
-
-      <div class="story-text">
-        <span class="eyebrow">La fondatrice</span>
-        <h2>Mon <span class="script">histoire</span></h2>
-        <p>Une passion, un savoir-faire et une histoire qui s'expriment dans chaque création.</p>
-        ${button("Découvrir mon histoire","?page=histoire")}
-      </div>
-    </div>
-  </section>
-
-  <section class="section categories">
-    <div class="container">
-      <div class="categories-header">
-        <span class="eyebrow">Des moments à célébrer</span>
-        <h2 class="heading">Nos créations</h2>
-      </div>
-
-      <div class="categories-grid">
-        ${CATEGORIES.slice(0,6).map(categoryCard).join("")}
-      </div>
-    </div>
-  </section>
-
-  <section class="sweets">
-    <div class="container sweets-grid">
-      <div class="sweets-copy">
-        <span class="eyebrow">Les gourmandises</span>
-        <h2>Douceurs &<br><span class="script">chocolats</span></h2>
-        <p>Des créations délicates et raffinées pour offrir ou simplement se faire plaisir.</p>
-        ${button("Toutes les créations","?page=creations")}
-      </div>
-
-      ${CATEGORIES.slice(6).map(c=>`
-        <a class="sweet" href="?page=collection&id=${c.id}">
-          ${photo(c.image,c.title)}
-          <h3>${esc(c.title)} ↗</h3>
-        </a>
-      `).join("")}
-    </div>
-  </section>
-
-  <section class="training">
-    <div class="training-bg">
-      ${SETTINGS.trainingImage
-        ? `<img src="${esc(SETTINGS.trainingImage)}" alt="Formation Cake Design">`
-        : ""}
-    </div>
-
-    <div class="training-content">
-      <span class="eyebrow">Formations Cake Design</span>
-      <h2>L'art de créer
-        <span class="script">& de transmettre</span>
-      </h2>
-      <p>Découvrez un univers de techniques, de créativité et de savoir-faire dédié à l'art du Cake Design.</p>
-      ${button("Découvrir les formations","?page=formations")}
-    </div>
-  </section>
-
-  <section class="round-section">
-    <div class="container">
-      <h2>Nos créations en images</h2>
-
-      <div class="carousel-row">
-        <button class="arrow" onclick="slideCircles(-1)" aria-label="Précédent">‹</button>
-
-        <div class="carousel-track" id="circleTrack">
-          ${SETTINGS.circlePhotos.map((src,i)=>`
-            <a class="circle-card" href="?page=creations">
-              ${photo(src,"Création "+(i+1))}
-              <p>Création ${String(i+1).padStart(2,"0")}</p>
-            </a>
-          `).join("")}
-        </div>
-
-        <button class="arrow" onclick="slideCircles(1)" aria-label="Suivant">›</button>
-      </div>
-    </div>
-  </section>
-
-  ${reviewSection()}
-  ${contactSection()}
-  `;
-}
-
-/* =========================================
-   REVIEWS
-========================================= */
-
-let reviewIndex = 0;
-
-function reviewMarkup() {
-  if (!REVIEWS.length) {
-    return `
-      <div class="review-copy">
-        <blockquote>Vos mots sont précieux.</blockquote>
-        <small>Les témoignages authentiques seront ajoutés prochainement.</small>
-      </div>
-      ${photo("","Création pâtissière")}
-    `;
-  }
-
-  const r = REVIEWS[reviewIndex];
-
-  return `
-    <div class="review-copy">
-      <blockquote>« ${esc(r.text)} »</blockquote>
-      <small>— ${esc(r.author)}</small>
-    </div>
-    ${photo(r.image || "","Création pâtissière")}
-  `;
-}
-
-function reviewSection() {
-  return `
-    <section class="reviews">
-      <div class="container">
-        <h2>Vos beaux messages</h2>
-
-        <div class="review-layout">
-          <button class="arrow" onclick="moveReview(-1)" aria-label="Avis précédent">‹</button>
-
-          <div class="review-panel" id="reviewPanel">
-            ${reviewMarkup()}
-          </div>
-
-          <button class="arrow" onclick="moveReview(1)" aria-label="Avis suivant">›</button>
-        </div>
-      </div>
-    </section>
-  `;
-}
-
-function moveReview(direction) {
-  if (!REVIEWS.length) return;
-
-  reviewIndex = (reviewIndex + direction + REVIEWS.length) % REVIEWS.length;
-
-  const panel = document.getElementById("reviewPanel");
-  if (panel) panel.innerHTML = reviewMarkup();
-}
-
-function slideCircles(direction) {
-  const track = document.getElementById("circleTrack");
-  if (track) track.scrollBy({left:direction*320,behavior:"smooth"});
-}
-
-/* =========================================
-   CONTACT
-========================================= */
-
-function contactSection() {
-  const links = [
-    ["WhatsApp",wa("Bonjour, je souhaite vous contacter.")],
-    ["Instagram",SETTINGS.instagram],
-    ["Facebook",SETTINGS.facebook],
-    ["Téléphone",SETTINGS.phone ? "tel:"+SETTINGS.phone : ""],
-    ["E-mail",SETTINGS.email ? "mailto:"+SETTINGS.email : ""]
-  ];
-
-  return `
-    <section class="contact">
-      <div class="container contact-grid">
-        <div>
-          <span class="eyebrow">Tatev Gateux · Orléans</span>
-          <h2>Contact & commandes</h2>
-          <p>Pour toute demande de création, de formation ou de collaboration, contactez-nous.</p>
-          ${order("Nous contacter","Bonjour, je souhaite vous contacter.")}
-        </div>
-
-        <div class="contact-links">
-          ${links.map(([label,url])=>url
-            ? `<a href="${esc(url)}" ${url.startsWith("http")?'target="_blank" rel="noopener noreferrer"':""}>${esc(label)} ↗</a>`
-            : `<span>${esc(label)} — à venir</span>`
-          ).join("")}
-        </div>
-      </div>
-    </section>
-  `;
-}
-
-/* =========================================
-   SUBPAGES
-========================================= */
-
-function subhero(title,description="") {
-  return `
-    <section class="subhero">
-      <span class="eyebrow">Tatev Gateux · Orléans</span>
-      <h1>${esc(title)}</h1>
-      ${description?`<p>${esc(description)}</p>`:""}
-    </section>
-  `;
-}
-
-function creations() {
-  return subhero("Nos créations","Des créations uniques pour chaque célébration.") + `
-    <section class="subpage">
-      <div class="container">
-        <div class="categories-grid">
-          ${CATEGORIES.map(categoryCard).join("")}
-        </div>
-      </div>
-    </section>
-    ${contactSection()}
-  `;
-}
-
-function collection(id) {
-  const c = CATEGORIES.find(x=>x.id===id);
-  if (!c) return missing();
-
-  const list = PRODUCTS.filter(p=>p.category===id);
-
-  return subhero(c.title,c.description) + `
-    <section class="subpage">
-      <div class="container">
-        <a class="back" href="?page=creations">← Toutes les créations</a>
-
-        ${list.length
-          ? `<div class="products">
-              ${list.map(p=>`
-                <a class="product" href="?page=produit&id=${encodeURIComponent(p.id)}">
-                  ${photo(p.image,p.title)}
-                  <h3>${esc(p.title)}</h3>
-                  <p>${esc(p.description)}</p>
-                </a>
-              `).join("")}
-            </div>`
-          : `<div class="empty-state">
-              <h2>La collection se prépare…</h2>
-              <p>Les photographies de nos créations seront bientôt disponibles.</p>
-              ${order("Demander une création","Bonjour, je souhaite des informations sur "+c.title)}
-            </div>`
+          if (min > 245) {
+            data[i + 3] = 0;
+          } else if (min > 215) {
+            data[i + 3] = Math.round(
+              data[i + 3] * (245 - min) / 30
+            );
+          }
         }
-      </div>
-    </section>
-    ${contactSection()}
-  `;
-}
 
-function produit(id) {
-  const p = PRODUCTS.find(x=>x.id===id);
-  if (!p) return missing();
+        ctx.putImageData(image, 0, 0);
+        logo.src = canvas.toDataURL('image/png');
+      } catch (error) {
+        // Keep original logo if browser restricts processing.
+      }
+    }, { once: true });
 
-  return subhero(p.title) + `
-    <section class="subpage">
-      <div class="container">
-        <a class="back" href="?page=collection&id=${encodeURIComponent(p.category)}">← Retour à la collection</a>
-
-        <div class="detail">
-          ${photo(p.image,p.title)}
-          <div>
-            <h2>${esc(p.title)}</h2>
-            <p>${esc(p.description)}</p>
-            ${order("Demander cette création","Bonjour, je souhaite des informations sur "+p.title)}
-          </div>
-        </div>
-
-        ${p.gallery?.length
-          ? `<div class="products" style="margin-top:60px">
-              ${p.gallery.map((src,i)=>photo(src,p.title+" "+(i+1))).join("")}
-            </div>`
-          : ""}
-      </div>
-    </section>
-    ${contactSection()}
-  `;
-}
-
-function histoire() {
-  return subhero("Mon histoire","La passion derrière chaque création.") + `
-    <section class="story">
-      <div class="container story-grid">
-        <div class="story-visual">
-          <div class="story-oval">
-            ${photo(SETTINGS.founderPortrait,"Portrait de Tatev")}
-          </div>
-          <div class="story-small">
-            ${photo(SETTINGS.founderDetail,"À l'atelier")}
-          </div>
-        </div>
-
-        <div class="story-text">
-          <span class="eyebrow">La fondatrice</span>
-          <h2>Mon <span class="script">histoire</span></h2>
-          <p>Le parcours personnel de Tatev et ses photographies seront ajoutés prochainement.</p>
-        </div>
-      </div>
-    </section>
-    ${contactSection()}
-  `;
-}
-
-function formations() {
-  return subhero("Formations Cake Design","Apprendre, imaginer, créer.") + `
-    <section class="training">
-      <div class="training-bg">
-        ${SETTINGS.trainingImage
-          ? `<img src="${esc(SETTINGS.trainingImage)}" alt="Formation Cake Design">`
-          : ""}
-      </div>
-
-      <div class="training-content">
-        <span class="eyebrow">Savoir-faire & création</span>
-        <h2>L'art de créer
-          <span class="script">& de transmettre</span>
-        </h2>
-        <p>Les programmes, dates et modalités seront ajoutés prochainement.</p>
-        ${order("Demander des informations","Bonjour, je souhaite des informations sur les formations.")}
-      </div>
-    </section>
-
-    <section class="subpage">
-      <div class="container">
-        ${COURSES.length
-          ? `<div class="products">
-              ${COURSES.map(c=>`
-                <article class="product">
-                  ${photo(c.image,c.title)}
-                  <h3>${esc(c.title)}</h3>
-                  <p>${esc(c.description)}</p>
-                </article>
-              `).join("")}
-            </div>`
-          : `<div class="empty-state">
-              <h2>Prochainement</h2>
-              <p>Découvrez bientôt nos programmes de formation.</p>
-            </div>`
-        }
-      </div>
-    </section>
-    ${contactSection()}
-  `;
-}
-
-function avis() {
-  return subhero("Vos beaux messages") + reviewSection() + contactSection();
-}
-
-function contactPage() {
-  return subhero("Contact & commandes","Échangeons autour de votre projet.") + contactSection();
-}
-
-function missing() {
-  return subhero("Page introuvable") + `
-    <section class="subpage center">
-      ${button("Retour à l'accueil","?page=home")}
-    </section>
-  `;
-}
-
-/* =========================================
-   ROUTER
-========================================= */
-
-function render() {
-  const query = new URLSearchParams(location.search);
-  const page = query.get("page") || "home";
-  const id = query.get("id");
-
-  const pages = {
-    home,
-    creations,
-    histoire,
-    formations,
-    avis,
-    contact:contactPage
-  };
-
-  document.getElementById("app").innerHTML =
-    page==="collection" ? collection(id) :
-    page==="produit" ? produit(id) :
-    pages[page] ? pages[page]() :
-    missing();
-
-  document.body.classList.toggle("home",page==="home");
-  document.title = page==="home"
-    ? "Tatev Gateux — Créations d'exception"
-    : page+" | Tatev Gateux";
-
-  window.scrollTo(0,0);
-}
-
-document.getElementById("menuButton").addEventListener("click",()=>{
-  const menu = document.getElementById("mobileNav");
-  const open = menu.classList.toggle("open");
-  document.getElementById("menuButton").setAttribute("aria-expanded",String(open));
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-render();
-</script>
+    logo.crossOrigin = 'anonymous';
+  </script>
 
 </body>
 </html>
