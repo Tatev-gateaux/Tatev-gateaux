@@ -109,6 +109,162 @@ button{font:inherit}
 .formations-rule{height:1px;width:100%;background:#bfa5ac;margin-top:32px}
 .formations-photo{width:100%;height:auto;max-height:620px;object-fit:contain;object-position:center;display:block}
 
+/* VOS DOUX MOTS — NOUVELLE SECTION */
+.reviews-section{
+  padding:0 0 85px;
+  background:
+    linear-gradient(rgba(255,244,241,.14),rgba(255,244,241,.14)),
+    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/simple-elegant-background_1085074-35079.avif?v=1792606373") center/cover no-repeat;
+  overflow:hidden;
+}
+.reviews-heading{
+  min-height:150px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  background:rgba(242,227,227,.91);
+}
+.reviews-heading h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,6vw,82px);
+  font-weight:400;
+  letter-spacing:3px;
+  color:#573943;
+}
+.reviews-heading h2 em{
+  font-family:Allura,cursive;
+  font-style:normal;
+  font-size:1.55em;
+  letter-spacing:0;
+  line-height:.65;
+}
+.reviews-heading-line{
+  width:clamp(30px,8vw,135px);
+  height:1px;
+  background:#b99a9e;
+}
+.reviews-panel{
+  position:relative;
+  max-width:1100px;
+  min-height:570px;
+  margin:75px auto 0;
+  padding:48px 95px;
+  background:rgba(255,247,243,.94);
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:40px;
+  align-items:center;
+}
+.reviews-left{
+  text-align:center;
+  color:#61434b;
+}
+.reviews-kicker{
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+.reviews-script{
+  margin:20px 0;
+  font-family:Allura,cursive;
+  font-size:clamp(60px,6vw,95px);
+  font-weight:400;
+  line-height:1;
+}
+.reviews-description{
+  max-width:320px;
+  margin:0 auto;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(21px,2vw,28px);
+  line-height:1.4;
+}
+.reviews-decoration{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin-top:32px;
+  font-size:24px;
+}
+.reviews-decoration:before,
+.reviews-decoration:after{
+  content:"";
+  width:65px;
+  height:1px;
+  background:#c7a9ae;
+}
+.reviews-image-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:440px;
+}
+.reviews-image{
+  width:auto;
+  max-width:100%;
+  max-height:465px;
+  object-fit:contain;
+  background:#fff;
+  padding:9px;
+  border:1px solid rgba(170,137,143,.25);
+  box-shadow:0 16px 38px rgba(76,48,58,.18);
+  transform:rotate(3deg);
+  transition:opacity .25s ease,transform .35s ease;
+}
+.reviews-image.is-changing{
+  opacity:0;
+  transform:rotate(1deg) translateY(8px);
+}
+.reviews-arrow{
+  position:absolute;
+  z-index:2;
+  top:50%;
+  transform:translateY(-50%);
+  width:54px;
+  height:54px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#805962;
+  font-family:'Cormorant Garamond',serif;
+  font-size:49px;
+  font-weight:400;
+  line-height:1;
+  cursor:pointer;
+  transition:color .2s,transform .2s;
+}
+.reviews-arrow:hover{color:#39222c;transform:translateY(-50%) scale(1.1)}
+.reviews-prev{left:15px}
+.reviews-next{right:15px}
+.reviews-pagination{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  margin-top:35px;
+}
+.review-dot{
+  width:10px;
+  height:10px;
+  padding:0;
+  border:1px solid #a9848b;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+}
+.review-dot.active{background:#a9848b}
+.reviews-counter{
+  text-align:center;
+  margin-top:16px;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#72535a;
+}
+
 /* FOOTER */
 .footer{padding:42px 20px;text-align:center;background:#f1e4e3}
 .footer-name{font-family:'Cormorant Garamond',serif;font-size:32px}
@@ -124,6 +280,7 @@ button{font:inherit}
 .story-circle{width:45%}
 .saveurs-grid{gap:12px}
 .saveur-photo{height:300px}
+.reviews-panel{margin:55px 5% 0;padding:40px 65px}
 }
 @media(max-width:850px){
 .menu-toggle{display:block}
@@ -147,6 +304,11 @@ button{font:inherit}
 .formations-layout{grid-template-columns:1fr;gap:25px}
 .formations-photo{max-height:440px;max-width:650px;margin:auto}
 .formations-title{font-size:100px}
+.reviews-panel{grid-template-columns:1fr;gap:15px;max-width:650px}
+.reviews-left{padding-top:15px}
+.reviews-script{font-size:70px;margin:12px 0}
+.reviews-image-wrap{min-height:300px}
+.reviews-image{max-height:400px}
 }
 @media(max-width:550px){
 .site-logo img{width:120px}
@@ -177,12 +339,27 @@ button{font:inherit}
 .formations-title{font-size:85px}
 .formations-copy{font-size:20px}
 .formations-photo{max-height:300px}
+.reviews-section{padding-bottom:55px}
+.reviews-heading{min-height:105px;gap:10px;padding:12px}
+.reviews-heading h2{font-size:35px;letter-spacing:1px}
+.reviews-heading-line{width:24px}
+.reviews-panel{margin:35px 12px 0;padding:35px 42px;min-height:0}
+.reviews-kicker{font-size:9px;letter-spacing:2px}
+.reviews-script{font-size:57px}
+.reviews-description{font-size:20px}
+.reviews-image-wrap{min-height:250px}
+.reviews-image{max-height:350px;padding:5px}
+.reviews-arrow{width:35px;height:45px;font-size:35px}
+.reviews-prev{left:4px}
+.reviews-next{right:4px}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .js .saveur-card{opacity:1;transform:none;transition:none}
+.reviews-image{transition:none}
 }
 </style>
+
 <script>document.documentElement.classList.add('js');</script>
 </head>
 
@@ -199,6 +376,7 @@ html{scroll-behavior:auto}
     <a href="#mon-histoire">Mon Histoire</a>
     <a href="#saveurs">Nos Saveurs</a>
     <a href="#formations">Formations</a>
+    <a href="#avis">Vos Doux Mots</a>
   </nav>
 </header>
 
@@ -424,6 +602,57 @@ html{scroll-behavior:auto}
   </div>
 </section>
 
+<!-- 7. VOS DOUX MOTS -->
+<section class="reviews-section" id="avis">
+
+  <div class="reviews-heading">
+    <span class="reviews-heading-line"></span>
+    <h2><em>Vos</em> DOUX MOTS</h2>
+    <span class="reviews-heading-line"></span>
+  </div>
+
+  <div class="reviews-panel">
+
+    <button class="reviews-arrow reviews-prev"
+      id="reviewPrev"
+      type="button"
+      aria-label="Avis précédent">←</button>
+
+    <div class="reviews-left">
+      <div class="reviews-kicker">Les témoignages de nos clients</div>
+      <h3 class="reviews-script">Merci du cœur</h3>
+      <p class="reviews-description">
+        Vos mots, vos sourires et vos souvenirs sont notre plus belle récompense.
+      </p>
+      <div class="reviews-decoration">♡</div>
+    </div>
+
+    <div class="reviews-image-wrap">
+      <img
+        id="reviewImage"
+        class="reviews-image"
+        src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/46cb7e3c-af29-46e3-bb11-cc8d0016a7f1.jpg?v=1792606122"
+        alt="Témoignage client 1 sur 4">
+    </div>
+
+    <button class="reviews-arrow reviews-next"
+      id="reviewNext"
+      type="button"
+      aria-label="Avis suivant">→</button>
+
+  </div>
+
+  <div class="reviews-pagination" id="reviewsPagination" aria-label="Choisir un avis">
+    <button class="review-dot active" type="button" aria-label="Avis 1" aria-current="true"></button>
+    <button class="review-dot" type="button" aria-label="Avis 2"></button>
+    <button class="review-dot" type="button" aria-label="Avis 3"></button>
+    <button class="review-dot" type="button" aria-label="Avis 4"></button>
+  </div>
+
+  <div class="reviews-counter" id="reviewsCounter">01 / 04</div>
+
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-name">Tatev Gâteaux</div>
@@ -431,6 +660,7 @@ html{scroll-behavior:auto}
 </footer>
 
 <script>
+/* MENU */
 const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
 
@@ -446,6 +676,7 @@ siteNav.querySelectorAll('a').forEach(a => {
   });
 });
 
+/* GALLERIES */
 const base = "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/";
 
 const galleries = {
@@ -597,6 +828,7 @@ document.addEventListener('keydown', e => {
   }
 });
 
+/* NOS SAVEURS ANIMATION */
 const saveurs = document.querySelector('.tg-saveurs');
 
 if ('IntersectionObserver' in window) {
@@ -613,6 +845,65 @@ if ('IntersectionObserver' in window) {
 } else {
   saveurs.classList.add('is-visible');
 }
+
+/* VOS DOUX MOTS CAROUSEL */
+const reviewPhotos = [
+  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/46cb7e3c-af29-46e3-bb11-cc8d0016a7f1.jpg?v=1792606122",
+  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/30820bfc-a434-463e-a5d8-a399f242fcfb.jpg?v=1792606122",
+  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/bb0a9db0-0ac5-4944-84ea-18bdcf2f3a6e.jpg?v=1792606122",
+  "https://cdn.shopify.com/s/files/1/0840/7020/3650/files/ff59e53b-c9dc-4229-8449-0e71a6d82287.jpg?v=1792606122"
+];
+
+let reviewIndex = 0;
+let reviewTimer;
+
+const reviewImage = document.getElementById('reviewImage');
+const reviewCounter = document.getElementById('reviewsCounter');
+const reviewDots = Array.from(document.querySelectorAll('.review-dot'));
+
+function showReview(nextIndex) {
+  const next = (nextIndex + reviewPhotos.length) % reviewPhotos.length;
+  if (next === reviewIndex) return;
+
+  reviewImage.classList.add('is-changing');
+  clearTimeout(reviewTimer);
+
+  reviewTimer = setTimeout(() => {
+    reviewIndex = next;
+    reviewImage.src = reviewPhotos[reviewIndex];
+    reviewImage.alt = 'Témoignage client ' + (reviewIndex + 1) + ' sur 4';
+    reviewCounter.textContent =
+      String(reviewIndex + 1).padStart(2, '0') + ' / 04';
+
+    reviewDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === reviewIndex);
+      if (index === reviewIndex) {
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.removeAttribute('aria-current');
+      }
+    });
+
+    reviewImage.classList.remove('is-changing');
+  }, 230);
+}
+
+document.getElementById('reviewPrev').addEventListener('click', () => {
+  showReview(reviewIndex - 1);
+});
+
+document.getElementById('reviewNext').addEventListener('click', () => {
+  showReview(reviewIndex + 1);
+});
+
+reviewDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => showReview(index));
+});
+
+reviewPhotos.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
 </script>
 
 </body>
