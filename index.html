@@ -15,7 +15,6 @@
   --plum: #593545;
   --cream: #fbf7ed;
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -76,7 +75,7 @@ button { font: inherit; }
     center / cover no-repeat;
 }
 
-/* WELCOME — EXACT THREE-COLUMN COMPOSITION */
+/* WELCOME */
 .welcome {
   width: 100%;
   display: grid;
@@ -90,12 +89,8 @@ button { font: inherit; }
   min-height: 660px;
   object-fit: cover;
 }
-.welcome-photo:first-child {
-  object-position: center;
-}
-.welcome-photo:last-child {
-  object-position: center;
-}
+.welcome-photo:first-child { object-position: center; }
+.welcome-photo:last-child { object-position: center; }
 .welcome-center {
   background: #fbf8ef;
   padding: 30px 35px 38px;
@@ -255,13 +250,11 @@ button { font: inherit; }
   object-fit: cover;
 }
 
-/* 200PX GAP BEFORE SAVEURS */
+/* SAVEURS */
 .saveurs-separator {
   height: 200px;
   background: #fff;
 }
-
-/* NOS SAVEURS */
 .tg-saveurs {
   position: relative;
   isolation: isolate;
@@ -373,7 +366,7 @@ button { font: inherit; }
   fill: none;
 }
 
-/* MON HISTOIRE — AFTER SAVEURS */
+/* MON HISTOIRE */
 .story {
   position: relative;
   width: 100%;
@@ -487,7 +480,6 @@ button { font: inherit; }
   .saveurs-grid { gap: 12px; }
   .saveur-photo { height: 300px; }
 }
-
 @media(max-width:850px) {
   .menu-toggle { display: block; }
   .site-nav {
@@ -501,7 +493,6 @@ button { font: inherit; }
     gap: 22px;
   }
   .site-nav.open { display: flex; }
-
   .welcome {
     grid-template-columns: 1fr 1fr;
     min-height: 0;
@@ -516,10 +507,8 @@ button { font: inherit; }
   }
   .welcome-title { font-size: 80px; }
   .welcome-copy { font-size: 23px; }
-
   .saveurs-grid { grid-template-columns: repeat(3,1fr); gap: 30px 15px; }
   .tg-saveurs-velvet { top: 135px; }
-
   .story { min-height: 0; padding: 80px 5%; }
   .story-layout { min-height: 0; flex-direction: column; }
   .story-circle {
@@ -538,20 +527,16 @@ button { font: inherit; }
   }
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
 }
-
 @media(max-width:550px) {
   .site-logo img { width: 120px; }
   .hero { min-height: 85svh; }
-
   .welcome-photo { height: 235px; min-height: 235px; }
   .welcome-center { padding: 40px 20px; }
   .welcome-title { font-size: 62px; }
   .welcome-copy { font-size: 20px; line-height: 1.35; }
-
   .categories-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
   .category-card { height: 270px; }
   .category-label { font-size: 17px; bottom: 10px; width: calc(100% - 16px); }
-
   .saveurs-separator { height: 150px; }
   .saveurs-grid { grid-template-columns: repeat(2,1fr); gap: 30px 12px; }
   .saveur-photo { height: 250px; }
@@ -563,13 +548,11 @@ button { font: inherit; }
     width: min(100%,230px);
     justify-self: center;
   }
-
   .story { padding: 55px 14px 65px; }
   .story-circle { width: min(80vw,330px); margin-bottom: -60px; }
   .story-panel { padding: 90px 20px 45px; }
   .story-title { font-size: 64px; }
   .story-text { font-size: 20px; line-height: 1.35; }
-
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-grid img { height: 350px; }
   .gallery-panel { padding: 55px 15px 25px; }
@@ -730,7 +713,7 @@ document.documentElement.classList.add('js');
   </div>
 </section>
 
-<!-- 5. MON HISTOIRE — AFTER SAVEURS -->
+<!-- 5. MON HISTOIRE -->
 <section class="story" id="mon-histoire">
   <div class="story-layout">
 
