@@ -204,7 +204,7 @@ button{font:inherit}
 .review-dot.active{background:#a9848b}
 .reviews-counter{text-align:center;margin-top:16px;font-size:11px;letter-spacing:3px;color:#72535a}
 
-/* NEW LUXURY FOOTER */
+/* LUXURY FOOTER */
 .tg-footer{
   position:relative;
   isolation:isolate;
@@ -214,104 +214,53 @@ button{font:inherit}
   background:#e9d5c7 url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/3f117850-fdc5-4dc2-a995-1366e049eec4.png?v=1792607273") center/cover no-repeat;
   color:#593545;
 }
-.tg-footer:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:rgba(251,239,230,.23);
-}
-.tg-footer-inner{
-  max-width:1400px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1.2fr 1fr;
-  gap:55px;
-  align-items:center;
-}
-.tg-footer-contact,.tg-footer-social{
-  display:flex;
-  flex-direction:column;
-  gap:27px;
-}
-.tg-footer-item{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  min-width:0;
-  font-family:'Cormorant Garamond',serif;
-}
-.tg-footer-icon{
-  width:48px;
-  height:48px;
-  flex:0 0 48px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  border-radius:50%;
-  background:rgba(139,92,105,.69);
-  color:white;
-}
-.tg-footer-icon svg{
-  width:24px;
-  height:24px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.tg-footer-item-text{
-  min-width:0;
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
-.tg-footer-item-text strong{
-  font-weight:500;
-  font-size:24px;
-  line-height:1.1;
-}
-.tg-footer-item-text a{
-  font-size:20px;
-  line-height:1.25;
-  overflow-wrap:anywhere;
-  transition:opacity .2s;
-}
+.tg-footer:before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(251,239,230,.23)}
+.tg-footer-inner{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:55px;align-items:center}
+.tg-footer-contact,.tg-footer-social{display:flex;flex-direction:column;gap:27px}
+.tg-footer-item{display:flex;align-items:center;gap:16px;min-width:0;font-family:'Cormorant Garamond',serif}
+.tg-footer-icon{width:48px;height:48px;flex:0 0 48px;display:flex;justify-content:center;align-items:center;border-radius:50%;background:rgba(139,92,105,.69);color:white}
+.tg-footer-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tg-footer-item-text{min-width:0;display:flex;flex-direction:column;gap:3px}
+.tg-footer-item-text strong{font-weight:500;font-size:24px;line-height:1.1}
+.tg-footer-item-text a{font-size:20px;line-height:1.25;overflow-wrap:anywhere;transition:opacity .2s}
 .tg-footer-item-text a:hover{opacity:.65}
-.tg-footer-brand{
+.tg-footer-brand{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-width:0}
+.tg-footer-logo{width:min(100%,360px);max-height:220px;object-fit:contain}
+.tg-footer-tagline{margin:10px 0 0;font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;text-align:center}
+.tg-footer-social{border-left:1px solid rgba(89,53,69,.43);padding-left:55px}
+.tg-footer-bottom{max-width:1400px;margin:52px auto 0;padding-top:20px;border-top:1px solid rgba(89,53,69,.2);text-align:center;font-size:10px;letter-spacing:2px}
+
+/* OPENING ANIMATION — ADDED */
+#tatev-opening{
+  position:fixed;
+  inset:0;
+  z-index:999999;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
-  text-align:center;
-  min-width:0;
+  justify-content:center;
+  background:#e9d5c9;
+  opacity:1;
+  visibility:visible;
+  transition:opacity 1.1s cubic-bezier(.4,0,.2,1),visibility 1.1s;
 }
-.tg-footer-logo{
-  width:min(100%,360px);
-  max-height:220px;
+#tatev-opening.tatev-opening-hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+#tatev-opening-logo{
+  display:block;
+  width:clamp(150px,21vw,260px);
+  max-height:240px;
   object-fit:contain;
+  opacity:0;
+  transform:translateY(18px) scale(.88);
+  animation:tatevLogoEntrance 1.55s cubic-bezier(.22,1,.36,1) forwards;
 }
-.tg-footer-tagline{
-  margin:10px 0 0;
-  font-size:10px;
-  font-weight:400;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  text-align:center;
-}
-.tg-footer-social{
-  border-left:1px solid rgba(89,53,69,.43);
-  padding-left:55px;
-}
-.tg-footer-bottom{
-  max-width:1400px;
-  margin:52px auto 0;
-  padding-top:20px;
-  border-top:1px solid rgba(89,53,69,.2);
-  text-align:center;
-  font-size:10px;
-  letter-spacing:2px;
+@keyframes tatevLogoEntrance{
+  0%{opacity:0;transform:translateY(18px) scale(.88)}
+  65%{opacity:1}
+  100%{opacity:1;transform:translateY(0) scale(1)}
 }
 
 /* RESPONSIVE */
@@ -418,11 +367,14 @@ button{font:inherit}
 .tg-footer-item-text strong{font-size:21px}
 .tg-footer-item-text a{font-size:18px}
 .tg-footer-bottom{margin-top:32px}
+#tatev-opening-logo{width:175px}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .js .saveur-card{opacity:1;transform:none;transition:none}
 .reviews-image{transition:none}
+#tatev-opening-logo{animation:none;opacity:1;transform:none}
+#tatev-opening{transition-duration:.2s}
 }
 </style>
 
@@ -430,6 +382,48 @@ html{scroll-behavior:auto}
 </head>
 
 <body>
+
+<!-- OPENING ANIMATION — CORRECT POSITION -->
+<div id="tatev-opening" aria-hidden="true">
+  <img
+    id="tatev-opening-logo"
+    src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545"
+    alt=""
+    fetchpriority="high">
+</div>
+
+<script>
+(function(){
+  const opening=document.getElementById('tatev-opening');
+  if(!opening)return;
+
+  let alreadyShown=false;
+  try{
+    alreadyShown=sessionStorage.getItem('tatevOpeningShown')==='1';
+  }catch(error){}
+
+  if(alreadyShown){
+    opening.remove();
+    return;
+  }
+
+  try{
+    sessionStorage.setItem('tatevOpeningShown','1');
+  }catch(error){}
+
+  function finishOpening(){
+    opening.classList.add('tatev-opening-hide');
+    opening.addEventListener('transitionend',function(){
+      opening.remove();
+    },{once:true});
+  }
+
+  window.setTimeout(finishOpening,2100);
+  window.setTimeout(function(){
+    if(opening.isConnected)opening.remove();
+  },3500);
+})();
+</script>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -719,12 +713,11 @@ html{scroll-behavior:auto}
 
 </section>
 
-<!-- 8. NEW LUXURY FOOTER -->
+<!-- 8. LUXURY FOOTER -->
 <footer class="tg-footer" id="contact">
 
   <div class="tg-footer-inner">
 
-    <!-- LEFT: PHONE AND WHATSAPP -->
     <div class="tg-footer-contact">
 
       <div class="tg-footer-item">
@@ -754,7 +747,6 @@ html{scroll-behavior:auto}
 
     </div>
 
-    <!-- CENTER: ORIGINAL TATEV LOGO -->
     <div class="tg-footer-brand">
       <a href="#accueil" aria-label="Tatev Gâteaux — Accueil">
         <img
@@ -765,7 +757,6 @@ html{scroll-behavior:auto}
       <p class="tg-footer-tagline">Créations pâtissières sur mesure</p>
     </div>
 
-    <!-- RIGHT: BOTH INSTAGRAM ACCOUNTS -->
     <div class="tg-footer-social">
 
       <div class="tg-footer-item">
