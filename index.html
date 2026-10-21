@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tatev Gâteaux | Pâtisserie sur mesure</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,565 +11,184 @@
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --plum: #593545;
-  --cream: #fbf7ed;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'Jost', sans-serif;
-  color: var(--plum);
-  background: #fff;
-}
-body.modal-open { overflow: hidden; }
-img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
+:root{--plum:#593545;--cream:#fbf7ed}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Jost,sans-serif;color:var(--plum);background:#fff}
+body.modal-open{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
 
 /* HEADER */
-.site-header {
-  position: absolute;
-  z-index: 30;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 22px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.site-logo img {
-  width: 155px;
-  max-height: 95px;
-  object-fit: contain;
-}
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-}
-.site-nav a {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.site-nav a:hover { opacity: .65; }
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  color: var(--plum);
-  font-size: 30px;
-  cursor: pointer;
-}
+.site-header{position:absolute;z-index:30;top:0;left:0;width:100%;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-logo img{width:155px;max-height:95px;object-fit:contain}
+.site-nav{display:flex;align-items:center;gap:36px}
+.site-nav a{font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.site-nav a:hover{opacity:.65}
+.menu-toggle{display:none;background:none;border:0;color:var(--plum);font-size:30px;cursor:pointer}
 
 /* HERO */
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-  background: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078")
-    center / cover no-repeat;
-}
+.hero{width:100%;min-height:100vh;min-height:100svh;background:url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/73b639e0-b600-4c55-9c61-72e6177930f5.png?v=1792517078") center/cover no-repeat}
 
-/* WELCOME */
-.welcome {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 29% 42% 29%;
-  min-height: 660px;
-  background: var(--cream);
-}
-.welcome-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 660px;
-  object-fit: cover;
-}
-.welcome-photo:first-child { object-position: center; }
-.welcome-photo:last-child { object-position: center; }
-.welcome-center {
-  background: #fbf8ef;
-  padding: 30px 35px 38px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.welcome-title {
-  margin: 0 0 12px;
-  font-family: 'Allura', cursive;
-  font-size: clamp(54px, 5.4vw, 90px);
-  font-weight: 400;
-  line-height: 1;
-  color: #231b1c;
-}
-.welcome-copy {
-  max-width: 570px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(20px, 1.6vw, 25px);
-  line-height: 1.43;
-  letter-spacing: .7px;
-  color: #261d20;
-}
-.welcome-copy p { margin: 0 0 15px; }
-.welcome-ornament {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 16px;
-  color: #7e596a;
-}
-.welcome-ornament span {
-  width: 80px;
-  height: 1px;
-  background: currentColor;
-}
-.welcome-ornament svg {
-  width: 25px;
-  height: 25px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.4;
-}
+/* BIENVENUE */
+.welcome{width:100%;display:grid;grid-template-columns:29% 42% 29%;min-height:660px;background:var(--cream)}
+.welcome-photo{width:100%;height:100%;min-height:660px;object-fit:cover}
+.welcome-center{background:#fbf8ef;padding:30px 35px 38px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.welcome-title{margin:0 0 12px;font-family:Allura,cursive;font-size:clamp(54px,5.4vw,90px);font-weight:400;line-height:1;color:#231b1c}
+.welcome-copy{max-width:570px;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,1.6vw,25px);line-height:1.43;letter-spacing:.7px;color:#261d20}
+.welcome-copy p{margin:0 0 15px}
+.welcome-ornament,.story-heart,.saveurs-ornament{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:16px}
+.welcome-ornament span,.story-heart span,.saveurs-ornament span{width:80px;height:1px;background:currentColor}
+.welcome-ornament svg,.story-heart svg,.saveurs-ornament svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.4}
 
 /* CATEGORIES */
-.tg-categories {
-  padding: 110px 5% 125px;
-  background:
-    linear-gradient(rgba(255,246,246,.77),rgba(255,246,246,.77)),
-    url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107")
-    center / cover no-repeat;
-}
-.categories-inner {
-  max-width: 1400px;
-  margin: auto;
-}
-.section-eyebrow {
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-}
-.section-title {
-  margin: 10px 0 52px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(46px, 6vw, 76px);
-  font-weight: 400;
-  text-align: center;
-}
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 24px;
-}
-.category-card {
-  position: relative;
-  width: 100%;
-  height: 420px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  background: #eee5e3;
-  cursor: pointer;
-}
-.category-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .8s ease;
-}
-.category-card:hover img { transform: scale(1.06); }
-.category-card::after {
-  content: "";
-  position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(transparent,rgba(34,21,28,.42));
-  pointer-events: none;
-}
-.category-label {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
-  width: calc(100% - 36px);
-  padding: 14px 12px;
-  background: rgba(255,250,247,.94);
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-}
+.tg-categories{padding:110px 5% 125px;background:linear-gradient(rgba(255,246,246,.77),rgba(255,246,246,.77)),url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/pink-roses-on-a-pink-background-free-photo.jpg?v=1792521107") center/cover no-repeat}
+.categories-inner{max-width:1400px;margin:auto}
+.section-eyebrow{text-align:center;font-size:11px;letter-spacing:3.5px;text-transform:uppercase}
+.section-title{margin:10px 0 52px;font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,76px);font-weight:400;text-align:center}
+.categories-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.category-card{position:relative;width:100%;height:420px;padding:0;border:0;overflow:hidden;background:#eee5e3;cursor:pointer}
+.category-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.category-card:hover img{transform:scale(1.06)}
+.category-card:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(34,21,28,.42));pointer-events:none}
+.category-label{position:absolute;z-index:1;left:50%;bottom:22px;transform:translateX(-50%);width:calc(100% - 36px);padding:14px 12px;background:rgba(255,250,247,.94);text-align:center;font-family:'Cormorant Garamond',serif;font-size:22px}
 
-/* GALLERY MODAL */
-.gallery-modal {
-  position: fixed;
-  z-index: 100;
-  inset: 0;
-  display: none;
-  overflow-y: auto;
-  padding: 60px 22px;
-  background: rgba(31,21,30,.83);
-}
-.gallery-modal.open { display: block; }
-.gallery-panel {
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-  padding: 55px 35px;
-  background: #fffaf8;
-}
-.gallery-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  border: 0;
-  background: transparent;
-  font-size: 35px;
-  cursor: pointer;
-}
-.gallery-title {
-  margin: 0 0 35px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 52px;
-  font-weight: 400;
-  text-align: center;
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 20px;
-}
-.gallery-grid img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-}
+/* GALLERY */
+.gallery-modal{position:fixed;z-index:100;inset:0;display:none;overflow-y:auto;padding:60px 22px;background:rgba(31,21,30,.83)}
+.gallery-modal.open{display:block}
+.gallery-panel{position:relative;max-width:1200px;margin:auto;padding:55px 35px;background:#fffaf8}
+.gallery-close{position:absolute;top:12px;right:18px;border:0;background:transparent;font-size:35px;cursor:pointer}
+.gallery-title{margin:0 0 35px;font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:400;text-align:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.gallery-grid img{width:100%;height:360px;object-fit:cover}
 
-/* SAVEURS */
-.saveurs-separator {
-  height: 200px;
-  background: #fff;
-}
-.tg-saveurs {
-  position: relative;
-  isolation: isolate;
-  padding: 0 20px 45px;
-  overflow: hidden;
-  background: #fff;
-  color: #fff;
-}
-.tg-saveurs-velvet {
-  position: absolute;
-  z-index: 0;
-  top: 150px;
-  inset-inline: 0;
-  bottom: 0;
-  background: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651")
-    center top / 420px auto repeat;
-}
-.saveurs-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1400px;
-  margin: auto;
-}
-.saveurs-grid {
-  display: grid;
-  grid-template-columns: repeat(5,minmax(0,1fr));
-  gap: 24px;
-}
-.saveur-card {
-  min-width: 0;
-  text-align: center;
-}
-.saveur-photo {
-  width: 100%;
-  height: 365px;
-  object-fit: cover;
-}
-.js .saveur-card {
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: opacity 1.4s ease,
-    transform 1.8s cubic-bezier(.22,1,.36,1);
-}
-.js .tg-saveurs.is-visible .saveur-card {
-  opacity: 1;
-  transform: translateY(0);
-}
-.js .tg-saveurs.is-visible .saveur-card:nth-child(2) { transition-delay: .15s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(3) { transition-delay: .3s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(4) { transition-delay: .45s; }
-.js .tg-saveurs.is-visible .saveur-card:nth-child(5) { transition-delay: .6s; }
-.saveur-card-content { padding: 24px 4px 0; }
-.saveur-card h3 {
-  margin: 0 0 13px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.saveur-card-line {
-  display: block;
-  width: 38px;
-  height: 1px;
-  margin: 0 auto 14px;
-  background: rgba(255,255,255,.85);
-}
-.saveur-card p {
-  max-width: 235px;
-  margin: auto;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  line-height: 1.45;
-}
-.saveurs-heading {
-  text-align: center;
-  padding: 32px 10px 0;
-}
-.saveurs-heading span {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  letter-spacing: 5px;
-}
-.saveurs-heading h2 {
-  margin: 4px 0 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(50px,6vw,76px);
-  font-weight: 400;
-  line-height: 1;
-}
-.saveurs-ornament {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin: 18px auto 0;
-}
-.saveurs-ornament span {
-  width: 90px;
-  height: 1px;
-  background: rgba(255,255,255,.85);
-}
-.saveurs-ornament svg {
-  width: 23px;
-  height: 23px;
-  stroke: #fff;
-  stroke-width: 1.5;
-  fill: none;
-}
+/* NOS SAVEURS */
+.saveurs-separator{height:200px;background:#fff}
+.tg-saveurs{position:relative;isolation:isolate;padding:0 20px 45px;overflow:hidden;background:#fff;color:#fff}
+.tg-saveurs-velvet{position:absolute;z-index:0;top:150px;inset-inline:0;bottom:0;background:url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/Screenshot_2026-10-21_000400.png?v=1792526651") center top/420px auto repeat}
+.saveurs-inner{position:relative;z-index:1;max-width:1400px;margin:auto}
+.saveurs-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.saveur-card{min-width:0;text-align:center}
+.saveur-photo{width:100%;height:365px;object-fit:cover}
+.js .saveur-card{opacity:0;transform:translateY(-100px);transition:opacity 1.4s ease,transform 1.8s cubic-bezier(.22,1,.36,1)}
+.js .tg-saveurs.is-visible .saveur-card{opacity:1;transform:translateY(0)}
+.js .tg-saveurs.is-visible .saveur-card:nth-child(2){transition-delay:.15s}
+.js .tg-saveurs.is-visible .saveur-card:nth-child(3){transition-delay:.3s}
+.js .tg-saveurs.is-visible .saveur-card:nth-child(4){transition-delay:.45s}
+.js .tg-saveurs.is-visible .saveur-card:nth-child(5){transition-delay:.6s}
+.saveur-card-content{padding:24px 4px 0}
+.saveur-card h3{margin:0 0 13px;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;letter-spacing:3px;text-transform:uppercase}
+.saveur-card-line{display:block;width:38px;height:1px;margin:0 auto 14px;background:rgba(255,255,255,.85)}
+.saveur-card p{max-width:235px;margin:auto;font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.45}
+.saveurs-heading{text-align:center;padding:32px 10px 0}
+.saveurs-heading span{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:5px}
+.saveurs-heading h2{margin:4px 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(50px,6vw,76px);font-weight:400;line-height:1}
+.saveurs-ornament{margin:18px auto 0}
 
 /* MON HISTOIRE */
-.story {
-  position: relative;
-  width: 100%;
-  min-height: 780px;
-  padding: 100px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/images_20e9066c-7731-4d9c-967b-2bf985b6c843.jpg?v=1792528341")
-    center / cover no-repeat;
-}
-.story-layout {
-  position: relative;
-  width: min(100%,1480px);
-  min-height: 630px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.story-panel {
-  position: relative;
-  z-index: 1;
-  width: 67%;
-  min-height: 620px;
-  padding: 55px 65px 55px 185px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,250,245,.87);
-  backdrop-filter: blur(7px);
-}
-.story-content {
-  max-width: 630px;
-  text-align: center;
-}
-.story-title {
-  margin: 0 0 25px;
-  font-family: 'Allura', cursive;
-  font-size: clamp(65px,6.5vw,105px);
-  font-weight: 400;
-  line-height: 1;
-}
-.story-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(20px,1.55vw,25px);
-  line-height: 1.26;
-}
-.story-text p { margin: 0 0 15px; }
-.story-circle {
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 1%;
-  transform: translateY(-50%);
-  width: 46%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #e8d4cb;
-}
-.story-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.story-heart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 23px auto 0;
-}
-.story-heart span {
-  width: 85px;
-  height: 1px;
-  background: #775e6d;
-}
-.story-heart svg {
-  width: 27px;
-  height: 27px;
-  fill: none;
-  stroke: #775e6d;
-  stroke-width: 1.4;
-}
+.story{position:relative;width:100%;min-height:780px;padding:100px 5%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:url("https://cdn.shopify.com/s/files/1/0840/7020/3650/files/images_20e9066c-7731-4d9c-967b-2bf985b6c843.jpg?v=1792528341") center/cover no-repeat}
+.story-layout{position:relative;width:min(100%,1480px);min-height:630px;display:flex;align-items:center;justify-content:flex-end}
+.story-panel{position:relative;z-index:1;width:67%;min-height:620px;padding:55px 65px 55px 185px;display:flex;align-items:center;justify-content:center;background:rgba(255,250,245,.87);backdrop-filter:blur(7px)}
+.story-content{max-width:630px;text-align:center}
+.story-title{margin:0 0 25px;font-family:Allura,cursive;font-size:clamp(65px,6.5vw,105px);font-weight:400;line-height:1}
+.story-text{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,1.55vw,25px);line-height:1.26}
+.story-text p{margin:0 0 15px}
+.story-circle{position:absolute;z-index:3;top:50%;left:1%;transform:translateY(-50%);width:46%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#e8d4cb}
+.story-circle img{width:100%;height:100%;object-fit:cover}
+
+/* FORMATIONS */
+.formations{width:100%;background:#fff;padding:95px 6%;overflow:hidden}
+.formations-layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:5%;align-items:center}
+.formations-content{color:#825d67;min-width:0}
+.formations-title{font-family:Allura,cursive;font-weight:400;font-size:clamp(85px,9vw,145px);line-height:.95;margin:0 0 25px}
+.formations-copy{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.45vw,23px);line-height:1.45}
+.formations-copy p{margin:0 0 21px}
+.formations-intro{position:relative;padding-left:35px}
+.formations-intro:before{content:'“';position:absolute;left:0;top:-10px;font-size:65px}
+.formations-rule{height:1px;width:100%;background:#bfa5ac;margin-top:32px}
+.formations-photo{width:100%;height:auto;max-height:620px;object-fit:contain;object-position:center;display:block}
 
 /* FOOTER */
-.footer {
-  padding: 42px 20px;
-  text-align: center;
-  background: #f1e4e3;
-}
-.footer-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-}
-.footer p {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+.footer{padding:42px 20px;text-align:center;background:#f1e4e3}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:32px}
+.footer p{font-size:11px;letter-spacing:2px;text-transform:uppercase}
 
 /* RESPONSIVE */
-@media(max-width:1200px) {
-  .welcome { grid-template-columns: 27% 46% 27%; }
-  .welcome-center { padding: 35px 20px; }
-  .welcome-copy { font-size: 20px; }
-  .categories-grid { grid-template-columns: repeat(3,1fr); }
-  .story-panel { width: 70%; padding: 45px 35px 45px 145px; }
-  .story-circle { width: 45%; }
-  .saveurs-grid { gap: 12px; }
-  .saveur-photo { height: 300px; }
+@media(max-width:1200px){
+.welcome{grid-template-columns:27% 46% 27%}
+.welcome-center{padding:35px 20px}
+.welcome-copy{font-size:20px}
+.categories-grid{grid-template-columns:repeat(3,1fr)}
+.story-panel{width:70%;padding:45px 35px 45px 145px}
+.story-circle{width:45%}
+.saveurs-grid{gap:12px}
+.saveur-photo{height:300px}
 }
-@media(max-width:850px) {
-  .menu-toggle { display: block; }
-  .site-nav {
-    display: none;
-    position: absolute;
-    right: 5%;
-    top: 90px;
-    padding: 25px;
-    background: rgba(255,250,248,.97);
-    flex-direction: column;
-    gap: 22px;
-  }
-  .site-nav.open { display: flex; }
-  .welcome {
-    grid-template-columns: 1fr 1fr;
-    min-height: 0;
-  }
-  .welcome-photo { min-height: 330px; height: 330px; }
-  .welcome-photo:first-child { grid-column: 1; grid-row: 1; }
-  .welcome-photo:last-child { grid-column: 2; grid-row: 1; }
-  .welcome-center {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    padding: 55px 7%;
-  }
-  .welcome-title { font-size: 80px; }
-  .welcome-copy { font-size: 23px; }
-  .saveurs-grid { grid-template-columns: repeat(3,1fr); gap: 30px 15px; }
-  .tg-saveurs-velvet { top: 135px; }
-  .story { min-height: 0; padding: 80px 5%; }
-  .story-layout { min-height: 0; flex-direction: column; }
-  .story-circle {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: min(75vw,450px);
-    margin-bottom: -85px;
-    align-self: flex-start;
-  }
-  .story-panel {
-    width: 100%;
-    min-height: 0;
-    padding: 125px 8% 55px;
-  }
-  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+@media(max-width:850px){
+.menu-toggle{display:block}
+.site-nav{display:none;position:absolute;right:5%;top:90px;padding:25px;background:rgba(255,250,248,.97);flex-direction:column;gap:22px}
+.site-nav.open{display:flex}
+.welcome{grid-template-columns:1fr 1fr;min-height:0}
+.welcome-photo{min-height:330px;height:330px}
+.welcome-photo:first-child{grid-column:1;grid-row:1}
+.welcome-photo:last-child{grid-column:2;grid-row:1}
+.welcome-center{grid-column:1/-1;grid-row:2;padding:55px 7%}
+.welcome-title{font-size:80px}
+.welcome-copy{font-size:23px}
+.saveurs-grid{grid-template-columns:repeat(3,1fr);gap:30px 15px}
+.tg-saveurs-velvet{top:135px}
+.story{min-height:0;padding:80px 5%}
+.story-layout{min-height:0;flex-direction:column}
+.story-circle{position:relative;top:auto;left:auto;transform:none;width:min(75vw,450px);margin-bottom:-85px;align-self:flex-start}
+.story-panel{width:100%;min-height:0;padding:125px 8% 55px}
+.gallery-grid{grid-template-columns:repeat(2,1fr)}
+.formations{padding:65px 6%}
+.formations-layout{grid-template-columns:1fr;gap:25px}
+.formations-photo{max-height:440px;max-width:650px;margin:auto}
+.formations-title{font-size:100px}
 }
-@media(max-width:550px) {
-  .site-logo img { width: 120px; }
-  .hero { min-height: 85svh; }
-  .welcome-photo { height: 235px; min-height: 235px; }
-  .welcome-center { padding: 40px 20px; }
-  .welcome-title { font-size: 62px; }
-  .welcome-copy { font-size: 20px; line-height: 1.35; }
-  .categories-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
-  .category-card { height: 270px; }
-  .category-label { font-size: 17px; bottom: 10px; width: calc(100% - 16px); }
-  .saveurs-separator { height: 150px; }
-  .saveurs-grid { grid-template-columns: repeat(2,1fr); gap: 30px 12px; }
-  .saveur-photo { height: 250px; }
-  .tg-saveurs-velvet { top: 110px; }
-  .saveur-card h3 { font-size: 17px; letter-spacing: 1.5px; }
-  .saveur-card p { font-size: 16px; }
-  .saveur-card:last-child {
-    grid-column: 1 / -1;
-    width: min(100%,230px);
-    justify-self: center;
-  }
-  .story { padding: 55px 14px 65px; }
-  .story-circle { width: min(80vw,330px); margin-bottom: -60px; }
-  .story-panel { padding: 90px 20px 45px; }
-  .story-title { font-size: 64px; }
-  .story-text { font-size: 20px; line-height: 1.35; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-grid img { height: 350px; }
-  .gallery-panel { padding: 55px 15px 25px; }
+@media(max-width:550px){
+.site-logo img{width:120px}
+.hero{min-height:85svh}
+.welcome-photo{height:235px;min-height:235px}
+.welcome-center{padding:40px 20px}
+.welcome-title{font-size:62px}
+.welcome-copy{font-size:20px;line-height:1.35}
+.categories-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.category-card{height:270px}
+.category-label{font-size:17px;bottom:10px;width:calc(100% - 16px)}
+.saveurs-separator{height:150px}
+.saveurs-grid{grid-template-columns:repeat(2,1fr);gap:30px 12px}
+.saveur-photo{height:250px}
+.tg-saveurs-velvet{top:110px}
+.saveur-card h3{font-size:17px;letter-spacing:1.5px}
+.saveur-card p{font-size:16px}
+.saveur-card:last-child{grid-column:1/-1;width:min(100%,230px);justify-self:center}
+.story{padding:55px 14px 65px}
+.story-circle{width:min(80vw,330px);margin-bottom:-60px}
+.story-panel{padding:90px 20px 45px}
+.story-title{font-size:64px}
+.story-text{font-size:20px;line-height:1.35}
+.gallery-grid{grid-template-columns:1fr}
+.gallery-grid img{height:350px}
+.gallery-panel{padding:55px 15px 25px}
+.formations{padding:45px 20px}
+.formations-title{font-size:85px}
+.formations-copy{font-size:20px}
+.formations-photo{max-height:300px}
 }
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  .js .saveur-card { opacity: 1; transform: none; transition: none; }
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.js .saveur-card{opacity:1;transform:none;transition:none}
 }
 </style>
-
-<script>
-document.documentElement.classList.add('js');
-</script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <a class="site-logo" href="#accueil">
     <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download.png?v=1792518545" alt="Tatev Gâteaux">
@@ -579,14 +198,16 @@ document.documentElement.classList.add('js');
     <a href="#categories">Catégories</a>
     <a href="#mon-histoire">Mon Histoire</a>
     <a href="#saveurs">Nos Saveurs</a>
+    <a href="#formations">Formations</a>
   </nav>
 </header>
 
 <!-- 1. HERO -->
 <section class="hero" id="accueil"></section>
 
-<!-- 2. WELCOME -->
+<!-- 2. BIENVENUE CHEZ TATEV -->
 <section class="welcome" id="bienvenue">
+
   <img class="welcome-photo"
     src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/f87d23e3-9d73-4e39-9271-37d6425430df.jpg?v=1792518863"
     alt="Un moment précieux autour d'un gâteau" loading="lazy">
@@ -599,32 +220,36 @@ document.documentElement.classList.add('js');
       <p>Que ce soit pour un mariage, un anniversaire, un baptême ou tout autre moment spécial, mon objectif est de créer des pièces gourmandes et élégantes, qui marquent les esprits et laissent un souvenir inoubliable.</p>
       <p>Merci d’être ici et de faire partie de cette belle aventure.</p>
     </div>
-    <div class="welcome-ornament" aria-hidden="true">
+    <div class="welcome-ornament">
       <span></span>
-      <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+      </svg>
       <span></span>
     </div>
   </div>
 
   <img class="welcome-photo"
     src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/MMM.jpg?v=1792518864"
-    alt="Gâteau de mariage aux fleurs" loading="lazy">
+    alt="Gâteau aux fleurs" loading="lazy">
+
 </section>
 
-<!-- 3. CATEGORIES -->
+<!-- 3. NOS CREATIONS -->
 <section class="tg-categories" id="categories">
   <div class="categories-inner">
     <div class="section-eyebrow">L'univers de Tatev</div>
     <h2 class="section-title">Nos Créations</h2>
+
     <div class="categories-grid">
 
       <button class="category-card" data-gallery="mariage">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506" alt="Mariage" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471507135_18448784689069880_7435331389009824822_n_c348ceef-490a-4499-83e5-503d8bd14098.jpg?v=1792520506" alt="Gâteaux de mariage" loading="lazy">
         <span class="category-label">Gâteaux de mariage</span>
       </button>
 
       <button class="category-card" data-gallery="anniversaire">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692" alt="Anniversaire" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/fc1e8d09-1ad0-440c-9453-83228020edc4.jpg?v=1792520692" alt="Gâteaux d'anniversaire" loading="lazy">
         <span class="category-label">Gâteaux d'anniversaire</span>
       </button>
 
@@ -634,12 +259,12 @@ document.documentElement.classList.add('js');
       </button>
 
       <button class="category-card" data-gallery="enfants">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140" alt="Enfants" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/471614349_18448787176069880_3019121382328272051_n.jpg?v=1792520140" alt="Gâteaux pour enfants" loading="lazy">
         <span class="category-label">Gâteaux pour enfants</span>
       </button>
 
       <button class="category-card" data-gallery="bapteme">
-        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476" alt="Baptême" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/854e7f3e-0ec4-4779-abc8-2939632bd719_385ece45-d9ea-438f-8169-0c811b272abb.jpg?v=1792520476" alt="Gâteaux de baptême" loading="lazy">
         <span class="category-label">Gâteaux de baptême</span>
       </button>
 
@@ -657,7 +282,7 @@ document.documentElement.classList.add('js');
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY MODAL -->
 <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Galerie">
   <div class="gallery-panel">
     <button class="gallery-close" id="galleryClose" aria-label="Fermer">×</button>
@@ -668,35 +293,56 @@ document.documentElement.classList.add('js');
 
 <div class="saveurs-separator"></div>
 
-<!-- 4. SAVEURS -->
+<!-- 4. NOS SAVEURS -->
 <section class="tg-saveurs" id="saveurs">
   <div class="tg-saveurs-velvet"></div>
   <div class="saveurs-inner">
+
     <div class="saveurs-grid">
 
       <article class="saveur-card">
         <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1c2eed35-80b0-4e83-91b3-59a825e674f7.png?v=1792525549" alt="Vanille Citron" loading="lazy">
-        <div class="saveur-card-content"><h3>Vanille Citron</h3><span class="saveur-card-line"></span><p>Une crème vanillée douce et une touche de citron frais.</p></div>
+        <div class="saveur-card-content">
+          <h3>Vanille Citron</h3>
+          <span class="saveur-card-line"></span>
+          <p>Une crème vanillée douce et une touche de citron frais.</p>
+        </div>
       </article>
 
       <article class="saveur-card">
         <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_4.png?v=1792525549" alt="Chocolat" loading="lazy">
-        <div class="saveur-card-content"><h3>Chocolat</h3><span class="saveur-card-line"></span><p>Un biscuit moelleux et une ganache au chocolat fondante.</p></div>
+        <div class="saveur-card-content">
+          <h3>Chocolat</h3>
+          <span class="saveur-card-line"></span>
+          <p>Un biscuit moelleux et une ganache au chocolat fondante.</p>
+        </div>
       </article>
 
       <article class="saveur-card">
         <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_3.png?v=1792525549" alt="Fruits Rouges" loading="lazy">
-        <div class="saveur-card-content"><h3>Fruits Rouges</h3><span class="saveur-card-line"></span><p>Une crème légère et des fruits rouges délicatement acidulés.</p></div>
+        <div class="saveur-card-content">
+          <h3>Fruits Rouges</h3>
+          <span class="saveur-card-line"></span>
+          <p>Une crème légère et des fruits rouges délicatement acidulés.</p>
+        </div>
       </article>
 
       <article class="saveur-card">
         <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_1.png?v=1792525554" alt="Dubaï" loading="lazy">
-        <div class="saveur-card-content"><h3>Dubaï</h3><span class="saveur-card-line"></span><p>Pistache, chocolat et kadaïf croustillant.</p></div>
+        <div class="saveur-card-content">
+          <h3>Dubaï</h3>
+          <span class="saveur-card-line"></span>
+          <p>Pistache, chocolat et kadaïf croustillant.</p>
+        </div>
       </article>
 
       <article class="saveur-card">
         <img class="saveur-photo" src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/download_2.png?v=1792525555" alt="Caramel" loading="lazy">
-        <div class="saveur-card-content"><h3>Caramel</h3><span class="saveur-card-line"></span><p>Un caramel onctueux et une crème délicate.</p></div>
+        <div class="saveur-card-content">
+          <h3>Caramel</h3>
+          <span class="saveur-card-line"></span>
+          <p>Un caramel onctueux et une crème délicate.</p>
+        </div>
       </article>
 
     </div>
@@ -704,12 +350,15 @@ document.documentElement.classList.add('js');
     <div class="saveurs-heading">
       <span>NOS</span>
       <h2>SAVEURS</h2>
-      <div class="saveurs-ornament" aria-hidden="true">
+      <div class="saveurs-ornament">
         <span></span>
-        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+        </svg>
         <span></span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -720,6 +369,7 @@ document.documentElement.classList.add('js');
     <div class="story-panel">
       <div class="story-content">
         <h2 class="story-title">Mon Histoire</h2>
+
         <div class="story-text">
           <p>Je suis née et j’ai grandi dans une famille où la cuisine était bien plus qu’un métier : c’était une passion. Avec des parents cuisiniers et une tante pâtissière, j’ai grandi dans un univers de saveurs et de créativité.</p>
           <p>Pourtant, la vie m’a d’abord menée sur un autre chemin. Après quatre années d’études universitaires, je suis devenue traductrice d’allemand.</p>
@@ -728,9 +378,12 @@ document.documentElement.classList.add('js');
           <p>Aujourd’hui, la pâtisserie est devenue ma plus belle façon de m’exprimer.</p>
           <p>Avant, je traduisais les mots. Aujourd’hui, je traduis mes émotions en saveurs, mes idées en créations et mes rêves en pâtisseries. 🤍</p>
         </div>
-        <div class="story-heart" aria-hidden="true">
+
+        <div class="story-heart">
           <span></span>
-          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>
+          </svg>
           <span></span>
         </div>
       </div>
@@ -743,6 +396,34 @@ document.documentElement.classList.add('js');
   </div>
 </section>
 
+<!-- 6. FORMATIONS -->
+<section class="formations" id="formations">
+  <div class="formations-layout">
+
+    <div class="formations-content">
+      <h2 class="formations-title">Formations</h2>
+
+      <div class="formations-copy">
+        <p class="formations-intro">Ce n’est pas une simple formation, c’est un véritable partage de mon savoir-faire.</p>
+
+        <p>Je vous ouvre les portes de mon univers en partageant avec vous mes propres recettes, celles que j’utilise au quotidien, mes techniques, mes astuces et tous les petits secrets qui font la différence.</p>
+
+        <p>En ligne ou en présentiel, je vous guide de A à Z, étape par étape, et je reste à vos côtés aussi longtemps que nécessaire, jusqu’à ce que vous puissiez réaliser vos gâteaux avec confiance et en toute autonomie.</p>
+
+        <p>Parce que mon plus grand bonheur, c’est de vous voir réussir à votre tour. 🤍</p>
+      </div>
+
+      <div class="formations-rule"></div>
+    </div>
+
+    <img class="formations-photo"
+      src="https://cdn.shopify.com/s/files/1/0840/7020/3650/files/1f90630d-1a06-4231-8879-937211409de5.jpg?v=1792529011"
+      alt="Formations en pâtisserie"
+      loading="lazy">
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-name">Tatev Gâteaux</div>
@@ -750,18 +431,18 @@ document.documentElement.classList.add('js');
 </footer>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const siteNav = document.getElementById("siteNav");
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
 
-menuToggle.addEventListener("click", () => {
-  const open = siteNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
+menuToggle.addEventListener('click', () => {
+  const open = siteNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(open));
 });
 
-siteNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    siteNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+siteNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -867,62 +548,70 @@ const galleries = {
   }
 };
 
-const modal = document.getElementById("galleryModal");
-const galleryTitle = document.getElementById("galleryTitle");
-const galleryGrid = document.getElementById("galleryGrid");
-const galleryClose = document.getElementById("galleryClose");
+const modal = document.getElementById('galleryModal');
+const galleryTitle = document.getElementById('galleryTitle');
+const galleryGrid = document.getElementById('galleryGrid');
+const galleryClose = document.getElementById('galleryClose');
+
 let previousFocus = null;
 
-document.querySelectorAll("[data-gallery]").forEach(card => {
-  card.addEventListener("click", () => {
+document.querySelectorAll('[data-gallery]').forEach(card => {
+  card.addEventListener('click', () => {
     const gallery = galleries[card.dataset.gallery];
     if (!gallery) return;
+
     previousFocus = card;
     galleryTitle.textContent = gallery.title;
     galleryGrid.replaceChildren();
 
     gallery.images.forEach((path, index) => {
-      const img = document.createElement("img");
+      const img = document.createElement('img');
       img.src = base + path;
-      img.alt = gallery.title + " " + (index + 1);
-      img.loading = index < 6 ? "eager" : "lazy";
+      img.alt = gallery.title + ' ' + (index + 1);
+      img.loading = index < 6 ? 'eager' : 'lazy';
       galleryGrid.appendChild(img);
     });
 
-    modal.classList.add("open");
+    modal.classList.add('open');
     modal.scrollTop = 0;
-    document.body.classList.add("modal-open");
+    document.body.classList.add('modal-open');
     galleryClose.focus();
   });
 });
 
 function closeGallery() {
-  modal.classList.remove("open");
-  document.body.classList.remove("modal-open");
+  modal.classList.remove('open');
+  document.body.classList.remove('modal-open');
   if (previousFocus) previousFocus.focus();
 }
 
-galleryClose.addEventListener("click", closeGallery);
-modal.addEventListener("click", e => {
+galleryClose.addEventListener('click', closeGallery);
+
+modal.addEventListener('click', e => {
   if (e.target === modal) closeGallery();
 });
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && modal.classList.contains("open")) closeGallery();
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) {
+    closeGallery();
+  }
 });
 
-const saveurs = document.querySelector(".tg-saveurs");
-if ("IntersectionObserver" in window) {
+const saveurs = document.querySelector('.tg-saveurs');
+
+if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: .12 });
+  }, {threshold:.12});
+
   observer.observe(saveurs);
 } else {
-  saveurs.classList.add("is-visible");
+  saveurs.classList.add('is-visible');
 }
 </script>
 
